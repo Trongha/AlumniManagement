@@ -1,0 +1,2 @@
+﻿trong public là để những file như css, js, image
+mỗi trang trong view có một thư mục trong public để chứa những thứ trên, ae có thể xem mẫu
