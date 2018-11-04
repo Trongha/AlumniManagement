@@ -43,7 +43,11 @@
 }
 
 .aClass{
-	position: relative;
+    position: relative;
+}
+.aClass img{
+    max-width: 445px;
+    max-height: 155px;
 }
 .xemThem {
     position: absolute;
@@ -67,5 +71,5 @@
     cursor: pointer;
 }
 .endNewClasses{
-	margin-top: 150px;
+	margin-top: 90px;
 }
