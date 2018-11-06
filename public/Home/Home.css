@@ -1,19 +1,4 @@
 
-
-
-.myNav{
-	/*opacity: 0.05;*/
-}
-.nenXanh {
-    background: #18bb9c;
-    padding: 80px 0px 30px;
-}
-
-.nenXanh h1 {
-    color: white;
-    font-size: 45px;
-}
-
 .lineStar {
     width: 23%;
     margin: auto;
@@ -49,7 +34,7 @@
     max-width: 445px;
     max-height: 155px;
 }
-.xemThem {
+.chiTiet {
     position: absolute;
     background: #18bb9c;
     width: 100%;
@@ -58,13 +43,16 @@
     left: 0px;
     opacity: 0;
     transition: all 0.6s;
+
 }
 
-.xemThem i {
+.chiTiet i {
     font-size: 45px;
-    margin-top: 40%;
+    margin-top: 25%;
+    color: #fff;
 }
-.aClass:hover .xemThem {
+
+.aClass:hover .chiTiet {
     opacity: 0.85;
     color: black;
     font-size: 18px;

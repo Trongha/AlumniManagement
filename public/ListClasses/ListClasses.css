@@ -3,20 +3,25 @@
 }
 
 body {
-    background-color: #474e5d;
+    background-color: #D4CEC3;
     font-family: Helvetica, sans-serif;
 }
 
 body .title{
-    margin-top: 69px;
     color: white;
     font-weight: 5px;
+}
+
+.gradient{
+    height: 69px;
+    background-image: linear-gradient(to bottom,#FDFCFA, #D4CEC3); 
 }
 /* The actual timeline (the vertical ruler) */
 .timeline {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 5%;
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -56,12 +61,14 @@ body .title{
 /* Place the container to the left */
 .left {
     left: -26%;
+    margin-top: -8%;
 }
 
 /* Place the container to the right */
 .right {
     left: 25%;
     margin-left: 25.4%;
+    margin-top: -8%;
 }
 
 /* Add arrows to the left container (pointing right) */
@@ -114,7 +121,7 @@ body .title{
     max-width: 445px;
     max-height: 155px;
 }
-.xemThem {
+.chiTiet {
     position: absolute;
     background: #18bb9c;
     width: 100%;
@@ -125,11 +132,11 @@ body .title{
     transition: all 0.6s;
 }
 
-.xemThem i {
+.chiTiet i {
     font-size: 45px;
-    margin-top: 20%;
+    margin-top: 10%;
 }
-.aClass:hover .xemThem {
+.aClass:hover .chiTiet {
     opacity: 0.85;
     color: black;
     font-size: 18px;
