@@ -29,7 +29,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-					<a class="navbar-brand" href="#"><span>Alumni Management</span> Admin</a>
+				<a class="navbar-brand" href="#"><span>Alumni Management</span> Admin</a>
 			</div>
 		</div><!-- /.container-fluid -->
 	</nav>
@@ -80,7 +80,7 @@
 
 		</div>
 		<!--/.row-->
-			<!--table-->
+		<!--table-->
 		<div class="table">
 			<table class="table">
 				<thead>
@@ -93,7 +93,7 @@
 						<th class="col-sm-1">&nbsp;</th>
 						<th class="col-sm-1">
 							<!--button them 1 user-->
-							<button onclick="addClick();" class="material-icons btn" href="addauser.html" style="padding:0px; color: black">add</a>
+							<button id="add-user" onclick="addClick();" class="material-icons btn" href="addauser.html" style="padding:0px; color: black">add</a>
 						</th>
 					</tr>
 				</thead>
@@ -114,8 +114,9 @@
 	<!--Form nhap thong tin 1 user-->
 	<div class="row" id="form-container">
 		<div class="panel panel-default" id="addform">
-			<div class="panel-heading">Thêm người dùng<button class="material-icons btn" style="float:right" onclick="closeClick()">close</button></div>
-			
+			<div class="panel-heading" style="font-family:Helvetica, Arial, sans-serif">Thêm người dùng<button class="material-icons btn"
+				 style="float:right" onclick="closeClick()">close</button></div>
+
 			<div class="panel-body">
 				<form class="form-horizontal" action="" method="post">
 					<fieldset>
@@ -168,6 +169,13 @@
 								<input id="password" name="password" type="password" class="form-control" required>
 							</div>
 						</div>
+						<!--rePassword input-->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="repassword">Nhập lại mật khẩu </label>
+							<div class="col-md-9">
+								<input id="repassword" name="repassword" type="repassword" class="form-control" required>
+							</div>
+						</div>
 						<!-- phonenum input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="sdt">Số điện thoại</label>
@@ -178,27 +186,79 @@
 						<!-- Address input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="address">Quê quán</label>
-							<div class="col-md-9">
-								<input id="address" name="address" type="text" class="form-control" required>
+							<div class="col-md-3">
+								<select id="tinh" class="form-control" style=" min-width: 100px;">
+									<option>Tỉnh</option>
+									<option>Nam Định</option>
+									<option>Hà Nam</option>
+									<option>...</option>
+								</select>
+							</div>
+							<div class="col-md-3 control-label"></div>
+							<div class="col-md-3">
+								<select class="form-control" style=" min-width: 100px;">
+									<option>Huyện</option>
+									<option>Giao Thủy</option>
+									<option>Xuân Trường</option>
+									<option>...</option>
+								</select>
+
 							</div>
 						</div>
 						<!-- Class input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="class">Lớp</label>
 							<div class="col-md-3">
-								<input id="class" name="class" type="text" class="form-control" required>
+								<select id="class" class="form-control" style=" min-width: 100px;">
+									<option>K61-CD</option>
+									<option>K62-CF</option>
+									<option>K63-J</option>
+									<option>Kxxx</option>
+								</select>
+								<button type="button" class="btn" onclick="addClass();">Thêm</button>
 							</div>
 							<label class="col-md-3 control-label" for="khoa">Khoa</label>
 							<div class="col-md-3">
-								<input id="khoa" name="khoa" type="text" class="form-control" required>
+								<select class="form-control" style=" min-width: 100px;">
+									<option>Công nghệ thông tin</option>
+									<option>Vật lí kĩ thuật</option>
+									<option>Điện tử viến thông</option>
+									<option>Công nghệ nano</option>
+								</select>
+
 							</div>
 						</div>
 						<!-- congviec input-->
 						<div class="form-group">
-							<label class="col-md-3 control-label" for="name">Công việc</label>
+							<label class="col-md-3 control-label">Công việc</label>
 							<div class="col-md-9">
-								<input id="job" name="job" type="text" class="form-control" required>
+								<table class="table" id="job-table">
+									<thead>
+										<tr>
+											<th>Vị trí</th>
+											<th>Cơ quan</th>
+											<th>Mức lương (USD)</th>
+											<th>Thời gian </th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input id="vitri" type="text" class="job-profile"></td>
+											<td><input id="coquan" type="text" class="job-profile"></td>
+											<td><input id="thoigian" type="number" class="job-profile"></td>
+											<td>
+												<input id="mucluong" type="text" class="job-profile">
+												
+											</td>
+											<td class="col-md-2"><button type="button" class="btn material-icons deleterow" style="padding:0px">delete</button></td>
+										</tr>
+									</tbody>
+								</table>
+								<button id="newjob" type="button" class="btn">Thêm</button>
+						
+
 							</div>
+
 						</div>
 
 						<!-- Message body -->
@@ -212,7 +272,7 @@
 						<div class="form-group">
 							<div class="col-md-12 widget-right">
 								<button type="submit" class="btn btn-default btn-md pull-right">Gửi</button>
-								<button type="submit" class="btn btn-default btn-md pull-right">Đóng</button>
+								<button type="button" class="btn btn-default btn-md pull-right" onclick="closeClick();">Đóng</button>
 							</div>
 						</div>
 					</fieldset>
@@ -220,6 +280,18 @@
 			</div>
 		</div>
 	</div>
+	<div class="row" id="class-container">
+		<div id="add-class-form" class="panel panel-default">
+			<div class="panel panel-default" id="addclass">
+				<div class="panel-heading" style="font-family:Helvetica, Arial, sans-serif; padding: auto;" >Thêm lớp học</div>
+				<div class="panel-body">
+					<div class="row" style="margin-left:10px; margin-right:10px"><input type="text" id="add-class"  class="form-control"></div>
+					<div class="row" style="padding:10px"><button type="button" onclick="addmoreClass();" class="btn" style="margin-left:52px">Thêm</button></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	</div>
 	<!--/.main-->
 
@@ -233,7 +305,8 @@
 	<script src="../../public/admin/js/bootstrap-datepicker.js"></script>
 	<script src="../../public/admin/js/custom.js"></script>
 	<script src="../../public/admin/js/addbutton.js"></script>
-
+	<script>
+	</script>
 </body>
 
 </html>
