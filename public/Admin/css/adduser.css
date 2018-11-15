@@ -1,4 +1,4 @@
-#form-container{
+#class-container{
     z-index: 2000;
     display: none;
     width: 100%;
@@ -7,10 +7,12 @@
     position: fixed;
     background-color:#00000063;
 }
-#addform{
+#add-class-form{
+    margin:auto;
+    width:20%;
+    height: 10%;
+    background-color: whitesmoke;  
+}
+#add-class{
     margin: auto;
-    width: 90%;
-    height: 90%;
-    background-color: whitesmoke;
-    overflow-y: scroll;
 }
