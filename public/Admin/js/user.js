@@ -1,7 +1,6 @@
 function addClass(){
     document.getElementById("class-container").style.display="block";
     document.getElementById("add-class").focus();
-    console.log("ditme");
 }
 
 function addmoreClass(){
@@ -40,6 +39,10 @@ function chapnhan(){
         alert("Mật khẩu không trùng khớp!");
         okie=false;
     }
+    else if(!document.getElementById("role-user").checked&&!document.getElementById("role-admin").checked){
+        alert("Bạn chưa chọn quyền!");
+        okie=false;
+    }
     if(okie){}
     //submit
 }
@@ -55,3 +58,20 @@ function ChuanhoaTen(ten) {
 		}
 	return dname;
 }
+document.getElementById("role-user").onClick(function(e){
+    console.log("wtf");
+    if (this.checked){
+        document.getElementById("user-info").style.display="block";
+    }
+    else
+    {
+        document.getElementById("user-info").style.display="none";
+    }
+});
+function isuser(){
+    if(document.getElementById("role-user").checked)
+    document.getElementById("user-info").style.display="block";
+    else
+    document.getElementById("user-info").style.display="none";
+}
+
