@@ -26,25 +26,21 @@ class CountrySakilaTest{
     }
 
     public function getSqlById($id){
-        $connect = SQLConnection::makeConnection();
-
         $sql = 'SELECT * FROM country WHERE country_id = '.$id.' ';
 
-        $result = $connect->query($sql);
+        $result = SQLConnection::getResultQuery($sql);
 
         if ($result->num_rows > 0){
             $row = $result->fetch_assoc();
-
             $this->country_id = $id;
             $this->country = $row["country"];
             $this->last_update = $row["last_update"];
-
         }
     }
 
     public function getString(){
         $s='';
-        $s .= 'id: '.$this->country_id.' country: '.$this->country.' lastUpDate: '.$this->last_update.'<br>';
+        $s .= 'id: '.$this->country_id.' country: '.$this->country.' lastUpDate: '.$this->last_update;
         return $s;
     }
 }

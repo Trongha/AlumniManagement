@@ -8,20 +8,16 @@
 
 class SQLConnection{
 
-    public static function makeConnection(){
-        $myServername = "localhost";
-        $myUsername = "root";
-        $myPassword = "";
-        $dbname = "Sakila";
-        $port = 3306 ;
+    public static function getResultQuery($sqlQuery, $myServername = "localhost", $myUsername = "root", $myPassword = "", $dbname = "Sakila", $port = 3306){
 
-        $conn = new mysqli($myServername, $myUsername, $myPassword, $dbname, $port);
+        $connect = new mysqli($myServername, $myUsername, $myPassword, $dbname, $port);
 
-        if ($conn->connect_error){
-            die("Connect Error: ". $conn->connect_error);
+        if ($connect->connect_error){
+            die("Connect Error: ". $connect->connect_error);
             return null;
         }
-        return $conn;
+        $result = $connect->query($sqlQuery);
+        return $result;
     }
 
 

@@ -11,7 +11,7 @@ require_once ('../../model/SQLConnection.php');
 
 
 class CountrySakilaTestController{
-    private $listCountry = Array();
+    private $listCountry;
 
     /**
      * CountrySakilaTestController constructor.
@@ -23,13 +23,11 @@ class CountrySakilaTestController{
     }
 
     public function getKCountryLastUpdate($k){
-        $connect = SQLConnection::makeConnection();
-
         $sql = 'SELECT * FROM Country
                 ORDER BY country.country_id DESC
                 limit '.$k;
 
-        $result = $connect->query($sql);
+        $result = SQLConnection::getResultQuery($sql);
 
         if ($result->num_rows > 0){
             while ($row = $result->fetch_assoc()){
@@ -39,14 +37,14 @@ class CountrySakilaTestController{
         }
     }
 
-    public function getString()
-    {
-        $s = "";
-        foreach ($this->listCountry as $aCountry) {
-            $s .= $aCountry->getString();
+    public function getString(){
+        $s = '';
+        foreach ($this->listCountry as $country){
+            $s .= $country->getString() . '<br>';
         }
         return $s;
     }
+
 
     public function show(){
         echo $this->getString();
