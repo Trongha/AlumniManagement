@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="../../public/admin/css/quanlidanhmuc.css">
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
@@ -49,13 +50,13 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li><a href="dashboard.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-			<li><a href="quanlinguoidung.html"><em class="fa fa-calendar">&nbsp;</em>Quản lí người dùng </a></li>
+			<li><a href="dashboard.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+			<li><a href="quanlinguoidung.php"><em class="fa fa-calendar">&nbsp;</em>Quản lí người dùng </a></li>
 
-			<li class="active"><a href="quanlidanhmuc.html"><em class="fa fa-toggle-off">&nbsp;</em> Quản lí danh mục</a></li>
-			<li><a href="quanliquyen.html"><em class="fa fa-clone">&nbsp;</em> Quản lí quyền</a></li>
-			<li><a href="thongkebaocao.html"><em class="fa fa-bar-chart">&nbsp;</em> Thống kê &amp; Báo cáo</a></li>
-			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Đăng xuất</a></li>
+			<li class="active"><a href="quanlidanhmuc.php"><em class="fa fa-toggle-off">&nbsp;</em> Quản lí danh mục</a></li>
+			 
+			<li><a href="thongkebaocao.php"><em class="fa fa-bar-chart">&nbsp;</em> Thống kê &amp; Báo cáo</a></li>
+			<li><a href="login.php"><em class="fa fa-power-off">&nbsp;</em> Đăng xuất</a></li>
 		</ul>
 	</div>
 	<!--/.sidebar-->
@@ -84,15 +85,19 @@
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#tab1" data-toggle="tab">Thông báo</a></li>
 						<li><a href="#tab2" data-toggle="tab">Khảo sát</a></li>
+						
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane fade in active" id="tab1">
 							<div class="panel panel-default ">
 								<div class="panel-heading">
-									Thông báo
+									<p>Thông báo</p>
+									<a href="taothongbao.php" style="float:right">Thêm thông báo</a>
 
+									
 								</div>
 								<div class="panel-body timeline-container">
+									
 									<ul class="timeline">
 										<li>
 
@@ -104,7 +109,7 @@
 													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sodales nisl. Donec malesuada orci ornare
 														risus finibus feugiat.</p>
 													<div style="float:both"></div>
-													<a href="" class="nav-link">Chi tiết...</a>
+													<a href="chitietthongbao.php" class="nav-link hienthichitiet">Chi tiết...</a>
 												</div>
 											</div>
 										</li>
@@ -149,8 +154,8 @@
 						<div class="tab-pane fade" id="tab2">
 							<div class="panel panel-default ">
 								<div class="panel-heading">
-									Khảo sát
-
+									<p>Khảo sát<p>
+									<a href="taocuockhaosat.php" style="float:right">Thêm cuộc khảo sát</a>
 								</div>
 								<div class="panel-body timeline-container">
 									<ul class="timeline">
@@ -164,7 +169,7 @@
 													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sodales nisl. Donec malesuada orci ornare
 														risus finibus feugiat.</p>
 													<div style="float:both"></div>
-													<a href="" class="nav-link">Chi tiết...</a>
+													<a href="chitietkhaosat.php" class="nav-link">Chi tiết...</a>
 												</div>
 											</div>
 										</li>
@@ -223,6 +228,7 @@
 	<script src="../../public/admin/js/easypiechart-data.js"></script>
 	<script src="../../public/admin/js/bootstrap-datepicker.js"></script>
 	<script src="../../public/admin/js/custom.js"></script>
+	<script src="../../public/admin/js/chitiet.js"></script>
 
 </body>
 
