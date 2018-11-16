@@ -17,7 +17,7 @@ class LopController{
 	 * @param array $listLop
 	 * @param int $soLuongLop
 	 */
-	public function __construct($soLuongLop = 2)
+	public function __construct($soLuongLop = 0)
 	{
 		$this->listLop = Array();
 		$this->soLuongLop = $soLuongLop;
@@ -40,7 +40,6 @@ class LopController{
 		$result = SQLConnection::getResultQuery($sql);
 
 		if ($result->num_rows > 0){
-			echo $result->num_rows;
 			while ($row = $result->fetch_assoc()){
 				$newLop = new Lop($row['lopID'], $row['tenlop']);
 				$this->addOneLop($newLop);
@@ -80,8 +79,8 @@ class LopController{
 		$this->soLuongLop = $soLuongLop;
 	}
 }
-
-$testShowLop = new LopController($soLuongLop = 2);
+/*
+$testShowLop = new LopController($soLuongLop = 10);
 
 $testShowLop->getLopInSql();
 $listClass = $testShowLop->getListLop();
@@ -106,7 +105,7 @@ if (is_array($listClass) || is_object($listClass)) {
 		echo $s;
 //		echo $aLop->getString();
 	}
-}
+}*/
 
 
 

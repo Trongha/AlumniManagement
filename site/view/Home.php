@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="../../public/Home/Home.css">
     <link rel="stylesheet" href="../../public/Home/Nav.css">
 	<title>Alumni</title>
+
+    <?php 
+        require_once ('../controller/HomeController.php');
+        $homeController = new HomeController();
+    ?>
+    
 </head>
 <body>
     
@@ -114,84 +120,9 @@
                     <!-- end Row -->
 
                 <div class="row">
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="thumbnail aClass">
-                            <img src="../../public/Home/img/portfolio/cake.jpg" alt="a class">
-                            <div class="caption">
-                                <h3>Lớp k61-CD</h3>
-                            </div>
-                            <a href="ListAlumni.html">
-                                <div class="chiTiet text-center">
-                                    <i class="fas fa-info-circle"></i>
-                                    <h3>Chi tiết...</h3>
-                                </div>
-                            </a>
-                        </div>
-                    </div>  <!-- end 1 class -->
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="thumbnail aClass">
-                            <img src="../../public/Home/img/portfolio/cake.jpg" alt="a class">
-                            <div class="caption">
-                                <h3>Lớp k61-CD</h3>
-                            </div>
-                            <a href="ListAlumni.html">
-                                <div class="chiTiet text-center">
-                                    <i class="fas fa-info-circle"></i>
-                                    <h3>Chi tiết...</h3>
-                                </div>
-                            </a>
-                        </div>
-                    </div>  <!-- end 1 class -->
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="thumbnail aClass">
-                            <img src="../../public/Home/img/portfolio/cake.jpg" alt="a class">
-                            <div class="caption">
-                                <h3>Lớp k61-CD</h3>
-                            </div>
-                            <a href="ListAlumni.html">
-                                <div class="chiTiet text-center">
-                                    <i class="fas fa-info-circle"></i>
-                                    <h3>Chi tiết...</h3>
-                                </div>
-                            </a>
-                        </div>
-                    </div>  <!-- end 1 class -->
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="thumbnail aClass">
-                            <img src="../../public/Home/img/portfolio/cake.jpg" alt="a class">
-                            <div class="caption">
-                                <h3>Lớp k61-CD</h3>
-                            </div>
-                            <a href="ListAlumni.html">
-                                <div class="chiTiet text-center">
-                                    <i class="fas fa-info-circle"></i>
-                                    <h3>Chi tiết...</h3>
-                                </div>
-                            </a>
-                        </div>
-                    </div>  <!-- end 1 class -->
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="thumbnail aClass">
-                            <img src="../../public/Home/img/portfolio/cake.jpg" alt="a class">
-                            <div class="caption">
-                                <h3>Lớp k61-CD</h3>
-                            </div>
-                            <a href="ListAlumni.html">
-                                <div class="chiTiet text-center">
-                                    <i class="fas fa-info-circle"></i>
-                                    <h3>Chi tiết...</h3>
-                                </div>
-                            </a>
-                        </div>
-                    </div>  <!-- end 1 class -->
-
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="endNewClasses">
-                            <div class="caption text-center">
-                                <h3><a href="" class="btn">Xem Thêm ...</a></h3>
-                            </div>
-                        </div>
-                    </div>  <!-- end 1 class -->
+                    <?php 
+                        $homeController->setListNewClass();
+                    ?>
                 </div>
             </div>
         </div>  <!-- end col8 -->
