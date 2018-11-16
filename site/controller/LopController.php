@@ -17,16 +17,16 @@ class LopController{
 	 * @param array $listLop
 	 * @param int $soLuongLop
 	 */
-	public function __construct($listLop = null, $soLuongLop = 0)
+	public function __construct($soLuongLop = 2)
 	{
-		$this->listLop = $listLop;
+		$this->listLop = Array();
 		$this->soLuongLop = $soLuongLop;
 	}
 
 	/**
 	 * add 1 lop vao list
 	 * */
-	public function addOneLop(Lop $newLop){
+	public function addOneLop($newLop){
 		array_push($this->listLop, $newLop);
 	}
 
@@ -40,6 +40,7 @@ class LopController{
 		$result = SQLConnection::getResultQuery($sql);
 
 		if ($result->num_rows > 0){
+			echo $result->num_rows;
 			while ($row = $result->fetch_assoc()){
 				$newLop = new Lop($row['lopID'], $row['tenlop']);
 				$this->addOneLop($newLop);
@@ -80,25 +81,31 @@ class LopController{
 	}
 }
 
-$testShowLop = new LopController($soLuongLop = 10);
-$testShowLop->getLopInSql();
-foreach ($testShowLop->getListLop() as $aLop){
-	$s = '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">'
-	  . '	<div class="thumbnail aClass">'
-	  . '		<img src="../../public/Home/img/portfolio/cake.jpg" alt="a class">'
-	  . '		<div class="caption">'
-	  . '			<h3>Lớp '. $aLop->getTenLop() .'</h3>'
-	  . '		</div>'
-	  . '		<a href="ListAlumni.html">'
-	  . '			<div class="chiTiet text-center">'
-	  . '				<i class="fas fa-info-circle"></i>'
-	  . '				<h3>Chi tiết...</h3>'
-	  . '			</div>'
-	  . '		</a>'
-	  . '	</div>'
-	  . '</div>  <!-- end 1 class -->';
+$testShowLop = new LopController($soLuongLop = 2);
 
-	echo $s;
+$testShowLop->getLopInSql();
+$listClass = $testShowLop->getListLop();
+
+if (is_array($listClass) || is_object($listClass)) {
+	foreach ($listClass as $aLop) {
+		$s = '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">'
+		  . '	<div class="thumbnail aClass">'
+		  . '		<img src="../../public/Home/img/portfolio/cake.jpg" alt="a class">'
+		  . '		<div class="caption">'
+		  . '			<h3>Lớp '. $aLop->getTenLop() .'</h3>'
+		  . '		</div>'
+		  . '		<a href="ListAlumni.html">'
+		  . '			<div class="chiTiet text-center">'
+		  . '				<i class="fas fa-info-circle"></i>'
+		  . '				<h3>Chi tiết...</h3>'
+		  . '			</div>'
+		  . '		</a>'
+		  . '	</div>'
+		  . '</div>  <!-- end 1 class -->';
+
+		echo $s;
+//		echo $aLop->getString();
+	}
 }
 
 
