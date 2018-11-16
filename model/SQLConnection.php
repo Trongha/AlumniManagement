@@ -8,7 +8,7 @@
 
 class SQLConnection{
 
-    public static function getResultQuery($sqlQuery, $myServername = "localhost", $myUsername = "root", $myPassword = "", $dbname = "Sakila", $port = 3306){
+    public static function getResultQuery($sqlQuery, $dbname = "qlcsv", $myServername = "localhost", $myUsername = "root", $myPassword = "", $port = 3306){
 
         $connect = new mysqli($myServername, $myUsername, $myPassword, $dbname, $port);
 
