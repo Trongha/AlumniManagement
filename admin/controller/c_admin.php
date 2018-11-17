@@ -1,5 +1,6 @@
 <?php
-include("../model/m_admin.php");
+
+include("../../model/m_admin.php");
 class c_admin{
     public function quanlidanhmuc(){
         $m_danhmuc= new m_admin();

@@ -7,7 +7,7 @@
  */
 require_once ('../../model/SQLConnection.php');
 require_once ('../../model/Lop.php');
-require_once ('../../admin/model/m_admin.php');
+require_once('../../admin/model/m_admin.php');
 
 class LopController{
 	private $listLop = Array();
