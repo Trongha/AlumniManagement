@@ -138,7 +138,7 @@
     <div class= "footer">
         <div class="container">
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <h4>
+                <h3>
                     Copyright &copy; Team
                 </h3>
             </div>
