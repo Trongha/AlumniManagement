@@ -6,7 +6,7 @@
  * Time: 11:20 CH
  */
 
-require_once ('SQLConnection.php');
+// require_once ('');
 
 class Lop{
     private $lopID = -1;

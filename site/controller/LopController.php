@@ -5,9 +5,9 @@
  * Date: 16/11/2018
  * Time: 11:44 CH
  */
-require_once ('../../model/SQLConnection.php');
+
 require_once ('../../model/Lop.php');
-require_once('../../admin/model/m_admin.php');
+require_once('../../model/database.php');
 
 class LopController{
 	private $listLop = Array();
@@ -38,18 +38,9 @@ class LopController{
 		$sql = 'SELECT * FROM lop
 				ORDER BY lop.lopID DESC
 				LIMIT '.$this->getSoLuongLop();
-/*		$result = SQLConnection::getResultQuery($sql);
 
-		if ($result->num_rows > 0){
-			while ($row = $result->fetch_assoc()){
-				$newLop = new Lop($row['lopID'], $row['tenlop']);
-				$this->addOneLop($newLop);
-			}
-		}*/
-
-		$admin = new m_admin();
-		$admin->setQuery($sql);
-		$result = $admin->loadAllRows();
+//		$admin = new database($sql);
+		$result = database::loadAllRowsStatic($sql);
 		
 		foreach ($result as $row) {
 			$newLop = new Lop($row->lopID, $row->tenlop);

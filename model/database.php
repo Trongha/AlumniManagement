@@ -4,11 +4,20 @@ class database{
     var $_sql= '';
     var $_cursor= NULL;
 
-    public function database(){
+
+
+    public function database($_sql = 'set names "utf8"'){
         $this->_dbh = new PDO('mysql:host=localhost:3306; dbname=qlcsv','root','');
         $this->_dbh->query('set names "utf8"');
+        $this->setQuery($_sql);
     }
-    public function setQuery($sql){
+
+	/**
+	 * database constructor.
+	 * @param string $_sql
+	 */
+
+	public function setQuery($sql){
         $this->_sql=$sql;
     }
     public function execute($options=array()){
@@ -33,5 +42,10 @@ class database{
         }
         return $result->fetchAll(PDO::FETCH_OBJ);
     }
+
+    public static function loadAllRowsStatic($sql = 'set names "utf8"'){
+		$db = new database($sql);
+		return $db->loadAllRows();
+	}
 }
 ?>
