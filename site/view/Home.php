@@ -15,7 +15,7 @@
 
     <!-- my CSS -->
     <link rel="stylesheet" href="../../public/Home/Home.css">
-    <link rel="stylesheet" href="../../public/Home/Nav.css">
+    <link rel="stylesheet" href="../../public/Home/NavFoo.css">
 	<title>Alumni</title>
 
     <?php 
@@ -122,22 +122,37 @@
                 <div class="row">
                     <?php 
                         $homeController->setListNewClass();
-                    ?>
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="endNewClasses">
-                            <div class="caption text-center">
-                                <h3><a href="ListClasses.php" class="btn">Xem Thêm ...</a></h3>
-                            </div>
-                        </div>
-                    </div>  <!-- end 1 class -->
+                    ?>                    
+                </div>
+                <div class="row">
+                    <div class="pull-right">
+                        <h2><a href="ListClasses.php" class="btn btn-info">Xem Thêm ...</a></h2>
+                    </div>
                 </div>
             </div>
-        </div>  <!-- end col8 -->
+        </div>  
+            <!-- end col8 -->
+    </div>
+        <!-- end container -->
 
+    <div class= "footer">
+        <div class="container">
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                <h4>
+                    Copyright &copy; Team
+                </h3>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class="text-right">
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-3x social"></i></a>
+                    <a href="mailto:Trongha.hd.98@gmai.com"><i class="fa fa-envelope-square fa-3x social"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
 
 	<script src="../../public/vendor/jquery/jquery.min.js"></script>
     <script src="../../public/vendor/bootstrapv3/js/bootstrap.min.js"></script>
-    <script src="../../public/Home/Nav.js"></script>
+    <script src="../../public/Home/NavFoo.js"></script>
 </body>
 </html>

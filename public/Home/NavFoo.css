@@ -116,4 +116,20 @@
         padding: 0px;
     }
 }
+.footer {
+    background-color: #1e3a94d4;
+    color: #fff;
+    height: 80px;
+    padding-top: 20px;
+    margin: 10px 0px 100px;
+}
+.footer i{
+    color: #fff;
+    opacity: 0.8;
+}
+.footer i:hover{
+    color: #ffc4c4;
+    opacity: 1;
+}
+
 

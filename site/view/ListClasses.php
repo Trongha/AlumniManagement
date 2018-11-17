@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../public/vendor/fontawesome-free/css/all.min.css">
     <!-- my CSS -->
     <link rel="stylesheet" href="../../public/ListClasses/ListClasses.css">
-    <link rel="stylesheet" href="../../public/Home/Nav.css">
+    <link rel="stylesheet" href="../../public/Home/NavFoo.css">
 	<title>Alumni</title>
     <?php 
         require_once('../controller/ListClassesController.php');
@@ -80,10 +80,26 @@
     </div>
         <!--end tiemline-->
 	
+    <div class= "footer">
+        <div class="container">
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                <h4>
+                    Copyright &copy; Team
+                </h3>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class="text-right">
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-3x social"></i></a>
+                    <a href="mailto:Trongha.hd.98@gmai.com"><i class="fa fa-envelope-square fa-3x social"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
 	<script src="../../public/vendor/jquery/jquery.min.js"></script>
     <script src="../../public/vendor/bootstrapv3/js/bootstrap.min.js"></script>
-    <script src="../../public/Home/Nav.js"></script>
+    <script src="../../public/Home/NavFoo.js"></script>
 
 </body>
 </html>
