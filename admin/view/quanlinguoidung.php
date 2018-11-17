@@ -1,8 +1,9 @@
-<?php/*
-include('../../controler/c_quanlinguoidung.php');
-$c_quanlinguoidung=new c_quanlinguoidung();
-$noidung=$c_quanlinguoidung->quanlinguoidung();
-$danhsachuser=$noidung['quanlinguoidung'];*/
+<?php
+include('../controller/c_admin.php');
+$c_admin=new c_admin();
+//$noidung=$c_admin->quanlinguoidung();
+//$listthongbao=$noidung['listthongbao'];
+//$listkhaosat=$noidung['listkhaosat'];
 ?>
 <!DOCTYPE html>
 <html>
