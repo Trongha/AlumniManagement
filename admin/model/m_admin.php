@@ -13,9 +13,9 @@ class m_admin extends database{
     }
     function getnguoidung(){
         $sql="select user.*, cuu_sv.*,lop.tenlop, khoa.tenkhoa from 
-        user join cuu_sv on user.userID=cuu_sv.userID join lop on user.lopID=lop.lopID
-        join khoa on lop.khoaID=khoa.khoaID
-        oderby user.userID DESC";
+        user left join cuu_sv on user.userID=cuu_sv.userID left join lop on cuu_sv.lopID=lop.lopID
+        left join khoa on lop.khoaID=khoa.khoaID
+        order by user.userID DESC";
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
