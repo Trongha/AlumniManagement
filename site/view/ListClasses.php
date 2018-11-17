@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="../../public/ListClasses/ListClasses.css">
     <link rel="stylesheet" href="../../public/Home/Nav.css">
 	<title>Alumni</title>
-    
+    <?php 
+        require_once('../controller/ListClassesController.php');
+     ?>
     
 </head>
 <body>
@@ -48,11 +50,16 @@
                     <li class="active" >
                         <a class="" href="ListClasses.php">Các lớp</a>
                     </li>
+                    <li>
+                        <a class="" href="#">Đăng nhập</a>
+                    </li>
+                    
                 </ul>
             </div>
             <!-- end navbar-collapse -->
         </div>
         <!-- end container -->
+
     </nav>  
         <!-- end Nav -->
     <div class="myHeader"></div>
@@ -66,7 +73,10 @@
     </div>
     
 	<div class="timeline">
-
+        <?php
+            $listClassController = new ListClassesController();
+            $listClassController->setListClasses();
+         ?>
     </div>
         <!--end tiemline-->
 	

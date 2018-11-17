@@ -22,7 +22,7 @@
         require_once ('../controller/HomeController.php');
         $homeController = new HomeController();
     ?>
-    
+
 </head>
 <body>
     
@@ -34,7 +34,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
 
-                <a class="logo navbar-brand page-scroll" href="Home.html">
+                <a class="logo navbar-brand page-scroll" href="Home.php">
                     <img src="../../public/Home/img/uetLogo.png" alt="">_Uet_Alumni
                 </a>
             </div>
@@ -43,7 +43,7 @@
                 <ul class="nav navbar-nav">
 
                     <li class="active" >
-                        <a href="Home.html">Trang chủ</a>
+                        <a href="Home.php">Trang chủ</a>
                     </li>
                     <li>
                         <a class="" href="#download">Bài đăng</a>
@@ -52,7 +52,7 @@
                         <a class="" href="#contact">Khảo sát</a>
                     </li>
                     <li>
-                        <a class="" href="ListClasses.html">Các lớp</a>
+                        <a class="" href="ListClasses.php">Các lớp</a>
                     </li>
                     <li>
                         <a class="" href="#">Đăng nhập</a>
@@ -123,6 +123,13 @@
                     <?php 
                         $homeController->setListNewClass();
                     ?>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <div class="endNewClasses">
+                            <div class="caption text-center">
+                                <h3><a href="ListClasses.php" class="btn">Xem Thêm ...</a></h3>
+                            </div>
+                        </div>
+                    </div>  <!-- end 1 class -->
                 </div>
             </div>
         </div>  <!-- end col8 -->

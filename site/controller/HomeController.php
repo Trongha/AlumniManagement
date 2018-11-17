@@ -19,7 +19,7 @@ class HomeController{
 	}
 
 	public function setListNewClass(){
-		$lopMoiThem = new LopController(6);
+		$lopMoiThem = new LopController(5);
 		$lopMoiThem->getLopInSql();
 		$listClass = $lopMoiThem->getListLop();
 
