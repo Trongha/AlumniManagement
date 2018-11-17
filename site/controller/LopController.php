@@ -7,7 +7,7 @@
  */
 
 require_once ('../../model/Lop.php');
-require_once('../../model/database.php');
+require_once('../../model/m_admin.php');
 
 class LopController{
 	private $listLop = Array();
@@ -35,13 +35,7 @@ class LopController{
 	 * get cac lop tu sql
 	 * */
 	public function getLopInSql(){
-		$sql = 'SELECT * FROM lop
-				ORDER BY lop.lopID DESC
-				LIMIT '.$this->getSoLuongLop();
-
-//		$admin = new database($sql);
-		$result = database::loadAllRowsStatic($sql);
-		
+		$result = m_admin::getNLopMoiNhat($this->getSoLuongLop());
 		foreach ($result as $row) {
 			$newLop = new Lop($row->lopID, $row->tenlop);
 			$this->addOneLop($newLop);

@@ -19,5 +19,11 @@ class m_admin extends database{
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
+    static function getNLopMoiNhat($n){
+		$sql = 'SELECT * FROM lop
+				ORDER BY lop.lopID DESC
+				LIMIT '.$n;
+		return database::loadAllRowsStatic($sql);
+	}
 }
 ?>
