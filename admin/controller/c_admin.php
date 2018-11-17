@@ -8,5 +8,10 @@ class c_admin{
         return array('listthongbao'=>$listthongbao,'listkhaosat'=>$listkhaosat);
 
     }
+    public function quanlinguoidung(){
+        $m_danhmuc=new m_admin();
+        $listnguoidung= $m_danhmuc->getnguoidung();
+        return array('listnguoidung'=>$listnguoidung);
+    }
 }
 ?>

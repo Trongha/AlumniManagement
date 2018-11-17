@@ -1,9 +1,8 @@
 <?php
 include('../controller/c_admin.php');
 $c_admin=new c_admin();
-//$noidung=$c_admin->quanlinguoidung();
-//$listthongbao=$noidung['listthongbao'];
-//$listkhaosat=$noidung['listkhaosat'];
+$noidung=$c_admin->quanlinguoidung();
+$listnguoidung=$noidung['listnguoidung'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -105,21 +104,20 @@ $c_admin=new c_admin();
 					</tr>
 				</thead>
 				<tbody>
-				<?php/*
-				foreach($danhsachuser as $user){
-					list($username, $hoten, $lop, $khoa)=explode(':',$user)
-				*/?>
+				<?php
+				foreach($listnguoidung as $user){
+				?>
 					<tr>
-						<td class="col-sm-2"><?//=$username?></td>
-						<td class="col-sm-2"><?//=$hoten?></td>
-						<td class="col-sm-2"><?//=$lop?></td>
-						<td class="col-sm-2"><?//$khoa?></td>
+						<td class="col-sm-2"><?=$user->username?></td>
+						<td class="col-sm-2"><?=$user->hoten?></td>
+						<td class="col-sm-2"><?=$user->tenlop?></td>
+						<td class="col-sm-2"><?=$user->tenkhoa?></td>
 						<td class="col-sm-2">&nbsp;</td>
 						<td class="col-sm-1"><button id="edit-user" class="material-icons btn" style="padding:0px; color: black; background-color: white"><a href="edit.php" style="color:black">edit</a></button></td>
 						<td class="col-sm-1"><button id="delete-user" class="material-icons btn" style="padding:0px; color: black; background-color: white" onclick="deleteRowNow();" >delete</button></td>
 					</tr>
 					<?php
-				//}
+				}
 					?>
 				</tbody>
 			</table>
