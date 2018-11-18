@@ -3,6 +3,7 @@ include('../controller/c_admin.php');
 $c_admin=new c_admin();
 $noidung=$c_admin->quanlinguoidung();
 $listnguoidung=$noidung['listnguoidung'];
+print_r($listnguoidung);
 ?>
 <!DOCTYPE html>
 <html>
@@ -113,7 +114,7 @@ $listnguoidung=$noidung['listnguoidung'];
 						<td class="col-sm-2"><?=$user->tenlop?></td>
 						<td class="col-sm-2"><?=$user->tenkhoa?></td>
 						<td class="col-sm-2">&nbsp;</td>
-						<td class="col-sm-1"><button id="edit-user" class="material-icons btn" style="padding:0px; color: black; background-color: white"><a href="edit.php" style="color:black">edit</a></button></td>
+						<td class="col-sm-1"><button id="edit-user" class="material-icons btn" style="padding:0px; color: black; background-color: white"><a href="edit.php?id=<?=$user->userID	?>" style="color:black">edit</a></button></td>
 						<td class="col-sm-1"><button id="delete-user" class="material-icons btn" style="padding:0px; color: black; background-color: white" onclick="deleteRowNow();" >delete</button></td>
 					</tr>
 					<?php

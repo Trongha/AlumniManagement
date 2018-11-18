@@ -25,7 +25,7 @@ function addnewjob(){
 $(document).ready(function (){
     $("#newjob").click(function(){
         
-        var markup = '<tr><td><input class="vitri" type="text" ></td><td><input class="coquan" type="text" ></td><td><input class="thoigian" type="number" ></td><td><input class="mucluong" type="text" ></td><td class="col-md-2"><button type="button" class="btn material-icons deleterow" style="padding:0px; background-color: white" onclick="deleteRowNow(event)">delete</button></td></tr>';
+        var markup = '<tr><td><input class="vitri" name="vitri[]" type="text" ></td><td><input class="coquan" name="coquan[]" type="text" ></td><td><input class="thoigian" name="thoigian[]" type="number" ></td><td><input class="mucluong" name="mucluong[]" type="text" ></td><td class="col-md-2"><button type="button" class="btn material-icons deleterow" style="padding:0px; background-color: white" onclick="deleteRowNow(event)">delete</button></td></tr>';
         $("#job-table tbody").append(markup);
     });
 });
@@ -71,7 +71,8 @@ document.getElementById("role-user").onClick(function(e){
 function isuser(){
     if(document.getElementById("role-user").checked)
     document.getElementById("user-info").style.display="block";
-    else
+    else{
     document.getElementById("user-info").style.display="none";
+}
 }
 

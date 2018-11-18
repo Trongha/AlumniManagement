@@ -1,3 +1,11 @@
+<?php
+include('../controller/c_admin.php');
+$c_admin=new c_admin();
+$noidung=$c_admin->edit();
+//$chitietnguoidung=$noidung['chitietnguoidung'];
+$listtinh=$noidung['listtinh'];
+$listkhoa=$noidung['listkhoa'];
+?>
 <!DOCTYPE html>
 <html>
 
@@ -83,7 +91,7 @@
 		
 	<!--Form nhap thong tin 1 user-->
 			<div class="panel-body">
-				<form class="form-horizontal" action="" method="post">
+				<form class="form-horizontal" action="xulithemnguoidung.php" method="post">
 					<fieldset>
 						<!--Username input-->
 						<div class="form-group">
@@ -136,11 +144,18 @@
 								<input id="imgi" name="imgi" type="file">
 							</div>
 						</div>
+						<!-- msv-->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="msv">Mã sinh viên</label>
+							<div class="col-sm-9">
+								<input id="msv" class="form-control" name="msv" type="text" required>
+							</div>
+						</div>
 						<!--img output-->
 						<div class="form-group">
 							<label class="col-md-3 control-label">&nbsp;</label>
 							<div class="col-sm-3">
-								<input id="imgo" name="imgo" type="image" src="../../public/admin/img/400x300.png" class="form-control" style=" min-height: 200px">
+								<img src="../../public/admin/img/400x300.png" class="form-control" style=" min-height: 200px">
 							</div>
 						</div>
 						<!-- Email input-->
@@ -162,20 +177,21 @@
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="address">Quê quán</label>
 							<div class="col-md-3">
-								<select id="tinh" class="form-control" style=" min-width: 100px;">
+								<select id="tinh" name="tinh" class="form-control" style=" min-width: 100px;">
 									<option disabled selected>Tỉnh</option>
-									<option>Nam Định</option>
-									<option>Hà Nam</option>
-									<option>...</option>
+									<?php
+									foreach($listtinh as $tinh){
+									?>
+									<option value="<?=$tinh->tinhid?>"><?=$tinh->tentinh?></option>
+									<?php
+									}
+									?>
 								</select>
 							</div>
 							<div class="col-md-1 control-label"></div>
 							<div class="col-md-3">
-								<select class="form-control" style=" min-width: 100px;">
+								<select id="huyen" name="huyen" class="form-control" style=" min-width: 100px;">
 									<option disabled selected>Huyện</option>
-									<option>Giao Thủy</option>
-									<option>Xuân Trường</option>
-									<option>...</option>
 								</select>
 
 							</div>
@@ -184,23 +200,22 @@
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="class">Lớp</label>
 							<div class="col-md-3">
-								<select id="class" class="form-control" style=" min-width: 100px;">
+								<select id="lop" name="lop" class="form-control" style=" min-width: 100px;">
 									<option disabled selected>Lớp</option>
-									<option>K61-CD</option>
-									<option>K62-CF</option>
-									<option>K63-J</option>
-									<option>Kxxx</option>
 								</select>
 								<button type="button" class="btn" onclick="addClass();">Thêm</button>
 							</div>
 							<div class="col-md-1"></div>
 							<div class="col-md-3">
-								<select class="form-control" style=" min-width: 100px;">
+								<select id="khoa" class="form-control" style=" min-width: 100px;">
 									<option disabled selected>Khoa</option>
-									<option>Công nghệ thông tin</option>
-									<option>Vật lí kĩ thuật</option>
-									<option>Điện tử viến thông</option>
-									<option>Công nghệ nano</option>
+									<?php
+									foreach($listkhoa as $khoa){
+									?>
+									<option value="<?=$khoa->khoaID?>"><?=$khoa->tenkhoa?></option>
+									<?php
+									}
+									?>
 								</select>
 
 							</div>
@@ -225,11 +240,11 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td><input class="vitri" type="text" ></td>
-											<td><input class="coquan" type="text" ></td>
-											<td><input class="thoigian" type="number"></td>
+											<td><input class="vitri" name="vitri[]" type="text" ></td>
+											<td><input class="coquan" name="coquan[]" type="text" ></td>
+											<td><input class="thoigian" name="thoigian[]" type="number"></td>
 											<td>
-												<input class="mucluong" type="text" class="job-profile">
+												<input class="mucluong" name="mucluong[]" type="text" class="job-profile">
 												
 											</td>
 											<td class="col-md-2">
@@ -259,7 +274,7 @@
 						<!-- Form actions -->
 						<div class="form-group">
 							<div class="col-md-12 widget-right">
-								<button type="button" id="add-user-submit" class="btn btn-default btn-md pull-right" onclick="chapnhan();">Gửi</button>
+								<button type="submit" id="add-user-submit" class="btn btn-default btn-md pull-right" onclick="chapnhan();">Gửi</button>
 							
 						</div>
 					</fieldset>
@@ -296,7 +311,20 @@
 	<script src="../../public/admin/js/custom.js"></script>
 	<script src="../../public/admin/js/user.js"></script>
 	<script>
+	$(document).ready(function(){
+		$("#tinh").change(function(event){
+			tinhid=$("#tinh").val();
+			$.post('huyen.php',{"tinhid":tinhid},function(data){
+				$("#huyen").html(data);
+			});
+		});
+		$("#khoa").change(function(event){
+			khoaid=$("#khoa").val();
+			$.post('lop.php',{"khoaid":khoaid},function(data){
+				$("#lop").html(data);
+			});
+		});
+	});
 	</script>
 </body>
-
 </html>
