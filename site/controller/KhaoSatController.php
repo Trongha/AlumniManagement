@@ -49,8 +49,10 @@ class KhaoSatController{
 
 	public function showInForm(){
 		if (isset($_GET["bangID"])){
-			foreach ($this->listKhaoSat as $aKhaoSat){
-				$s = "<div class=\"row 1cau\">
+
+			if (is_array($this->listKhaoSat) || is_object($this->listKhaoSat)) {
+				foreach ($this->listKhaoSat as $aKhaoSat) {
+					$s = "<div class=\"row 1cau\">
                     <div class=\"col-xs-10 col-sm-10 col-md-10 col-lg-10 CauHoi\">
                         <label for=\"$aKhaoSat->khaosatID\">$aKhaoSat->noidung</label>
                     </div>
@@ -64,7 +66,8 @@ class KhaoSatController{
                 </div>
                 <hr>";
 
-				echo $s;
+					echo $s;
+				}
 			}
 		}
 	}

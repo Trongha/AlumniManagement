@@ -45,9 +45,6 @@
                         <a href="Home.php">Trang chủ</a>
                     </li>
                     <li>
-                        <a class="" href="#download">Bài đăng</a>
-                    </li>
-                    <li>
                         <a class="" href="#khaosat">Khảo sát</a>
                     </li>
                     <li>

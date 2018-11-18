@@ -27,50 +27,47 @@
 
 </head>
 <body>
-    
-    <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
 
-                <a class="logo navbar-brand page-scroll" href="Home.php">
-                    <img src="../../public/Home/img/uetLogo.png" alt="">_Uet_Alumni
-                </a>
-            </div>
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
 
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-
-                    <li class="active" >
-                        <a href="Home.php">Trang chủ</a>
-                    </li>
-                    <li>
-                        <a class="" href="#download">Bài đăng</a>
-                    </li>
-                    <li>
-                        <a class="" href="#khaosat">Khảo sát</a>
-                    </li>
-                    <li>
-                        <a class="" href="ListClasses.php">Các lớp</a>
-                    </li>
-                    <li  class="active" >
-                        <?php
-                            require_once ("../controller/HomeController.php");
-                            HomeController::setUsernameNav();
-                        ?>
-                    </li>
-                    
-                </ul>
-            </div>
-            <!-- end navbar-collapse -->
+            <a class="logo navbar-brand page-scroll" href="Home.php">
+                <img src="../../public/Home/img/uetLogo.png" alt="">_Uet_Alumni
+            </a>
         </div>
-        <!-- end container -->
 
-    </nav>  
-        <!-- end Nav -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+
+                <li >
+                    <a href="Home.php">Trang chủ</a>
+                </li>
+                <li>
+                    <a class="" href="#KhaoSat">Khảo sát</a>
+                </li>
+                <li>
+                    <a class="" href="ListClasses.php">Các lớp</a>
+                </li>
+                <li class="active">
+					<?php
+					require_once ('../controller/HomeController.php');
+					homeController::setUsernameNav();
+					?>
+                </li>
+
+            </ul>
+        </div>
+        <!-- end navbar-collapse -->
+    </div>
+    <!-- end container -->
+
+</nav>
+<!-- end Nav -->
 
     <div class="myHeader"></div>
 

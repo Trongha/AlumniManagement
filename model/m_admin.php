@@ -130,8 +130,8 @@ class m_admin extends database{
 	}
 	static function getAllAlumniByClassID($classID){
     	$sql = "SELECT cuu_sv.*, 
-                    congtac.noilamviec, congtac.mucluong, 
-                    congtac.coquanID, congtac.congviecdamnhiem
+                    congtac.noilamviec, congtac.mucluong,
+                    congtac.congviecdamnhiem
                     FROM cuu_sv
                     LEFT JOIN congtac ON cuu_sv.csv_id = congtac.csv_id
                     WHERE lopid = $classID ORDER BY cuu_sv.csv_id";
