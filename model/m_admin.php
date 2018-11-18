@@ -46,5 +46,9 @@ class m_admin extends database{
     	$sql = "SELECT * FROM `user` WHERE username = '$username'";
     	return parent::loadAllRowsStatic($sql);
 	}
+	static function getAlumniInfoByUserID($userID){
+    	$sql = "SELECT * FROM `cuu_sv` WHERE userID = $userID";
+    	return parent::loadAllRowsStatic($sql);
+	}
 }
 ?>

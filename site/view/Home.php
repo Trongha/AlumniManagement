@@ -1,3 +1,10 @@
+<?php
+    require_once ('../../model/mySession.php');
+    mySession::checkLogin();
+    require_once ('../controller/HomeController.php');
+    $homeController = new HomeController();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +17,10 @@
 	<link rel="stylesheet" href="../../public/vendor/bootstrapv3/css/bootstrap-theme.min.css">
     <!-- font -->
     <link rel="stylesheet" type="text/css" href="../../public/vendor/fontawesome-free/css/all.min.css">
-
-    
-
     <!-- my CSS -->
     <link rel="stylesheet" href="../../public/Home/Home.css">
     <link rel="stylesheet" href="../../public/Home/NavFoo.css">
 	<title>Alumni</title>
-
-    <?php 
-        require_once ('../controller/HomeController.php');
-        $homeController = new HomeController();
-    ?>
 
 </head>
 <body>
@@ -55,7 +54,9 @@
                         <a class="" href="ListClasses.php">Các lớp</a>
                     </li>
                     <li>
-                        <a class="" href="#">Đăng nhập</a>
+                        <?php
+                            $homeController->setUsername();
+                        ?>
                     </li>
                     
                 </ul>

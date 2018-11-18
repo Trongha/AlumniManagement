@@ -18,6 +18,12 @@ class HomeController{
 	{
 	}
 
+	public function setUsername(){
+		isset($_SESSION['hoten']) ? $Acc = $_SESSION['hoten'] : $Acc = 'Đăng nhập';
+		$s = "<a class='' href='#'>$Acc</a>";
+		echo $s;
+	}
+
 	public function setListNewClass(){
 		$lopMoiThem = new LopController(5);
 		$lopMoiThem->getLopInSql();

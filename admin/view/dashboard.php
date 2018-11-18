@@ -1,3 +1,7 @@
+<?php
+    require_once ("../../model/mySession.php");
+    mySession::checkAdmin();
+?>
 <!DOCTYPE html>
 <html>
 <head>

@@ -1,4 +1,5 @@
 <?php
+
     require_once ("../controller/LoginController.php");
     $manager = new LoginController();
 	$manager->runLogin();

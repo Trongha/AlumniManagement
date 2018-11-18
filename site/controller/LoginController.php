@@ -34,26 +34,28 @@ class loginController{
 
 
 	public function runLogin(){
-		session_start();
-		$this->getAcc();
-		if ($this->check()){
-			$_SESSION['username'] = $this->usernameInput;
-			if ($this->allInfo->isadmin == 1){
-				header('Location: admin/view/dashboard.php');
+		if (isset($_POST["btn_submit"])){
+			$this->getAcc();
+			if ($this->check()){
+				$s = "	<div class='alert alert-success myalert'>
+						  <strong>Success!</strong> Xin chào $this->usernameInput
+						</div>";
+				echo $s;
+				echo $this->usernameInput;
+				$_SESSION['username'] = $this->usernameInput;
+
+
+				if ($this->allInfo->isadmin == 1){
+					header('Location: admin/view/dashboard.php');
+				}else{
+					header('Location: site/view/Home.php');
+				}
 			}else{
-				header('Location: site/view/Home.php');
+				$s = "	<div class='alert alert-danger myalert'>
+					  		<strong>Haizzz...!</strong> Sai tên đăng nhập hoặc mật khẩu!
+						</div>";
 			}
-
-			$s = "	<div class='alert alert-success myalert'>
-					  <strong>Success!</strong> Xin chào $this->usernameInput
-					</div>";
 			echo $s;
-		}else{
-			$s = "	<div class='alert alert-danger myalert'>
-					  <strong>Haizzz...!</strong> Sai tên đăng nhập hoặc mật khẩu!
-					</div>";
-
 		}
-		echo $s;
 	}
 }
