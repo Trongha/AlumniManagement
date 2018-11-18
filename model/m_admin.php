@@ -42,6 +42,9 @@ class m_admin extends database{
 		$sql = "SELECT * FROM lop WHERE lopID = $classID";
 		return parent::loadAllRowsStatic($sql);
 	}
-
+	static function getUserByUsername($username){
+    	$sql = "SELECT * FROM `user` WHERE username = '$username'";
+    	return parent::loadAllRowsStatic($sql);
+	}
 }
 ?>

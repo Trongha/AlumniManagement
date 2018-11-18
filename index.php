@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" type="text/css" href="public/vendor/bootstrapv3/css/bootstrap.min.css">
 
-	<link rel="stylesheet" type="text/css" href="public/login/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="public/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 
 	<link rel="stylesheet" type="text/css" href="public/login/util.css">
 	<link rel="stylesheet" type="text/css" href="public/login/login.css">
@@ -48,15 +48,9 @@
 			</div>
 		</div>
 	</div>
+	<?php 
 
-<?php 
-	if (isset($_POST["btn_submit"])){
-		$username = $_POST["username"];
-		$password = $_POST["pass"];
-		echo "$username, $password";
-	}
- ?>
-
+	 ?>
 	<script src="public/vendor/jquery/jquery.min.js"></script>
 
 	<script src="public/login/login.js"></script>
