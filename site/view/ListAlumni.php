@@ -28,7 +28,7 @@ $manager = new ListAlumniController();
                     <i class="fa fa-bars"></i>
                 </button>
 
-                <a class="logo navbar-brand page-scroll" href="Home.html">
+                <a class="logo navbar-brand page-scroll" href="Home.php">
                     <img src="../../public/Home/img/uetLogo.png" alt="">_Uet_Alumni
                 </a>
             </div>
@@ -36,8 +36,8 @@ $manager = new ListAlumniController();
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
 
-                    <li>
-                        <a href="Home.html">Trang chủ</a>
+                    <li class="active" >
+                        <a href="Home.php">Trang chủ</a>
                     </li>
                     <li>
                         <a class="" href="#download">Bài đăng</a>
@@ -45,16 +45,21 @@ $manager = new ListAlumniController();
                     <li>
                         <a class="" href="#contact">Khảo sát</a>
                     </li>
-                    <li class="active" >
-                        <a class="" href="ListClasses.html">Các lớp</a>
+                    <li>
+                        <a class="" href="ListClasses.php">Các lớp</a>
                     </li>
+                    <li>
+                        <a class="" href="#">Đăng nhập</a>
+                    </li>
+
                 </ul>
             </div>
             <!-- end navbar-collapse -->
         </div>
         <!-- end container -->
-    </nav>  
-        <!-- end Nav -->
+
+    </nav>
+    <!-- end Nav -->
 
     <div class="myHeader"></div>
     	

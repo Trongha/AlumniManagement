@@ -45,15 +45,15 @@ class ListAlumniController{
 			$this->__construct($_GET["classID"]);
 		}
 		$listAlumni = m_admin::getAllAlumniByClassID($this->classID);
-		$stt = 0;
-//		echo var_dump($listAlumni);
-		foreach ($listAlumni as $Alumni){
-			$mucluong = "";
-			if ($Alumni->mucluong > 0){
-				$mucluong .= $Alumni->mucluong . "$";
-			}
-			$stt++;
-			$row = "<tr>
+		if(isset($listAlumni)){
+			$stt = 0;
+			foreach ($listAlumni as $Alumni){
+				$mucluong = "";
+				if ($Alumni->mucluong > 0){
+					$mucluong .= $Alumni->mucluong . "$";
+				}
+				$stt++;
+				$row = "<tr>
 	    			<td>$stt</td>
 	    			<td>$Alumni->hoten</td>
 	    			<td>$this->nameClass</td>
@@ -63,9 +63,9 @@ class ListAlumniController{
 	    			<td>$Alumni->email</td>
 	    			<td>$Alumni->sdt</td>
 	    		</tr>";
-			echo $row;
+				echo $row;
+			}
 		}
-
 	}
 
 }

@@ -76,33 +76,6 @@ class LopController{
 		$this->soLuongLop = $soLuongLop;
 	}
 }
-/*
-$testShowLop = new LopController($soLuongLop = 10);
-
-$testShowLop->getLopInSql();
-$listClass = $testShowLop->getListLop();
-
-if (is_array($listClass) || is_object($listClass)) {
-	foreach ($listClass as $aLop) {
-		$s = '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">'
-		  . '	<div class="thumbnail aClass">'
-		  . '		<img src="../../public/Home/img/portfolio/cake.jpg" alt="a class">'
-		  . '		<div class="caption">'
-		  . '			<h3>Lớp '. $aLop->getTenLop() .'</h3>'
-		  . '		</div>'
-		  . '		<a href="ListAlumni.php">'
-		  . '			<div class="chiTiet text-center">'
-		  . '				<i class="fas fa-info-circle"></i>'
-		  . '				<h3>Chi tiết...</h3>'
-		  . '			</div>'
-		  . '		</a>'
-		  . '	</div>'
-		  . '</div>  <!-- end 1 class -->';
-
-		echo $s;
-//		echo $aLop->getString();
-	}
-}*/
 
 
 

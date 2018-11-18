@@ -24,13 +24,7 @@ class ListClassesController
 		$listAllClass->getLopInSql();
 		$listClass = $listAllClass->getListLop();
 		if (is_array($listClass) || is_object($listClass)) {
-			$hand = '';
 			for ($i=0 ; $i<count($listClass) ; $i++){
-//				if ($i%2){
-//					$hand = 'right';
-//				}else{
-//					$hand = 'left';
-//				}
 				($i%2) ? $hand = 'right' : $hand = 'left';
 				$s = '<div class="container ' . $hand . '">
 							<div class="content">
@@ -39,7 +33,7 @@ class ListClassesController
 				$s.= '					<div class="caption">
 											<h3>Lớp '. $listClass[$i]->getTenLop() .'</h3>
 										</div>';
-				$s.= '					<a href="ListAlumni.php">
+				$s.= '					<a href="ListAlumni.php?classID='.$listClass[$i]->getLopID().'">
 											<div class="chiTiet text-center">
 												<i class="fas fa-info-circle"></i>
 												<h3>Chi tiết...</h3>

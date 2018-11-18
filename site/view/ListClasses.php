@@ -38,7 +38,7 @@
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
 
-                    <li>
+                    <li class="active" >
                         <a href="Home.php">Trang chủ</a>
                     </li>
                     <li>
@@ -47,21 +47,21 @@
                     <li>
                         <a class="" href="#contact">Khảo sát</a>
                     </li>
-                    <li class="active" >
+                    <li>
                         <a class="" href="ListClasses.php">Các lớp</a>
                     </li>
                     <li>
                         <a class="" href="#">Đăng nhập</a>
                     </li>
-                    
+
                 </ul>
             </div>
             <!-- end navbar-collapse -->
         </div>
         <!-- end container -->
 
-    </nav>  
-        <!-- end Nav -->
+    </nav>
+    <!-- end Nav -->
     <div class="myHeader"></div>
     <div class="gradient">
         <div class="container ">

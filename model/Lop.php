@@ -108,22 +108,6 @@ class Lop{
         $this->khoa = $khoa;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getKichHoat()
-    {
-        return $this->kichHoat;
-    }
-
-    /**
-     * @param mixed $kichHoat
-     */
-    public function setKichHoat($kichHoat)
-    {
-        $this->kichHoat = $kichHoat;
-    }
-
     public function getString(){
         $s = '';
         $s .= 'id:   '.$this->getLopID(). '<br>'
