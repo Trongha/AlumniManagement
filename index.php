@@ -1,3 +1,9 @@
+<?php
+    require_once ("site/controller/LoginController.php");
+    $manager = new LoginController();
+	$manager->runLogin();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
