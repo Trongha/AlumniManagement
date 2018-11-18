@@ -167,5 +167,9 @@ class m_admin extends database{
 		$sql = "INSERT INTO `kqkhaosat` (`ketquaID`, `luachon`, `csv_id`, `khaosatID`) VALUES (NULL, '$luaChon', '$csvID', '$khaoSatID')";
 		return parent::loadAllRowsStatic($sql);
 	}
+	static function getBangKhaoSatByID($bangID){
+    	$sql = "SELECT * FROM `bangkhaosat` WHERE bangID = $bangID";
+    	return parent::loadAllRowsStatic($sql);
+	}
 }
 ?>

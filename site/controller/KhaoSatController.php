@@ -20,10 +20,12 @@ class KhaoSatController{
 	public function __construct($BangKhaoSatID = 0)
 	{
 		$this->BangKhaoSatID = $BangKhaoSatID;
+		if (isset($_GET["bangID"])) {
+			$this->BangKhaoSatID = $_GET["bangID"];
+		}
 		if ($this->BangKhaoSatID !==0){
 			$this->setListKhaoSat();
 		}
-
 	}
 
 	/**
@@ -34,9 +36,19 @@ class KhaoSatController{
 		$this->listKhaoSat = m_admin::getListKhaoSatByBangID($this->BangKhaoSatID);
 	}
 
+	public function setTenBangKhaoSat(){
+		$name = m_admin::getBangKhaoSatByID($this->BangKhaoSatID);
+
+		if ($name !== null){
+			echo "<h2>".$name[0]->tenbang."</h2>";
+		}else{
+			echo "<h2>:))</h2>";
+		}
+
+	}
+
 	public function showInForm(){
 		if (isset($_GET["bangID"])){
-			$this->__construct($_GET["bangID"]);
 			foreach ($this->listKhaoSat as $aKhaoSat){
 				$s = "<div class=\"row 1cau\">
                     <div class=\"col-xs-10 col-sm-10 col-md-10 col-lg-10 CauHoi\">

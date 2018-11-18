@@ -78,7 +78,10 @@
         <div class="container">
             <div class="row">
                 <div class="title text-center">
-                    <h2>Tên bài khảo sát</h2>
+                    <?php
+                        $manager->setTenBangKhaoSat();
+                    ?>
+
                     <hr>
                 </div>
             </div>
