@@ -4,6 +4,7 @@
 
     require_once ("../controller/KhaoSatController.php");
     $manager = new KhaoSatController();
+    $manager->getKetQua();
 
 ?>
 
@@ -87,7 +88,7 @@
                     $manager->showInForm();
                 ?>
                 <div class="row text-center">
-                    <button class="btn btn-success">
+                    <button class="btn btn-success" name="submit-btn">
                         ---------------Xong!---------------
                     </button>
                 </div>

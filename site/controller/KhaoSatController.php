@@ -44,9 +44,9 @@ class KhaoSatController{
                     </div>
                     <div class=\"col-xs-2 col-sm-2 col-md-2 col-lg-2 DapAn\">
                         <select name=\"$aKhaoSat->khaosatID\">
-                            <option value=\"1\">Có</option>
-                            <option value=\"2\">Không hẳn</option>
-                            <option value=\"3\">Không</option>
+                            <option value=\"co\">Có</option>
+                            <option value=\"khong\">Không hẳn</option>
+                            <option value=\"khonghan\">Không</option>
                         </select>
                     </div>
                 </div>
@@ -57,7 +57,17 @@ class KhaoSatController{
 		}
 	}
 
+	public function getKetQua(){
+		if (isset($_POST['submit-btn'])){
+			unset($_POST['submit-btn']);
+			$s = "	<div class='alert alert-success myalert'>
+					  <strong>Success!</strong>Cảm ơn bạn ".$_SESSION['hoten']." đã hoàn thành bài khảo sát
+					</div>";
+			echo $s;
+			foreach ($_POST as $khaoSatID => $dapAn){
+				m_admin::insertIntoKetQuaKhaoSat($khaoSatID, $_SESSION['csv_id'], $dapAn);
+			}
 
-
-
+		}
+	}
 }

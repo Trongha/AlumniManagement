@@ -60,5 +60,9 @@ class m_admin extends database{
 				LIMIT $n";
     	return parent::loadAllRowsStatic($sql);
 	}
+	static function insertIntoKetQuaKhaoSat($khaoSatID, $csvID, $luaChon){
+		$sql = "INSERT INTO `kqkhaosat` (`ketquaID`, `luachon`, `csv_id`, `khaosatID`) VALUES (NULL, '$luaChon', '$csvID', '$khaoSatID')";
+		return parent::loadAllRowsStatic($sql);
+	}
 }
 ?>
