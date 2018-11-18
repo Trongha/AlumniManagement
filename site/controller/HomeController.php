@@ -18,8 +18,13 @@ class HomeController{
 	{
 	}
 
-	public function setUsername(){
-		isset($_SESSION['hoten']) ? $Acc = $_SESSION['hoten'] : $Acc = 'Đăng nhập';
+	public static function setUsernameNav(){
+		if(isset($_SESSION['isadmin']) && ($_SESSION['isadmin'] == 1)){
+			$Acc = $_SESSION['username'];
+		}
+		else{
+			isset($_SESSION['hoten']) ? $Acc = $_SESSION['hoten'] : $Acc = 'Đăng nhập';
+		}
 		$s = "<a class='' href='#'>$Acc</a>";
 		echo $s;
 	}

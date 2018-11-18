@@ -49,7 +49,9 @@ $manager = new ListAlumniController();
                         <a class="" href="ListClasses.php">Các lớp</a>
                     </li>
                     <li>
-                        <a class="" href="#">Đăng nhập</a>
+						<?php
+						$homeController->setUsernameNav();
+						?>
                     </li>
 
                 </ul>

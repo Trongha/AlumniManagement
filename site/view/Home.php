@@ -53,9 +53,9 @@
                     <li>
                         <a class="" href="ListClasses.php">Các lớp</a>
                     </li>
-                    <li>
+                    <li  class="active" >
                         <?php
-                            $homeController->setUsername();
+                            $homeController->setUsernameNav();
                         ?>
                     </li>
                     

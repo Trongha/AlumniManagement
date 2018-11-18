@@ -17,8 +17,7 @@
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: #253B80;
-    opacity: 0.8;
+    background-color: #253b809c;
 }
 
 .navbar-custom .navbar-brand {
@@ -85,8 +84,7 @@
         padding: 20px 0;
         border-bottom: 0;
         letter-spacing: 1px;
-        background: #253B80;
-        opacity: 0.75;
+        background: #253b809c;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -97,18 +95,21 @@
         position: relative;
         margin: -20px 0px;
         padding: 20px 0px;
-        background-color: green;
+        background-color: #00800094;
     }
     .navbar-custom.top-nav-collapse {
         color: #fff;    
         padding: 0;
         border-bottom: 1px solid rgba(255,255,255,.3);
-        background: #253B80;
+        background: #253b80d1;
         opacity: 0.92;
     }
     .navbar-custom.top-nav-collapse li a{
         color: #fff;
         font-size: 100%;
+    }
+    .navbar-custom.top-nav-collapse li.active{
+        background-color: green;
     }
     .navbar-custom.top-nav-collapse  .nav li.active {
         color: #fff;
