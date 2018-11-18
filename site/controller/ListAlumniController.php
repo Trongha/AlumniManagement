@@ -8,6 +8,7 @@
 include_once ('../../model/m_admin.php');
 class ListAlumniController{
 	private $classID ;
+	private $nameClass;
 
 	/**
 	 * ListAlumniController constructor.
@@ -16,23 +17,49 @@ class ListAlumniController{
 	public function __construct($classID = 0)
 	{
 		$this->classID = $classID;
-		echo $this->classID;
+		$this->setNameClass();
 	}
 
+	/**
+	 * @param int|string $classID
+	 */
+	public function setClassID($classID)
+	{
+		$this->classID = $classID;
+	}
+
+	/**
+	 * @param mixed $nameClass
+	 */
+	public function setNameClass()
+	{
+		if(m_admin::getClassByID($this->classID) !== null){
+			$this->nameClass = m_admin::getClassByID($this->classID)[0]->tenlop;
+		}
+	}
+
+
+
 	public function setBodyTable(){
+		if (isset($_GET["classID"])){
+			$this->__construct($_GET["classID"]);
+		}
 		$listAlumni = m_admin::getAllAlumniByClassID($this->classID);
-		echo $this->classID;
 		$stt = 0;
 //		echo var_dump($listAlumni);
 		foreach ($listAlumni as $Alumni){
+			$mucluong = "";
+			if ($Alumni->mucluong > 0){
+				$mucluong .= $Alumni->mucluong . "$";
+			}
 			$stt++;
 			$row = "<tr>
 	    			<td>$stt</td>
 	    			<td>$Alumni->hoten</td>
-	    			<td>k61-CB</td>
-	    			<td>noilamviec</td>
-	    			<td>Code dạo</td>
-	    			<td>mucluong</td>
+	    			<td>$this->nameClass</td>
+	    			<td>$Alumni->noilamviec</td>
+	    			<td>$Alumni->congviecdamnhiem</td>
+	    			<td>$mucluong</td>
 	    			<td>$Alumni->email</td>
 	    			<td>$Alumni->sdt</td>
 	    		</tr>";

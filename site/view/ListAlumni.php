@@ -1,7 +1,6 @@
 <?php
 require_once('../controller/ListAlumniController.php');
-$manager = new ListAlumniController(1);
-
+$manager = new ListAlumniController();
 ?>
 
 <!DOCTYPE html>
@@ -68,9 +67,10 @@ $manager = new ListAlumniController(1);
 	    <div class="container">
 	    <table class="listAlumni table table-hover table-bordered">
 	    	<thead >
-	    		<tr class="success">
+	    		<tr class="info">
 	    			<th>Stt</th>
 	    			<th>Họ và tên</th>
+	    			<th>Lớp</th>
 	    			<th>Nơi công tác</th>
 	    			<th>Công việc đảm nhiệm</th>
 	    			<th>Mức lương</th>

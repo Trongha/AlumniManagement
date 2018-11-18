@@ -23,15 +23,24 @@ class m_admin extends database{
 		$sql = 'SELECT * FROM lop
 				ORDER BY lop.lopID DESC
 				LIMIT '.$n;
-		return database::loadAllRowsStatic($sql);
+		return parent::loadAllRowsStatic($sql);
 	}
 	static function getAllAlumniByClassID($classID){
-    	$sql = 'SELECT * FROM `cuu_sv` WHERE lopid = '.$classID.' ORDER BY csv_id';
-    	return database::loadAllRowsStatic($sql);
+    	$sql = "SELECT cuu_sv.*, 
+                    congtac.noilamviec, congtac.mucluong, 
+                    congtac.coquanID, congtac.congviecdamnhiem
+                    FROM cuu_sv
+                    LEFT JOIN congtac ON cuu_sv.csv_id = congtac.csv_id
+                    WHERE lopid = $classID ORDER BY cuu_sv.csv_id";
+        return parent::loadAllRowsStatic($sql);
 	}
 	static function getCongTacInfoByAlumniID($alumniID){
     	$sql = 'SELECT * FROM congtac WHERE csv_id = '.$alumniID;
-    	return database::loadAllRowsStatic($sql);
+    	return parent::loadAllRowsStatic($sql);
+	}
+	static function getClassByID($classID){
+		$sql = "SELECT * FROM lop WHERE lopID = $classID";
+		return parent::loadAllRowsStatic($sql);
 	}
 
 }

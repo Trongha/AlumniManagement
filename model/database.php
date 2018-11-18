@@ -45,7 +45,12 @@ class database{
 
     public static function loadAllRowsStatic($sql = 'set names "utf8"'){
 		$db = new database($sql);
-		return $db->loadAllRows();
+		$allRow = $db->loadAllRows();
+		if (count($allRow)>0){
+			return $allRow;
+		}else{
+			return null;
+		}
 	}
 }
 ?>
