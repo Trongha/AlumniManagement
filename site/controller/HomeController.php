@@ -19,7 +19,7 @@ class HomeController{
 	}
 
 	public function setListNewClass(){
-		$lopMoiThem = new LopController(6);
+		$lopMoiThem = new LopController(5);
 		$lopMoiThem->getLopInSql();
 		$listClass = $lopMoiThem->getListLop();
 
@@ -28,7 +28,7 @@ class HomeController{
 				$s = '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">'
 					. '	<div class="thumbnail aClass">'
 					. '		<img src="../../public/Home/img/portfolio/cake.jpg" alt="a class">'
-					. '		<div class="caption">'
+					. '		<div class="caption text-center">'
 					. '			<h3>Lớp '. $aLop->getTenLop() .'</h3>'
 					. '		</div>'
 					. '		<a href="ListAlumni.php">'

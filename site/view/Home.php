@@ -49,7 +49,7 @@
                         <a class="" href="#download">Bài đăng</a>
                     </li>
                     <li>
-                        <a class="" href="#contact">Khảo sát</a>
+                        <a class="" href="#khaosat">Khảo sát</a>
                     </li>
                     <li>
                         <a class="" href="ListClasses.php">Các lớp</a>
@@ -68,9 +68,9 @@
         <!-- end Nav -->
 
     <div class="myHeader"></div>
-    <hr>
-    <div class="container">
-        <div class="newsFeed">
+
+    <div class="newsFeed">
+        <div class="container">
             <div class="slide col-xs-12 col-sm-7 col-md-7 col-lg-7">
                 <div id="carousel-id" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -95,45 +95,56 @@
             </div>
                 <!-- end Slide -->
             <div class=" news col-xs-12 col-sm-5 col-md-5 col-lg-5">
-                <div class="panel-title">
-                    Tin mới
-                    <hr>
+                <div class="news">
+                    <div class="panel-title">
+                        Tin mới
+                        <hr>
+                    </div>
                 </div>
+                    <!-- end news -->
             </div>
-                <!-- end news -->
+                
         </div>
-            <!-- end NewsFeed -->
     </div>
-    
-    <div class="container">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">	
-            <div class="newClasses">
-                <div class="row">
-                    <div class="text-center">
-                        <h3>Lớp mới thêm</h3>
-                        <div class="lineStar">
-                            <span class="glyphicon glyphicon-star"></span>
-                        </div>  
-                            <!-- end lineStar -->
-                    </div>
-                </div> 
-                    <!-- end Row -->
+         <!-- end NewsFeed -->
+    <div class="newClassSession">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">	
+                <div class="newClasses">
+                    <div class="row">
+                        <div class="text-center">
+                            <h2>Lớp mới thêm</h2>
+                            <hr>
+                        </div>
+                    </div> 
+                        <!-- end Row -->
 
-                <div class="row">
-                    <?php 
-                        $homeController->setListNewClass();
-                    ?>                    
-                </div>
-                <div class="row">
-                    <div class="pull-right">
-                        <h2><a href="ListClasses.php" class="btn btn-info">Xem Thêm ...</a></h2>
+                    <div class="row">
+                        <?php 
+                            $homeController->setListNewClass();
+                        ?>                    
+                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                            <div class="thumbnail aClass">
+                                <img src="../../public/Home/img/portfolio/cake.jpg" alt="a class">
+                                <div class="caption text-center">
+                                    <h3>Try My Best</h3>
+                                </div>
+                                <a href="ListClasses.php">
+                                    <div class="chiTiet text-center">
+                                        <i class="fas fa-file-alt"></i>
+                                        <h2>Tất cả các lớp</h2>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>  <!-- end 1 class -->
                     </div>
+
                 </div>
-            </div>
-        </div>  
-            <!-- end col8 -->
+            </div>  
+                <!-- end col8 -->
+        </div>
+            <!-- end container -->
     </div>
-        <!-- end container -->
 
     <div class= "footer">
         <div class="container">

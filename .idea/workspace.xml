@@ -3,11 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="f663908a-febf-4d72-89ce-46db6b35cbbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/m_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/m_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Home/NavFoo.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/Home/NavFoo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/controller/ListAlumniController.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/controller/ListAlumniController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/view/ListAlumni.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/ListAlumni.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/Home/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/Home - Copy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/Home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/ListClasses.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/userHome - Copy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/userHome.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/userListClasses.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,37 +45,37 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="4" />
-          <entry key="php" value="32" />
+          <entry key="php" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="4" />
-          <entry key="PHP" value="32" />
+          <entry key="PHP" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="29" />
-          <entry key="php" value="5443" />
-          <entry key="txt" value="167" />
+          <entry key="php" value="5506" />
+          <entry key="txt" value="240" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="64" />
-          <entry key="PHP" value="5393" />
-          <entry key="PLAIN_TEXT" value="167" />
+          <entry key="PHP" value="5456" />
+          <entry key="PLAIN_TEXT" value="240" />
           <entry key="SQL" value="15" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.37228915">
+    <splitter split-orientation="horizontal" split-proportion="0.72771084">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/model/database.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="781">
@@ -88,11 +93,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/site/view/ListAlumni.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="40">
-                  <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+                <state relative-caret-position="272">
+                  <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
@@ -110,11 +115,29 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/site/controller/LopController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1460">
+                  <caret line="78" selection-start-line="78" selection-end-line="78" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/site/view/ListClasses.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="200">
+                  <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/site/controller/ListAlumniController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="212">
-                  <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+                <state relative-caret-position="832">
+                  <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -122,8 +145,26 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/site/controller/ListClassesController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="260">
-                  <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+                <state relative-caret-position="552">
+                  <caret line="38" column="68" lean-forward="true" selection-start-line="38" selection-start-column="68" selection-end-line="38" selection-end-column="68" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/site/view/Home.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="440">
+                  <caret line="67" column="24" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="51" selection-end-column="43" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/model/Lop.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="72">
+                  <caret line="65" column="30" lean-forward="true" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="30" />
                 </state>
               </provider>
             </entry>
@@ -141,20 +182,20 @@
         <option value="$PROJECT_DIR$/model/CountrySakilaTest.php" />
         <option value="$PROJECT_DIR$/site/controller/CountrySakilaTestController.php" />
         <option value="$PROJECT_DIR$/model/SQLConnection.php" />
-        <option value="$PROJECT_DIR$/model/Lop.php" />
         <option value="$PROJECT_DIR$/site/view/ListClasses.html" />
-        <option value="$PROJECT_DIR$/site/controller/ListClassesController.php" />
         <option value="$PROJECT_DIR$/site/controller/HomeController.php" />
         <option value="$PROJECT_DIR$/site/view/Home.php" />
         <option value="$PROJECT_DIR$/admin/controller/c_admin.php" />
-        <option value="$PROJECT_DIR$/site/view/ListClasses.php" />
-        <option value="$PROJECT_DIR$/site/controller/LopController.php" />
         <option value="$PROJECT_DIR$/model/Alumni.php" />
         <option value="$PROJECT_DIR$/model/CongTac.php" />
         <option value="$PROJECT_DIR$/model/m_admin.php" />
-        <option value="$PROJECT_DIR$/site/view/ListAlumni.php" />
         <option value="$PROJECT_DIR$/model/database.php" />
+        <option value="$PROJECT_DIR$/site/controller/LopController.php" />
+        <option value="$PROJECT_DIR$/model/Lop.php" />
+        <option value="$PROJECT_DIR$/site/controller/ListClassesController.php" />
         <option value="$PROJECT_DIR$/site/controller/ListAlumniController.php" />
+        <option value="$PROJECT_DIR$/site/view/ListClasses.php" />
+        <option value="$PROJECT_DIR$/site/view/ListAlumni.php" />
       </list>
     </option>
   </component>
@@ -295,7 +336,7 @@
       <workItem from="1542410764173" duration="5069000" />
       <workItem from="1542439059858" duration="5823000" />
       <workItem from="1542463747277" duration="2264000" />
-      <workItem from="1542475818593" duration="10820000" />
+      <workItem from="1542475818593" duration="12341000" />
     </task>
     <task id="LOCAL-00001" summary="ok list new class at Home">
       <created>1542410657934</created>
@@ -332,11 +373,25 @@
       <option name="project" value="LOCAL" />
       <updated>1542504799443</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="in danh sách lớp theo mã">
+      <created>1542513025893</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1542513025893</updated>
+    </task>
+    <task id="LOCAL-00007" summary="ok xem danh sách lớp">
+      <created>1542513837331</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1542513837331</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51582000" />
+    <option name="totallyTimeSpent" value="53103000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -376,7 +431,9 @@
     <MESSAGE value="Gộp 2 model" />
     <MESSAGE value="Dùng Hàm static get data" />
     <MESSAGE value="Hiện danh sahcs sv 1 lớp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hiện danh sahcs sv 1 lớp" />
+    <MESSAGE value="in danh sách lớp theo mã" />
+    <MESSAGE value="ok xem danh sách lớp" />
+    <option name="LAST_COMMIT_MESSAGE" value="ok xem danh sách lớp" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/site/controller/HomeControler.php" />
@@ -396,31 +453,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/Lop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2440">
-          <caret line="127" column="16" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/view/ListClasses.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/site/controller/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="27" column="73" selection-start-line="27" selection-start-column="73" selection-end-line="27" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/view/Home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="116" column="49" selection-start-line="116" selection-start-column="49" selection-end-line="116" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -436,13 +472,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/SQLConnection.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/controller/LopController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="51" column="29" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/Alumni.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -465,13 +494,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site/view/ListAlumni.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/m_admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="658">
@@ -479,10 +501,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/site/controller/LopController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1460">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Lop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="65" column="30" lean-forward="true" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/site/controller/ListClassesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state relative-caret-position="552">
+          <caret line="38" column="68" lean-forward="true" selection-start-line="38" selection-start-column="68" selection-end-line="38" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/controller/ListAlumniController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/view/Home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="67" column="24" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="51" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -493,10 +543,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site/controller/ListAlumniController.php">
+    <entry file="file://$PROJECT_DIR$/site/view/ListAlumni.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+        <state relative-caret-position="272">
+          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/view/ListClasses.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
         </state>
       </provider>
     </entry>

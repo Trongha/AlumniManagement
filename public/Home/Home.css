@@ -26,6 +26,14 @@
     color: black;
     background: white;
 }
+.newsFeed{
+    margin:10px 0px;
+}
+
+.newClassSession {
+    background: #13983d9c;
+
+}
 
 .aClass{
     position: relative;
@@ -34,9 +42,10 @@
     max-width: 445px;
     max-height: 155px;
 }
+
 .chiTiet {
     position: absolute;
-    background: #18bb9c;
+    background: #31708f;
     width: 100%;
     height: 100%;
     top: 0px;
@@ -49,6 +58,10 @@
 .chiTiet i {
     font-size: 45px;
     margin-top: 25%;
+    color: #fff;
+}
+
+.chiTiet h3, h2{
     color: #fff;
 }
 
