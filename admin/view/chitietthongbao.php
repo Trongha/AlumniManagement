@@ -1,3 +1,9 @@
+<?php
+include('../controller/c_admin.php');
+$c_admin=new c_admin();
+$noidung=$c_admin->chitietthongbao();
+$chitietthongbao=$noidung['chitietthongbao'];
+?>
 <!DOCTYPE html>
 <html>
 
@@ -64,11 +70,9 @@
 		<!--/.sidebar-->
 		<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 			<div class="panel panel-default" style="min-height:600px">
-				<div class="panel-heading">Thông báo a</div>
+				<div class="panel-heading"><?=$chitietthongbao->tieude?></div>
 				<div class="panel-body">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus.
-						Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie.
-						Fusce et dui urna.</p>
+					<p><?=$chitietthongbao->noidung?></p>
 				</div>
 			</div>
 		</div>

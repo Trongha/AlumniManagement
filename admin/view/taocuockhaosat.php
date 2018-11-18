@@ -83,20 +83,21 @@
 								<div class="panel-heading" style="font-family:Helvetica, Arial, sans-serif">
 									<p>Khảo sát<p>									
 								</div>
-								<form action="">
+								<form action="xulibangkhaosat.php" method="get">
 								<div class="table">
 									<div class="form-group">
 										<br><br>
-										<input type="text" class="form-control" id="titleQuestion" placeholder="Tiêu đề" value="" style="width: 90%; border-color: #30a5ff" required>
+										<input type="text" name="tenbang" class="form-control" id="titleQuestion" placeholder="Tiêu đề" value="" style="width: 90%; border-color: #30a5ff" required>
 										<br>
-										<input class="form-control" placeholder="Câu hỏi 1" type="text" id="0" value="" style="width: 90%">
-					
+										<div id="listcauhoi">
+										<input class="form-control" name="cauhoi[]" placeholder="Câu hỏi" type="text" id="0" value="" style="width: 90%" required>
+										</div>
 									<div>
 										<span id="responce"></span>
-										<button id="addques" class="material-icons btn" style="padding:0px; color: black" onclick="addQuestion()">add</button>
+										<button id="addques" type="button" class="material-icons btn" style="padding:0px; color: black" onclick="addQuestion()">add</button>
 										
 									</div>
-									</div>
+									</div><button class="btn" style="background_color:White" type="submit">Đăng</button>
 								</div>
 								</form>
 							</div>
@@ -115,14 +116,14 @@
 	<script src="../../public/admin/js/custom.js"></script>
 	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.0.min.js"></script>
 	<script>
-		var countBox =2;
-		var boxName = 1;
-		function addQuestion()
-		{
-     		var boxName="Câu hỏi "+countBox; 
-			document.getElementById('responce').innerHTML+='<br/><input class="form-control" type="text" id="'+boxName+'" placeholder="'+boxName+'" value="" style="width: 90%""  /><br/>';
-     		countBox += 1;
-		}
+		$(document).ready(function (){
+    $("#addques").click(function(){
+		
+			 var markup='<input class="form-control" name="cauhoi[]" placeholder="Câu hỏi" type="text"value="" style="width: 90%" required>';
+		$("#listcauhoi").append(markup);
+		
+    });
+});
 	</script>
 
 </body>

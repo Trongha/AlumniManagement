@@ -66,9 +66,12 @@
 			<div class="panel panel-default" style="min-height:600px">
 				<div class="panel-heading">Khảo sát a</div>
 				<div class="panel-body">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus.
-						Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie.
-						Fusce et dui urna.</p>
+					<div class="cauhoi">
+					<div class="col-md-6">Câu hỏi</div>
+					<div class="col-md-2">Có:<span style="padding:20px">1</span></div>
+					<div class="col-md-2">Không hẳn:<span style="padding:20px">1</span></div>
+					<div class="col-md-2">Không:<span style="padding:20px">1</span></div>
+					</div>
 				</div>
 			</div>
 		</div>

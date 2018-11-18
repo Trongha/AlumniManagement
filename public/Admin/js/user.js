@@ -25,7 +25,7 @@ function addnewjob(){
 $(document).ready(function (){
     $("#newjob").click(function(){
         
-        var markup = '<tr><td><input class="vitri" type="text" ></td><td><input class="coquan" type="text" ></td><td><input class="thoigian" type="number" ></td><td><input class="mucluong" type="text" ></td><td class="col-md-2"><button type="button" class="btn material-icons deleterow" style="padding:0px; background-color: white" onclick="deleteRowNow(event)">delete</button></td></tr>';
+        var markup = '<tr><td><input class="vitri" name="vitri[]" type="text" required></td><td><input class="coquan" name="coquan[]" type="text" required></td><td><input class="thoigian" name="thoigian[]" type="text" required></td><td><input class="mucluong" name="mucluong[]" type="number" required></td><td class="col-md-2"><button type="button" class="btn material-icons deleterow" style="padding:0px; background-color: white" onclick="deleteRowNow(event)">delete</button></td></tr>';
         $("#job-table tbody").append(markup);
     });
 });
@@ -59,7 +59,6 @@ function ChuanhoaTen(ten) {
 	return dname;
 }
 document.getElementById("role-user").onClick(function(e){
-    console.log("wtf");
     if (this.checked){
         document.getElementById("user-info").style.display="block";
     }
@@ -71,7 +70,9 @@ document.getElementById("role-user").onClick(function(e){
 function isuser(){
     if(document.getElementById("role-user").checked)
     document.getElementById("user-info").style.display="block";
-    else
+    else{
     document.getElementById("user-info").style.display="none";
+    document.getElementById("name").required="false";
+}
 }
 

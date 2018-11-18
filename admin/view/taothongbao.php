@@ -83,14 +83,14 @@
 								<div class="panel-heading" style="font-family:Helvetica, Arial, sans-serif">
 									<p>Thêm thông báo</p>
 								</div>
-								<form action="">
+								<form action="xulithongbao.php" method="get">
 								<div class="table">
 								
 									<div class="form-group">
 										<br>
-										<input type="text" class="form-control" id="titlenotice" placeholder="Tên thông báo" value="" style="width: 90%; border-color: #30a5ff" required>
+										<input type="text" name="tieude" class="form-control" id="titlenotice" placeholder="Tên thông báo" value="" style="width: 90%; border-color: #30a5ff" required>
 										<br>
-										<textarea class="form-control" placeholder="Nội dung..." type="textarea" id="notice" value="" style="width: 90%; height: 300px" required></textarea> 
+										<textarea class="form-control" name="noidung" placeholder="Nội dung..." type="textarea" id="notice" value="" style="width: 90%; height: 300px" required></textarea> 
 									<div>
 										<button class="btn" style="background_color:White" type="submit">Đăng bài</button>
 										

@@ -114,7 +114,7 @@ $listkhaosat=$noidung['listkhaosat'];
 											<div class="timeline-panel">
 											
 												<div class="timeline-heading">
-													<h4 class="timeline-title"><a href="chitietthongbao.php" style="color:black"><?=$thongbao->tieude?></a></h4>
+													<h4 class="timeline-title"><a href="chitietthongbao.php?id=<?=$thongbao->thongbaoID?>" style="color:black"><?=$thongbao->tieude?></a></h4>
 												</div>
 											</div>
 										</li>
@@ -139,7 +139,7 @@ $listkhaosat=$noidung['listkhaosat'];
 										<li>
 											<div class="timeline-panel">
 												<div class="timeline-heading">
-													<h4 class="timeline-title"><a href="chitietkhaosat.php" style="color:black"><?=$khaosat->tenbang?></a></h4>
+													<h4 class="timeline-title"><a href="chitietkhaosat.php?id=<?=$khaosat->bangID?>" style="color:black"><?=$khaosat->tenbang?></a></h4>
 												</div>
 											</div>
 										</li>

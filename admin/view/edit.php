@@ -1,3 +1,12 @@
+<?php
+include('../controller/c_admin.php');
+$c_admin=new c_admin();
+$noidung=$c_admin->edit1();
+$chitietnguoidung=$noidung['chitietnguoidung'];
+$listtinh=$noidung['listtinh'];
+$listkhoa=$noidung['listkhoa'];
+print_r($chitietnguoidung[0]->username);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -75,7 +84,7 @@
 
 		<div class="row">
 			<div class="col-sm-12">
-				<h1 class="page-header" style="font-family:Helvetica, Arial, sans-serif">Thông tin cá nhân</h1>
+				<h1 class="page-header" style="font-family:Helvetica, Arial, sans-serif">Thông tin chi tiết</h1>
 			</div>
 
 		</div>
@@ -83,21 +92,20 @@
 		
 	<!--Form nhap thong tin 1 user-->
 			<div class="panel-body">
-			<div class="panel-body">
-				<form class="form-horizontal" action="" method="post">
+				<form class="form-horizontal" action="xulithemnguoidung.php" method="post">
 					<fieldset>
 						<!--Username input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="username">Tên đăng nhập</label>
 							<div class="col-md-9">
-								<input id="username" name="username" type="text" class="form-control" required>
+								<input id="username" name="username" type="text" class="form-control" value="<?=$chitietnguoidung[0]->username?>" required>
 							</div>
 						</div>
 						<!-- Password input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="password">Mật khẩu </label>
 							<div class="col-md-9">
-								<input id="password" name="password" type="password" class="form-control" required>
+								<input id="password" name="password" type="password" class="form-control" value="<?=$chitietnguoidung[0]->password?>" required>
 							</div>
 						</div>
 						<!--rePassword input-->
@@ -115,40 +123,51 @@
 						<input type="checkbox" name="admin" id="role-admin">Admin
 						</div>
 						</div>
+						<?php
+						if($chitietnguoidung[0]->isuser){
+						?>
 						<div id="user-info">
 						<!-- Name input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="name">Họ tên</label>
 							<div class="col-md-9">
-								<input id="name" name="name" type="text" class="form-control" onblur="this.value=ChuanhoaTen(this.value);" required>
+								<input id="name" name="name" type="text" class="form-control" onblur="this.value=ChuanhoaTen(this.value);" value="<?=$chitietnguoidung[0]->hoten?>" required>
 							</div>
 						</div>
 						<!-- dob input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="dob">Ngày sinh</label>
 							<div class="col-md-9">
-								<input id="dob" name="dob" type="date" class="form-control" required>
+								<input id="dob" name="dob" type="date" class="form-control" value="<?=$chitietnguoidung[0]->ngáyinh?>" required>
+							</div>
+						</div>
+						<!-- msv-->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="msv">Mã sinh viên</label>
+							<div class="col-sm-9">
+								<input id="msv" class="form-control" name="msv" type="text" value="<?=$chitietnguoidung[0]->csv_id?>" required>
 							</div>
 						</div>
 						<!-- img input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="imgi">Ảnh</label>
 							<div class="col-sm-9">
-								<input id="imgi" name="imgi" type="file">
+								<input id="imgi" name="imgi" type="file" value="<?=$chitietnguoidung[0]->anh?>">
 							</div>
 						</div>
+						
 						<!--img output-->
 						<div class="form-group">
 							<label class="col-md-3 control-label">&nbsp;</label>
 							<div class="col-sm-3">
-								<input id="imgo" name="imgo" type="image" src="../../public/admin/img/400x300.png" class="form-control" style=" min-height: 200px">
+								<img src="../../public/admin/img/400x300.png" class="form-control" style=" min-height: 200px">
 							</div>
 						</div>
 						<!-- Email input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="email">E-mail</label>
 							<div class="col-md-9">
-								<input id="email" name="email" type="text" class="form-control" required>
+								<input id="email" name="email" type="text" class="form-control" value="<?=$chitietnguoidung[0]->email?>" required>
 							</div>
 						</div>
 						
@@ -156,27 +175,34 @@
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="sdt">Số điện thoại</label>
 							<div class="col-md-9">
-								<input id="sdt" name="sdt" type="text" class="form-control">
+								<input id="sdt" name="sdt" type="text" value="<?=$chitietnguoidung[0]->username?>" class="form-control">
 							</div>
 						</div>
 						<!-- Address input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="address">Quê quán</label>
 							<div class="col-md-3">
-								<select id="tinh" class="form-control" style=" min-width: 100px;">
+								<select id="tinh" name="tinh" class="form-control" style=" min-width: 100px;"  required>
 									<option disabled selected>Tỉnh</option>
-									<option>Nam Định</option>
-									<option>Hà Nam</option>
-									<option>...</option>
+									<?php
+									foreach($listtinh as $tinh){
+										if($chitietnguoidung[0]->tentinh==$tinh->tentinh){
+									?>
+									<option value="<?=$tinh->tinhid?>" selected><?=$tinh->tentinh?></option>
+									<?php
+									}else{
+									?>
+									<option value="<?=$tinh->tinhid?>"><?=$tinh->tentinh?></option>
+									<?php
+									}
+								}
+									?>
 								</select>
 							</div>
 							<div class="col-md-1 control-label"></div>
 							<div class="col-md-3">
-								<select class="form-control" style=" min-width: 100px;">
+								<select id="huyen" name="huyen" class="form-control" style=" min-width: 100px;" required>
 									<option disabled selected>Huyện</option>
-									<option>Giao Thủy</option>
-									<option>Xuân Trường</option>
-									<option>...</option>
 								</select>
 
 							</div>
@@ -185,23 +211,22 @@
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="class">Lớp</label>
 							<div class="col-md-3">
-								<select id="class" class="form-control" style=" min-width: 100px;">
+								<select id="lop" name="lop" class="form-control" style=" min-width: 100px;" required>
 									<option disabled selected>Lớp</option>
-									<option>K61-CD</option>
-									<option>K62-CF</option>
-									<option>K63-J</option>
-									<option>Kxxx</option>
 								</select>
 								<button type="button" class="btn" onclick="addClass();">Thêm</button>
 							</div>
 							<div class="col-md-1"></div>
 							<div class="col-md-3">
-								<select class="form-control" style=" min-width: 100px;">
+								<select id="khoa" class="form-control" style=" min-width: 100px;" required>
 									<option disabled selected>Khoa</option>
-									<option>Công nghệ thông tin</option>
-									<option>Vật lí kĩ thuật</option>
-									<option>Điện tử viến thông</option>
-									<option>Công nghệ nano</option>
+									<?php
+									foreach($listkhoa as $khoa){
+									?>
+									<option value="<?=$khoa->khoaID?>"><?=$khoa->tenkhoa?></option>
+									<?php
+									}
+									?>
 								</select>
 
 							</div>
@@ -215,8 +240,8 @@
 										<tr>
 											<th>Vị trí</th>
 											<th>Cơ quan</th>
-											<th>Mức lương (USD)</th>
-											<th>Thời gian </th>
+											<th>Thời gian</th>
+											<th>Mức Lương (USD)</th>
 											<th class="col-sm-1">
 												<!--button them 1 user-->
 												<button id="newjob" type="button" class="material-icons btn" style="padding:0px; color: black; background-color: white">add</button>
@@ -226,11 +251,11 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td><input class="vitri" type="text" ></td>
-											<td><input class="coquan" type="text" ></td>
-											<td><input class="thoigian" type="number"></td>
+											<td><input class="vitri" name="vitri[]" type="text" required></td>
+											<td><input class="coquan" name="coquan[]" type="text" required></td>
+											<td><input class="thoigian" name="thoigian[]" type="text" required></td>
 											<td>
-												<input class="mucluong" type="text" class="job-profile">
+												<input class="mucluong" name="mucluong[]" type="number" class="job-profile" required>
 												
 											</td>
 											<td class="col-md-2">
@@ -256,30 +281,171 @@
 							</div>
 							</div>
 						</div>
+						<?php}else{?>
+							<div id="user-info" style="display:none">
+						<!-- Name input-->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="name">Họ tên</label>
+							<div class="col-md-9">
+								<input id="name" name="name" type="text" class="form-control" onblur="this.value=ChuanhoaTen(this.value);" required>
+							</div>
+						</div>
+						<!-- dob input-->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="dob">Ngày sinh</label>
+							<div class="col-md-9">
+								<input id="dob" name="dob" type="date" class="form-control" required>
+							</div>
+						</div>
+						<!-- msv-->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="msv">Mã sinh viên</label>
+							<div class="col-sm-9">
+								<input id="msv" class="form-control" name="msv" type="text" required>
+							</div>
+						</div>
+						<!-- img input-->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="imgi">Ảnh</label>
+							<div class="col-sm-9">
+								<input id="imgi" name="imgi" type="file">
+							</div>
+						</div>
+						
+						<!--img output-->
+						<div class="form-group">
+							<label class="col-md-3 control-label">&nbsp;</label>
+							<div class="col-sm-3">
+								<img src="../../public/admin/img/400x300.png" class="form-control" style=" min-height: 200px">
+							</div>
+						</div>
+						<!-- Email input-->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="email">E-mail</label>
+							<div class="col-md-9">
+								<input id="email" name="email" type="text" class="form-control" required>
+							</div>
+						</div>
+						
+						<!-- phonenum input-->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="sdt">Số điện thoại</label>
+							<div class="col-md-9">
+								<input id="sdt" name="sdt" type="text" class="form-control">
+							</div>
+						</div>
+						<!-- Address input-->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="address">Quê quán</label>
+							<div class="col-md-3">
+								<select id="tinh" name="tinh" class="form-control" style=" min-width: 100px;" required>
+									<option disabled selected>Tỉnh</option>
+									<?php
+									foreach($listtinh as $tinh){
+									?>
+									<option value="<?=$tinh->tinhid?>"><?=$tinh->tentinh?></option>
+									<?php
+									}
+									?>
+								</select>
+							</div>
+							<div class="col-md-1 control-label"></div>
+							<div class="col-md-3">
+								<select id="huyen" name="huyen" class="form-control" style=" min-width: 100px;" required>
+									<option disabled selected>Huyện</option>
+								</select>
+
+							</div>
+						</div>
+						<!-- Class input-->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="class">Lớp</label>
+							<div class="col-md-3">
+								<select id="lop" name="lop" class="form-control" style=" min-width: 100px;" required>
+									<option disabled selected>Lớp</option>
+								</select>
+								<button type="button" class="btn" onclick="addClass();">Thêm</button>
+							</div>
+							<div class="col-md-1"></div>
+							<div class="col-md-3">
+								<select id="khoa" class="form-control" style=" min-width: 100px;" required>
+									<option disabled selected>Khoa</option>
+									<?php
+									foreach($listkhoa as $khoa){
+									?>
+									<option value="<?=$khoa->khoaID?>"><?=$khoa->tenkhoa?></option>
+									<?php
+									}
+									?>
+								</select>
+
+							</div>
+						</div>
+						<!-- congviec input-->
+						<div class="form-group">
+							<label class="col-md-3 control-label">Công việc</label>
+							<div class="col-md-9">
+								<table class="table" id="job-table" class="form-control">
+									<thead>
+										<tr>
+											<th>Vị trí</th>
+											<th>Cơ quan</th>
+											<th>Thời gian</th>
+											<th>Mức Lương (USD)</th>
+											<th class="col-sm-1">
+												<!--button them 1 user-->
+												<button id="newjob" type="button" class="material-icons btn" style="padding:0px; color: black; background-color: white">add</button>
+											</th>
+	
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input class="vitri" name="vitri[]" type="text" required></td>
+											<td><input class="coquan" name="coquan[]" type="text" required></td>
+											<td><input class="thoigian" name="thoigian[]" type="text" required></td>
+											<td>
+												<input class="mucluong" name="mucluong[]" type="number" class="job-profile" required>
+												
+											</td>
+											<td class="col-md-2">
+												<button type="button" class="btn material-icons deleterow" style="padding:0px; background-color: white" onclick="deleteRowNow(event)">
+													delete
+												</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								
+						
+
+							</div>
+
+						</div>
+
+						<!-- Message body -->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="message">Ghi chú</label>
+							<div class="col-md-9">
+								<textarea class="form-control" id="message" name="message" placeholder="..." rows="5"></textarea>
+							</div>
+							</div>
+								</div>
+								<?php
+								}
+								?>
 						</div>
 						<!-- Form actions -->
 						<div class="form-group">
 							<div class="col-md-12 widget-right">
-								<button type="button" id="add-user-submit" class="btn btn-default btn-md pull-right" onclick="chapnhan();">Gửi</button>
+								<button type="submit" id="add-user-submit" class="btn btn-default btn-md pull-right" onclick="chapnhan();">Gửi</button>
 							
 						</div>
 					</fieldset>
 				</form>
 			</div>
-			</div>
 
 	
-    </div>
-    <div class="row" id="class-container">
-		<div id="add-class-form" class="panel panel-default">
-			<div class="panel panel-default" id="addclass">
-				<div class="panel-heading" style="font-family:Helvetica, Arial, sans-serif; padding: auto; text-align: center" >Thêm lớp học</div>
-				<div class="panel-body">
-					<div class="row" style="margin-left:10px; margin-right:10px"><input type="text" id="add-class"  class="form-control"></div>
-					<div class="row" style="padding:10px"><button type="button" onclick="addmoreClass();" class="btn" style="margin-left:90px">Thêm</button></div>
-				</div>
-			</div>
-		</div>
     </div>
 	<!--/.main-->
 
@@ -294,7 +460,20 @@
 	<script src="../../public/admin/js/custom.js"></script>
 	<script src="../../public/admin/js/user.js"></script>
 	<script>
+	$(document).ready(function(){
+		$("#tinh").change(function(event){
+			tinhid=$("#tinh").val();
+			$.post('huyen.php',{"tinhid":tinhid},function(data){
+				$("#huyen").html(data);
+			});
+		});
+		$("#khoa").change(function(event){
+			khoaid=$("#khoa").val();
+			$.post('lop.php',{"khoaid":khoaid},function(data){
+				$("#lop").html(data);
+			});
+		});
+	});
 	</script>
 </body>
-
 </html>
