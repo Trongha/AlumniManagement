@@ -29,10 +29,18 @@
 .newsFeed{
     margin:10px 0px;
 }
+.news h3, hr{
+    margin:5px 0px;
+    padding:0px;
+}
 
+.news a{
+    /*padding-left: 10px;*/
+    padding:10px 0px;
+    font-size: 15px;
+}
 .newClassSession {
     background: #13983d9c;
-
 }
 
 .aClass{

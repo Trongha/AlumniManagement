@@ -29,6 +29,10 @@ class HomeController{
 		echo $s;
 	}
 
+	public static function setListKhaoSat(){
+
+	}
+
 	public function setListNewClass(){
 		$lopMoiThem = new LopController(5);
 		$lopMoiThem->getLopInSql();

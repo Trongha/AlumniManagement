@@ -50,5 +50,9 @@ class m_admin extends database{
     	$sql = "SELECT * FROM `cuu_sv` WHERE userID = $userID";
     	return parent::loadAllRowsStatic($sql);
 	}
+	static function getListKhaoSatByBangID($bangID){
+    	$sql = "SELECT * FROM `khaosat` WHERE bangID = $bangID";
+    	return parent::loadAllRowsStatic($sql);
+	}
 }
 ?>

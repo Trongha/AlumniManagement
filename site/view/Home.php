@@ -97,9 +97,53 @@
                 <!-- end Slide -->
             <div class=" news col-xs-12 col-sm-5 col-md-5 col-lg-5">
                 <div class="news">
-                    <div class="panel-title">
-                        Tin mới
+                    <div class="">
+                         <h3><i class="far fa-newspaper"></i>    Tin mới</h3>
                         <hr>
+                    </div>
+                    <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 pull-right">
+
+                        <div class="row 1tin">
+                            <i class="fas fa-pencil-alt"></i>
+                            <a href="KhaoSat.php?bangID=1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, obcaecati!</a>
+                        </div>
+                        <div class="row 1tin">
+                            <i class="fas fa-pencil-alt"></i>
+                            <a href="KhaoSat.php?bangID=1">Lorem ipsum dolor sit amet.</a>
+                        </div>
+                        <div class="row 1tin">
+                            <i class="fas fa-pencil-alt"></i>
+                            <a href="KhaoSat.php?bangID=1">Lorem ipsum dolor sit amet.</a>
+                        </div>
+                        <div class="row 1tin">
+                            <i class="fas fa-pencil-alt"></i> 
+                            <a href="KhaoSat.php?bangID=1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis dolores harum, odio officiis quasi qui quia vel. Alias, officia.</a>
+                        </div>
+                        <div class="row 1tin">
+                            <i class="fas fa-pencil-alt"></i>
+                            <a href="KhaoSat.php?bangID=1">o officiis quasi qui quia vel. Alias, officia.</a>
+                        </div>
+                        <div class="row 1tin">
+                            <i class="fas fa-pencil-alt"></i>
+                            <a href="KhaoSat.php?bangID=1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, obcaecati!</a>
+                        </div>
+                        <div class="row 1tin">
+                            <i class="fas fa-pencil-alt"></i>
+                            <a href="KhaoSat.php?bangID=1">Lorem ipsum dolor sit amet.</a>
+                        </div>
+                        <div class="row 1tin">
+                            <i class="fas fa-pencil-alt"></i>
+                            <a href="KhaoSat.php?bangID=1">Lorem ipsum dolor sit amet.</a>
+                        </div>
+                        <div class="row 1tin">
+                            <i class="fas fa-pencil-alt"></i>
+                            <a href="KhaoSat.php?bangID=1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis dolores harum, odio officiis quasi qui quia vel. Alias, officia.</a>
+                        </div>
+                        <div class="row 1tin">
+                            <i class="fas fa-pencil-alt"></i>
+                            <a href="KhaoSat.php?bangID=1">o officiis quasi qui quia vel. Alias, officia.</a>
+                        </div>
+
                     </div>
                 </div>
                     <!-- end news -->
