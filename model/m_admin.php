@@ -54,5 +54,11 @@ class m_admin extends database{
     	$sql = "SELECT * FROM `khaosat` WHERE bangID = $bangID";
     	return parent::loadAllRowsStatic($sql);
 	}
+	static function getnKhaoSatMoiNhat($n){
+    	$sql = "SELECT * FROM `bangkhaosat`
+				ORDER BY bangID
+				LIMIT $n";
+    	return parent::loadAllRowsStatic($sql);
+	}
 }
 ?>

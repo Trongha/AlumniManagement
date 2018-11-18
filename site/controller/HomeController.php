@@ -30,7 +30,15 @@ class HomeController{
 	}
 
 	public static function setListKhaoSat(){
-
+		$soLuongBaiDang = 9;
+		$listKhaoSat = m_admin::getnKhaoSatMoiNhat($soLuongBaiDang);
+		foreach ($listKhaoSat as $aKhaoSat){
+			$s = "	<div class=\"row 1tin\">
+						<i class=\"fas fa-pencil-alt\"></i>
+						<a href=\"KhaoSat.php?bangID=$aKhaoSat->bangID\">$aKhaoSat->tenbang</a>
+					</div>";
+			echo $s;
+		}
 	}
 
 	public function setListNewClass(){
