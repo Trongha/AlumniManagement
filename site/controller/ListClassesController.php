@@ -39,7 +39,7 @@ class ListClassesController
 				$s.= '					<div class="caption">
 											<h3>Lớp '. $listClass[$i]->getTenLop() .'</h3>
 										</div>';
-				$s.= '					<a href="ListAlumni.html">
+				$s.= '					<a href="ListAlumni.php">
 											<div class="chiTiet text-center">
 												<i class="fas fa-info-circle"></i>
 												<h3>Chi tiết...</h3>

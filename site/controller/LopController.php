@@ -35,7 +35,9 @@ class LopController{
 	 * get cac lop tu sql
 	 * */
 	public function getLopInSql(){
+
 		$result = m_admin::getNLopMoiNhat($this->getSoLuongLop());
+
 		foreach ($result as $row) {
 			$newLop = new Lop($row->lopID, $row->tenlop);
 			$this->addOneLop($newLop);
@@ -88,7 +90,7 @@ if (is_array($listClass) || is_object($listClass)) {
 		  . '		<div class="caption">'
 		  . '			<h3>Lớp '. $aLop->getTenLop() .'</h3>'
 		  . '		</div>'
-		  . '		<a href="ListAlumni.html">'
+		  . '		<a href="ListAlumni.php">'
 		  . '			<div class="chiTiet text-center">'
 		  . '				<i class="fas fa-info-circle"></i>'
 		  . '				<h3>Chi tiết...</h3>'

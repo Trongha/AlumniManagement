@@ -7,5 +7,18 @@
  */
 
 class Alumni{
+	private $AlumniID;
+
+	/**
+	 * Alumni constructor.
+	 * @param $AlumniID
+	 */
+	public function __construct($AlumniID)
+	{
+		$this->AlumniID = $AlumniID;
+	}
+
+//	public  function get
+
 
 }

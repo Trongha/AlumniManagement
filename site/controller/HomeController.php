@@ -31,7 +31,7 @@ class HomeController{
 					. '		<div class="caption">'
 					. '			<h3>Lớp '. $aLop->getTenLop() .'</h3>'
 					. '		</div>'
-					. '		<a href="ListAlumni.html">'
+					. '		<a href="ListAlumni.php">'
 					. '			<div class="chiTiet text-center">'
 					. '				<i class="fas fa-info-circle"></i>'
 					. '				<h3>Chi tiết...</h3>'

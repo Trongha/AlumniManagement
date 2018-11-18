@@ -19,11 +19,20 @@ class m_admin extends database{
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
-    static function getNLopMoiNhat($n){
+    static function getnLopMoiNhat($n){
 		$sql = 'SELECT * FROM lop
 				ORDER BY lop.lopID DESC
 				LIMIT '.$n;
 		return database::loadAllRowsStatic($sql);
 	}
+	static function getAllAlumniByClassID($classID){
+    	$sql = 'SELECT * FROM `cuu_sv` WHERE lopid = '.$classID.' ORDER BY csv_id';
+    	return database::loadAllRowsStatic($sql);
+	}
+	static function getCongTacInfoByAlumniID($alumniID){
+    	$sql = 'SELECT * FROM congtac WHERE csv_id = '.$alumniID;
+    	return database::loadAllRowsStatic($sql);
+	}
+
 }
 ?>
