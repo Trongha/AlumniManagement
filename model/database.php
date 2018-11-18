@@ -7,7 +7,7 @@ class database{
 
 
     public function database($_sql = 'set names "utf8"'){
-        $this->_dbh = new PDO('mysql:host=localhost:3306; dbname=qlcsv','root','');
+        $this->_dbh = new PDO('mysql:host=localhost:3307; dbname=qlcsv','root','');
         $this->_dbh->query('set names "utf8"');
         $this->setQuery($_sql);
     }
@@ -42,7 +42,17 @@ class database{
         }
         return $result->fetchAll(PDO::FETCH_OBJ);
     }
-
+    public function loadRow($option=array()){
+        if(!$option){
+            if(!$result=$this->execute())
+            return false;
+        }
+        else{
+            if(!$result=$this->execute($option))
+            return false;
+        }
+        return $result->fetchAll(PDO::FETCH_OBJ);
+    }
     public static function loadAllRowsStatic($sql = 'set names "utf8"'){
 		$db = new database($sql);
 		$allRow = $db->loadAllRows();

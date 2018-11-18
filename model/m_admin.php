@@ -19,14 +19,15 @@ class m_admin extends database{
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
-<<<<<<< HEAD
     function getchitietthongbao($id){
         $sql="select * from thongbao where thongbaoID=$id";
         $this->setQuery($sql);
         return $this->loadRow(array($id));
     }
     function getchitietkhaosat($id){
-    }
+        $sql="select * from khaosat where khaosatID=$id";
+        $this->setQuery($sql);
+        return $this->loadRow(array($id));}
     function getchitietnguoidung($id){
         $sql="select user.*, cuu_sv.*,lop.tenlop, khoa.tenkhoa,huyen.tenhuyen, tinh.tentinh from 
         user left join cuu_sv on user.userID=cuu_sv.userID left join lop on cuu_sv.lopID=lop.lopID
@@ -91,17 +92,36 @@ class m_admin extends database{
         return $this->execute(array($csvid,$hoten,$email,$huyenid,$anh,$lopid,$userid,$sdt,$ngaysinh));
     }
     function themcongviec($noilamviec,$congviecdamnhiem,$mucluong,$csvid,$thoigian){
-        $sql="insert into congtac(noilamviec,congviecdamnhiem,mucluong,csvid,thoigian)
+        $sql="insert into congtac(noilamviec,congviecdamnhiem,mucluong,csv_id,thoigian)
         values(?,?,?,?,?)";
         $this->setQuery($sql);
         return $this->execute(array($noilamviec,$congviecdamnhiem,$mucluong,$csvid,$thoigian));
     }
     function getmaxuserid(){
-        $sql="select max(userid) as max from user";
+        $sql="select max(userID) as max from user";
         $this->setQuery($sql);
         return $this->loadRow();
     }
-=======
+    function checkmasv($msv){
+        $sql="select csv_id from cuu_sv where csv_id=$msv";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
+    function checkusername($username){
+        $sql="select username from user where username=$username";
+        $this->setQuery($sql);
+        return $this->loadRow();}
+    function themlop($tenlop,$khoaid){
+        $sql=" insert into lop (tenlop,khoaID)
+        values(?,?)";
+        $this->setQuery($sql);
+        return $this->execute(array($tenlop,$khoaid));
+    }
+    function checktenlop($tenlop){
+        $sql="select telop from lop where tenlop=$tenlop";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
     static function getnLopMoiNhat($n){
 		$sql = 'SELECT * FROM lop
 				ORDER BY lop.lopID DESC
@@ -133,6 +153,5 @@ class m_admin extends database{
     	$sql = "SELECT * FROM `cuu_sv` WHERE userID = $userID";
     	return parent::loadAllRowsStatic($sql);
 	}
->>>>>>> 936f4a02a047eb5ef214227b121b9158df86f14c
 }
 ?>

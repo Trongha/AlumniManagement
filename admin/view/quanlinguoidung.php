@@ -3,7 +3,6 @@ include('../controller/c_admin.php');
 $c_admin=new c_admin();
 $noidung=$c_admin->quanlinguoidung();
 $listnguoidung=$noidung['listnguoidung'];
-print_r($listnguoidung);
 ?>
 <!DOCTYPE html>
 <html>

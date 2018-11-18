@@ -26,13 +26,19 @@ class c_admin{
         $chitietthongbao=$m_danhmuc->getchitietthongbao($id_khaosat);
         return array('chitietkhaosat'=>$chitietkhaosat);
     }
-    public function edit(){
-        //$id_user=$_GET['id'];
+    public function edit1(){
+        $id_user=$_GET['id'];
         $m_danhmuc= new m_admin();
-        //$chitietnguoidung=$m_danhmuc->getchitietnguoidung($id_user);
+        $chitietnguoidung=$m_danhmuc->getchitietnguoidung($id_user);
         $listtinh=$m_danhmuc->gettinh();
         $listkhoa=$m_danhmuc->getkhoa();
-        return array(/*'chitietnguoidung'=>$chitietnguoidung,*/'listtinh'=>$listtinh,'listkhoa'=>$listkhoa);
+        return array('chitietnguoidung'=>$chitietnguoidung,'listtinh'=>$listtinh,'listkhoa'=>$listkhoa);
+    }
+    public function edit(){
+        $m_danhmuc= new m_admin();
+        $listtinh=$m_danhmuc->gettinh();
+        $listkhoa=$m_danhmuc->getkhoa();
+        return array('listtinh'=>$listtinh,'listkhoa'=>$listkhoa);
     }
     public function xulithongbao(){
         $tenthongbao=$_GET['tieude'];
@@ -53,7 +59,7 @@ class c_admin{
         $maxid=$id['maxid'];
         $noidung=$_GET['cauhoi'];
         for($i=0;$i<count($noidung);$i++){
-            $m_danhmuc->addcauhoi($maxid->max,$noidung[$i]);
+            $m_danhmuc->addcauhoi($maxid[0]->max,$noidung[$i]);
         }
     }
     public function huyen(){
@@ -132,7 +138,8 @@ class c_admin{
         else{
             $huyenid='';
         }
-        $m_danhmuc->themthongtincsv($csvid,$hoten,$email,$huyenid,$img,$lopid,$userid->max,$sdt,$ngaysinh);
+       
+        $m_danhmuc->themthongtincsv($csvid,$hoten,$email,$huyenid,$img,$lopid,$maxuserid[0]->max,$sdt,$ngaysinh);
         $listvitri=$_POST['vitri'];
         $listcoquan=$_POST['coquan'];
         $listthoigian=$_POST['thoigian'];
@@ -140,8 +147,24 @@ class c_admin{
         for($i=0;$i<count($listvitri);$i++){
             $m_danhmuc->themcongviec($listcoquan[$i],$listvitri[$i],$listmucluong[$i],$csvid,$listthoigian[$i]);
         }
-
+        $checkmsv=$m_danhmuc->checkmasv($csvid);
+        if(empty($checkmsv)){header('Location:http://localhost/AlumniManagement/admin/view/quanlinguoidung.php');}
+    else{
+        echo"<span>Trùng mã sv!</span><br>";
+        }
+        $checkusername=$m_danhmuc->checkusername($username);
+        if(empty($checkusername)){header('Location:http://localhost/AlumniManagement/admin/view/quanlinguoidung.php');}
+    else{
+        echo"<span>Trùng username</span>!<br>";
+        }
     }   
+   
+}
+public function themlop(){
+    $m_danhmuc=new m_admin();
+    $tenlop=$_GET['addclass'];
+    $khoaid=$_GET['khoa'];
+    $m_danhmuc->themlop($tenlop,$khoaid);
 }
 }
 ?>
