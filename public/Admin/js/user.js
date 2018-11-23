@@ -47,6 +47,7 @@ function chapnhan(){
     }
     return okie;
 }
+
 function ChuanhoaTen(ten) {
 	dname = ten;
 	ss = dname.split(' ');

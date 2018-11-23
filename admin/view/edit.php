@@ -84,7 +84,7 @@ $listlop=$noidung['listlop'];
 
 		<div class="row">
 			<div class="col-sm-12">
-				<h1 class="page-header" style="font-family:Helvetica, Arial, sans-serif">Thông tin chi tiết<?php print_r($chitietnguoidung[0]->csv_id);?></h1>
+				<h1 class="page-header" style="font-family:Helvetica, Arial, sans-serif">Thông tin chi tiết</h1>
 			</div>
 
 		</div>
@@ -92,7 +92,7 @@ $listlop=$noidung['listlop'];
 		
 	<!--Form nhap thong tin 1 user-->
 			<div class="panel-body">
-<form class="form-horizontal" action="suathongtincanhan.php?userid=<?=$chitietnguoidung[0]->userID?>&isuser=<?=$chitietnguoidung[0]->isuser?><?php if($chitietnguoidung[0]->isuser == 1){ ?>&csvid=<?=$chitietnguoidung[0]->csv_id?><?php } ?>" method="post">
+<form class="form-horizontal" action="suathongtincanhan.php?userid=<?=$chitietnguoidung[0]->userID?>&isuser=<?=$chitietnguoidung[0]->isuser?><?php if($chitietnguoidung[0]->isuser == 1){ ?>&csvid=<?=$chitietnguoidung[0]->csv_id?><?php } ?>" method="post" onsubmit="return chapnhan();">
 					<fieldset>
 						<!--Username input-->
 						<div class="form-group">

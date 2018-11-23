@@ -92,7 +92,7 @@ $listkhoa=$noidung['listkhoa'];
 		
 	<!--Form nhap thong tin 1 user-->
 			<div class="panel-body">
-				<form class="form-horizontal" action="xulithemnguoidung.php" method="post" onsubmit="return chapnhap()">
+				<form class="form-horizontal" action="xulithemnguoidung.php" method="post" onsubmit="return chapnhan();">
 					<fieldset>
 						<!--Username input-->
 						<div class="form-group">
@@ -156,7 +156,7 @@ $listkhoa=$noidung['listkhoa'];
 							</div>
 							<?php
 							if(isset($_SESSION['errormsv'])){
-								echo "<div class='col-md-9' style='float:right'>".$_SESSION['errormsv']."</div>";
+								echo "<div class='col-md-9' style='float:right color:red'>".$_SESSION['errormsv']."</div>";
 								unset($_SESSION['errormsv']);
 							}
 							?>
