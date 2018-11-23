@@ -117,6 +117,10 @@ class m_admin extends database{
         $sql="select username from user where username=$username";
         $this->setQuery($sql);
         return $this->loadRow();}
+        function checkusername1($userid,$username){
+            $sql="select username from user where username=$username and userID != $userid";
+            $this->setQuery($sql);
+            return $this->loadRow();}
     function themlop($tenlop,$khoaid){
         $sql=" insert into lop (tenlop,khoaID)
         values(?,?)";

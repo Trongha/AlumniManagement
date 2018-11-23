@@ -100,6 +100,12 @@ $listlop=$noidung['listlop'];
 							<div class="col-md-9">
 								<input id="username" name="username" type="text" class="form-control" value="<?=$chitietnguoidung[0]->username?>" required>
 							</div>
+							<?php
+							if(isset($_SESSION['errorusername'])){
+								echo "<div class='col-md-9 errmess' style='float:right'>".$_SESSION['errorusername']."</div>";
+								unset($_SESSION['errorusername']);
+							}
+							?>
 						</div>
 						<!-- Password input-->
 						<div class="form-group">
@@ -134,6 +140,12 @@ $listlop=$noidung['listlop'];
 							<div class="col-sm-9">
 								<input id="msv" class="form-control" name="msv" type="text" value="<?=$chitietnguoidung[0]->msv?>" required>
 							</div>
+							<?php
+							if(isset($_SESSION['errormsv'])){
+								echo "<div class='col-md-9' style='float:right color:red'>".$_SESSION['errormsv']."</div>";
+								unset($_SESSION['errormsv']);
+							}
+							?>
 						</div>
 						<!-- img input-->
 						<div class="form-group">

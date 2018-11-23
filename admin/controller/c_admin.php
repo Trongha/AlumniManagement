@@ -197,8 +197,8 @@ public function capnhatthongtin(){
     $isuser=$_GET['isuser'];
     $username=$_POST['username'];
     $password=$_POST['password'];
-    $checkusername=$m_danhmuc->checkusername($username);
-        if(empty($checkusername)){
+    $checkusername=$m_danhmuc->checkusername($userid,$username);
+        if(empty($checkusername1)){
             $m_danhmuc->capnhatuser($userid,$username,$password);
             if(isset($_SESSION['errorusername'])){
                 unset($_SESSION['errorusername']);
