@@ -1,4 +1,7 @@
 <?php
+require_once ('../../model/mySession.php');
+mySession::checkLogin();
+
 require_once('../controller/ListAlumniController.php');
 $manager = new ListAlumniController();
 ?>
@@ -36,20 +39,20 @@ $manager = new ListAlumniController();
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
 
-                    <li class="active" >
+                    <li >
                         <a href="Home.php">Trang chủ</a>
                     </li>
                     <li>
-                        <a class="" href="#download">Bài đăng</a>
-                    </li>
-                    <li>
-                        <a class="" href="#contact">Khảo sát</a>
+                        <a class="" href="#KhaoSat">Khảo sát</a>
                     </li>
                     <li>
                         <a class="" href="ListClasses.php">Các lớp</a>
                     </li>
-                    <li>
-                        <a class="" href="#">Đăng nhập</a>
+                    <li class="active">
+						<?php
+                            require_once ('../controller/HomeController.php');
+						    homeController::setUsernameNav();
+						?>
                     </li>
 
                 </ul>

@@ -1,6 +1,11 @@
 <?php
-require_once ('../../model/mySession.php');
-mySession::checkLogin();
+    require_once ('../../model/mySession.php');
+    mySession::checkLogin();
+
+    require_once ("../controller/KhaoSatController.php");
+    $manager = new KhaoSatController();
+    $manager->getKetQua();
+
 ?>
 
 <!DOCTYPE html>
@@ -13,17 +18,13 @@ mySession::checkLogin();
     <!-- bootstrap -->
 	<link rel="stylesheet" href="../../public/vendor/bootstrapv3/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../public/vendor/bootstrapv3/css/bootstrap-theme.min.css">
-
     <!-- font -->
     <link rel="stylesheet" type="text/css" href="../../public/vendor/fontawesome-free/css/all.min.css">
     <!-- my CSS -->
-    <link rel="stylesheet" href="../../public/ListClasses/ListClasses.css">
+    <link rel="stylesheet" href="../../public/KhaoSat/KhaoSat.css">
     <link rel="stylesheet" href="../../public/Home/NavFoo.css">
-	<title>Alumni</title>
-    <?php 
-        require_once('../controller/ListClassesController.php');
-     ?>
-    
+	<title>Alumni_KhaoSat</title>
+
 </head>
 <body>
 
@@ -49,8 +50,8 @@ mySession::checkLogin();
                 <li>
                     <a class="" href="#KhaoSat">Khảo sát</a>
                 </li>
-                <li class="active">
-                    <a  href="ListClasses.php">Các lớp</a>
+                <li>
+                    <a class="" href="ListClasses.php">Các lớp</a>
                 </li>
                 <li class="active">
 					<?php
@@ -68,26 +69,35 @@ mySession::checkLogin();
 </nav>
 <!-- end Nav -->
 
-    </nav>
-    <!-- end Nav -->
     <div class="myHeader"></div>
-    <div class="gradient">
-        <div class="container ">
-            <div class="title text-left">
-                <h2>Cựu sinh viên các lớp</h2>
-                <hr>
+
+    <div class="BaiKhaoSat">
+        <div class="container">
+            <div class="row">
+                <div class="title text-center">
+                    <?php
+                        $manager->setTenBangKhaoSat();
+                    ?>
+
+                    <hr>
+                </div>
             </div>
+
+            <form action="KhaoSat.php" method="POST">
+                <?php
+                    $manager->showInForm();
+                ?>
+                <div class="row text-center">
+                    <button class="btn btn-success" name="submit-btn">
+                        ---------------Xong!---------------
+                    </button>
+                </div>
+                
+            </form>
         </div>
+            <!-- end container -->
     </div>
-    
-	<div class="timeline">
-        <?php
-            $listClassController = new ListClassesController();
-            $listClassController->setListClasses();
-         ?>
-    </div>
-        <!--end tiemline-->
-	
+
     <div class= "footer">
         <div class="container">
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
@@ -95,7 +105,7 @@ mySession::checkLogin();
                     Copyright &copy; Team
                 </h3>
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-2 col-sm-4 col-md-4 col-lg-4">
                 <div class="text-right">
                     <a href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-3x social"></i></a>
                     <a href="mailto:Trongha.hd.98@gmai.com"><i class="fa fa-envelope-square fa-3x social"></i></a>
@@ -103,11 +113,9 @@ mySession::checkLogin();
             </div>
         </div>
     </div>
-    
 
 	<script src="../../public/vendor/jquery/jquery.min.js"></script>
     <script src="../../public/vendor/bootstrapv3/js/bootstrap.min.js"></script>
     <script src="../../public/Home/NavFoo.js"></script>
-
 </body>
 </html>

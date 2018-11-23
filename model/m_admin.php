@@ -218,8 +218,8 @@ class m_admin extends database{
 	}
 	static function getAllAlumniByClassID($classID){
     	$sql = "SELECT cuu_sv.*, 
-                    congtac.noilamviec, congtac.mucluong, 
-                    congtac.coquanID, congtac.congviecdamnhiem
+                    congtac.noilamviec, congtac.mucluong,
+                    congtac.congviecdamnhiem
                     FROM cuu_sv
                     LEFT JOIN congtac ON cuu_sv.csv_id = congtac.csv_id
                     WHERE lopid = $classID ORDER BY cuu_sv.csv_id";
@@ -239,6 +239,24 @@ class m_admin extends database{
 	}
 	static function getAlumniInfoByUserID($userID){
     	$sql = "SELECT * FROM `cuu_sv` WHERE userID = $userID";
+    	return parent::loadAllRowsStatic($sql);
+	}
+	static function getListKhaoSatByBangID($bangID){
+    	$sql = "SELECT * FROM `khaosat` WHERE bangID = $bangID";
+    	return parent::loadAllRowsStatic($sql);
+	}
+	static function getnKhaoSatMoiNhat($n){
+    	$sql = "SELECT * FROM `bangkhaosat`
+				ORDER BY bangID
+				LIMIT $n";
+    	return parent::loadAllRowsStatic($sql);
+	}
+	static function insertIntoKetQuaKhaoSat($khaoSatID, $csvID, $luaChon){
+		$sql = "INSERT INTO `kqkhaosat` (`ketquaID`, `luachon`, `csv_id`, `khaosatID`) VALUES (NULL, '$luaChon', '$csvID', '$khaoSatID')";
+		return parent::loadAllRowsStatic($sql);
+	}
+	static function getBangKhaoSatByID($bangID){
+    	$sql = "SELECT * FROM `bangkhaosat` WHERE bangID = $bangID";
     	return parent::loadAllRowsStatic($sql);
 	}
 }

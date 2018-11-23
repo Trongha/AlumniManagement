@@ -7,7 +7,7 @@ class database{
 
 
     public function database($_sql = 'set names "utf8"'){
-        $this->_dbh = new PDO('mysql:host=localhost:3307; dbname=qlcsv','root','');
+        $this->_dbh = new PDO('mysql:host=localhost:3306; dbname=qlcsv','root','');
         $this->_dbh->query('set names "utf8"');
         $this->setQuery($_sql);
     }

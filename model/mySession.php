@@ -51,6 +51,7 @@ class mySession{
 			$_SESSION['isuser'] = 1;
 			$info = m_admin::getAlumniInfoByUserID(self::$userInSession->userID)[0];
 			$_SESSION['hoten'] = $info->hoten;
+			$_SESSION['csv_id'] = $info->csv_id;
 		}
 	}
 

@@ -18,10 +18,30 @@ class HomeController{
 	{
 	}
 
-	public function setUsername(){
-		isset($_SESSION['hoten']) ? $Acc = $_SESSION['hoten'] : $Acc = 'Đăng nhập';
-		$s = "<a class='' href='#'>$Acc</a>";
+	public static function setUsernameNav(){
+		if(isset($_SESSION['isadmin']) && ($_SESSION['isadmin'] == 1)){
+			$Acc = $_SESSION['username'];
+		}
+		else{
+			isset($_SESSION['hoten']) ? $Acc = $_SESSION['hoten'] : $Acc = 'Đăng nhập';
+		}
+		$s = "<a href='#'>$Acc</a>";
+		if ($Acc == 'Đăng nhập'){
+			$s = "<a href='https://localhost/AlumniManagement/'>$Acc</a>";
+		}
 		echo $s;
+	}
+
+	public static function setListKhaoSat(){
+		$soLuongBaiDang = 9;
+		$listKhaoSat = m_admin::getnKhaoSatMoiNhat($soLuongBaiDang);
+		foreach ($listKhaoSat as $aKhaoSat){
+			$s = "	<div class=\"row 1tin\">
+						<i class=\"fas fa-pencil-alt\"></i>
+						<a href=\"KhaoSat.php?bangID=$aKhaoSat->bangID\">$aKhaoSat->tenbang</a>
+					</div>";
+			echo $s;
+		}
 	}
 
 	public function setListNewClass(){

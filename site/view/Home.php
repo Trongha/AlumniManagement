@@ -45,17 +45,14 @@
                         <a href="Home.php">Trang chủ</a>
                     </li>
                     <li>
-                        <a class="" href="#download">Bài đăng</a>
-                    </li>
-                    <li>
                         <a class="" href="#khaosat">Khảo sát</a>
                     </li>
                     <li>
                         <a class="" href="ListClasses.php">Các lớp</a>
                     </li>
-                    <li>
+                    <li  class="active" >
                         <?php
-                            $homeController->setUsername();
+                            $homeController->setUsernameNav();
                         ?>
                     </li>
                     
@@ -97,9 +94,15 @@
                 <!-- end Slide -->
             <div class=" news col-xs-12 col-sm-5 col-md-5 col-lg-5">
                 <div class="news">
-                    <div class="panel-title">
-                        Tin mới
+                    <div class="">
+                         <h3><i class="far fa-newspaper"></i>    Tin mới</h3>
                         <hr>
+                    </div>
+                    <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 pull-right">
+                        <?php
+                            $homeController->setListKhaoSat();
+                        ?>
+
                     </div>
                 </div>
                     <!-- end news -->
