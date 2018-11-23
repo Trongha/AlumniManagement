@@ -70,9 +70,9 @@ $chitietthongbao=$noidung['chitietthongbao'];
 		<!--/.sidebar-->
 		<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 			<div class="panel panel-default" style="min-height:600px">
-				<div class="panel-heading"><?=$chitietthongbao->tieude?></div>
+				<div class="panel-heading"><?=$chitietthongbao[0]->tieude?></div>
 				<div class="panel-body">
-					<p><?=$chitietthongbao->noidung?></p>
+					<p><?=$chitietthongbao[0]->noidung?></p>
 				</div>
 			</div>
 		</div>

@@ -32,7 +32,9 @@ class c_admin{
         $chitietnguoidung=$m_danhmuc->getchitietnguoidung($id_user);
         $listtinh=$m_danhmuc->gettinh();
         $listkhoa=$m_danhmuc->getkhoa();
-        return array('chitietnguoidung'=>$chitietnguoidung,'listtinh'=>$listtinh,'listkhoa'=>$listkhoa);
+        $listhuyen=$m_danhmuc->gethuyen($chitietnguoidung[0]->tinhid);
+        $listlop=$m_danhmuc->getlop($chitietnguoidung[0]->khoaID);
+        return array('listlop'=>$listlop,'chitietnguoidung'=>$chitietnguoidung,'listtinh'=>$listtinh,'listkhoa'=>$listkhoa,'listhuyen'=>$listhuyen);
     }
     public function edit(){
         $m_danhmuc= new m_admin();
@@ -90,7 +92,16 @@ class c_admin{
         else{
             $isadmin=0;
         }
+        $checkusername=$m_danhmuc->checkusername($username);
+        if(empty($checkusername)){
         $m_danhmuc->themuser($username,$password,$isadmin,$isuser);
+            if(isset($_SESSION['errorusername'])){
+                unset($_SESSION['errorusername']);
+            }
+    }
+        else{
+            $_SESSION['errorusername']="Tên đăng nhập đã tồn tại!";
+            }
         if($isuser==1){
             $hoten=$_POST['name'];
             $ngaysinh=$_POST['dob'];
@@ -132,39 +143,141 @@ class c_admin{
         else{
             $sdt='';
         }
-        $csvid=$_POST['msv'];
+        $msv=$_POST['msv'];
         if(isset($_POST['huyen'])){
         $huyenid=$_POST['huyen'];}
         else{
             $huyenid='';
         }
-       
-        $m_danhmuc->themthongtincsv($csvid,$hoten,$email,$huyenid,$img,$lopid,$maxuserid[0]->max,$sdt,$ngaysinh);
+        $checkmsv=$m_danhmuc->checkmasv($msv);
+        if(empty($checkmsv)){
+        $m_danhmuc->themthongtincsv($msv,$hoten,$email,$huyenid,$img,$lopid,$maxuserid[0]->max,$sdt,$ngaysinh);
+        if(isset($_SESSION['errormsv'])){
+            unset($_SESSION['errormsv']);
+        }
+        $csvid=$m_danhmuc->getmaxcsvid();
+        $id1=array('maxid'=>$csvid);
+        $maxcsvid=$id1['maxid'];
         $listvitri=$_POST['vitri'];
         $listcoquan=$_POST['coquan'];
         $listthoigian=$_POST['thoigian'];
         $listmucluong=$_POST['mucluong'];
         for($i=0;$i<count($listvitri);$i++){
-            $m_danhmuc->themcongviec($listcoquan[$i],$listvitri[$i],$listmucluong[$i],$csvid,$listthoigian[$i]);
-        }
-        $checkmsv=$m_danhmuc->checkmasv($csvid);
-        if(empty($checkmsv)){header('Location:http://localhost/AlumniManagement/admin/view/quanlinguoidung.php');}
-    else{
-        echo"<span>Trùng mã sv!</span><br>";
-        }
-        $checkusername=$m_danhmuc->checkusername($username);
-        if(empty($checkusername)){header('Location:http://localhost/AlumniManagement/admin/view/quanlinguoidung.php');}
-    else{
-        echo"<span>Trùng username</span>!<br>";
-        }
-    }   
-   
-}
+            $m_danhmuc->themcongviec($listcoquan[$i],$listvitri[$i],$listmucluong[$i],$maxcsvid[0]->max,$listthoigian[$i]);
+           
+        }}
+        else
+        $_SESSION['errormsv']="Mã sinh viên đã tồn tại!";
+    }
+     
+    
+    }
 public function themlop(){
     $m_danhmuc=new m_admin();
     $tenlop=$_GET['addclass'];
     $khoaid=$_GET['khoa'];
     $m_danhmuc->themlop($tenlop,$khoaid);
+}
+public function getchitietkhaosat(){
+    $m_danhmuc=new m_admin();
+    $bangid=$_GET['id']; 
+    $tenbang=$m_danhmuc->gettenbang($bangid);
+    $listcauhoi=$m_danhmuc->getcauhoi($bangid);
+    $kqco=$m_danhmuc->getkqco($bangid);
+    $kqkhong=$m_danhmuc->getkqkhong($bangid);
+    $kqkhonghan=$m_danhmuc->getkqkhonghan($bangid);
+    return array('listcauhoi'=>$listcauhoi,'kqco'=>$kqco,'kqkhong'=>$kqkhong,'kqkhonghan'=>$kqkhonghan,'tenbang'=>$tenbang);
+
+}
+public function capnhatthongtin(){
+    $m_danhmuc=new m_admin();
+    $userid=$_GET['userid'];
+    $isuser=$_GET['isuser'];
+    $username=$_POST['username'];
+    $password=$_POST['password'];
+    $checkusername=$m_danhmuc->checkusername($username);
+        if(empty($checkusername)){
+            $m_danhmuc->capnhatuser($userid,$username,$password);
+            if(isset($_SESSION['errorusername'])){
+                unset($_SESSION['errorusername']);
+            }
+    }
+        else{
+            $_SESSION['errorusername']="Tên đăng nhập đã tồn tại!";
+            }
+            if($isuser==1){
+                $hoten=$_POST['name'];
+                $ngaysinh=$_POST['dob'];
+            if(isset($_FILES['imgi']['name'])){ // Đã chọn file
+                    //Kiểm tra định dạng tệp tin
+            if($_FILES['imgi']['type'] == "image/jpeg" || $_FILES['imgi']['type'] == "image/png" || $_FILES['imgi']['type'] == "image/gif"){
+            //Tiếp tục kiểm tra dung lượng
+            $maxFileSize = 10 * 1000 * 1000; //MB
+            if($_FILES['imgi']['size'] > ($maxFileSize * 1000 * 1000)){
+                echo 'Tập tin không được vượt quá: '.$maxFileSize.' MB';
+            } else {
+                //Hợp lệ tiếp tục xử lý Upload
+                $path = 'public/images/'; //Lưu trữ tập tin vào thư mục: images
+                $tmp_name = $_FILES['imgi']['tmp_name'];
+                $name = $_FILES['imgi']['name'];
+                $type = $_FILES['imgi']['type']; 
+                $size = $_FILES['imgi']['size']; 
+                //Upload file
+                move_uploaded_file($tmp_name,$path.$name);
+                $img=$path.$name;
+        }
+                }
+                else $img='';
+            }
+            else{
+                $img='';
+            }
+            if(isset($_POST['lop'])){
+            $lopid=$_POST['lop'];}
+            else{$lopid='';}
+            $email=$_POST['email'];
+            if(isset($_POST['sdt'])){
+                $sdt=$_POST['sdt'];
+            }
+      
+            else{
+                $sdt='';
+            }
+            $msv=$_POST['msv'];
+            if(isset($_POST['huyen'])){
+            $huyenid=$_POST['huyen'];}
+            else{
+                $huyenid='';
+            }
+            $checkmsv=$m_danhmuc->checkmasv($msv);
+            if(empty($checkmsv)){
+            $m_danhmuc->capnhatcsv($userid, $hoten, $msv,$email,$huyenid,$img,$lopid,$sdt,$ngaysinh);
+            if(isset($_SESSION['errormsv'])){
+                unset($_SESSION['errormsv']);
+            }
+            $csvid=$_GET['csvid'];
+            $m_danhmuc->xoacongviec($csvid);
+            $listvitri=$_POST['vitri'];
+            $listcoquan=$_POST['coquan'];
+            $listthoigian=$_POST['thoigian'];
+            $listmucluong=$_POST['mucluong'];
+            for($i=0;$i<count($listvitri);$i++){
+                $m_danhmuc->themcongviec($listcoquan[$i],$listvitri[$i],$listmucluong[$i],$csvid,$listthoigian[$i]);
+               
+            }}
+            else
+            $_SESSION['errormsv']="Mã sinh viên đã tồn tại!";
+        }
+}
+public function xoanguoidung(){
+    $m_danhmuc=new m_admin();
+    $userid=$_GET['id'];
+    if(isset($_GET['csvid'])){
+        $csvid=$_GET['csvid'];
+        $m_danhmuc->xoacongviec($csvid);
+        $m_danhmuc->xoacuusv($userid);
+    }
+    $m_danhmuc->xoauser($userid);
 }
 }
 ?>

@@ -1,5 +1,6 @@
 <?php
 include('../controller/c_admin.php');
+
 $c_admin=new c_admin();
 $noidung=$c_admin->edit();
 //$chitietnguoidung=$noidung['chitietnguoidung'];
@@ -91,7 +92,7 @@ $listkhoa=$noidung['listkhoa'];
 		
 	<!--Form nhap thong tin 1 user-->
 			<div class="panel-body">
-				<form class="form-horizontal" action="xulithemnguoidung.php" method="post">
+				<form class="form-horizontal" action="xulithemnguoidung.php" method="post" onsubmit="return chapnhap()">
 					<fieldset>
 						<!--Username input-->
 						<div class="form-group">
@@ -99,6 +100,12 @@ $listkhoa=$noidung['listkhoa'];
 							<div class="col-md-9">
 								<input id="username" name="username" type="text" class="form-control" autofocus required>
 							</div>
+							<?php
+							if(isset($_SESSION['errorusername'])){
+								echo "<div class='col-md-9 errmess' style='float:right'>".$_SESSION['errorusername']."</div>";
+								unset($_SESSION['errorusername']);
+							}
+							?>
 						</div>
 						<!-- Password input-->
 						<div class="form-group">
@@ -113,6 +120,7 @@ $listkhoa=$noidung['listkhoa'];
 							<div class="col-md-9">
 								<input id="repassword" name="repassword" type="password" class="form-control" required>
 							</div>
+							<div class="col-md-9 errmess" id="errrepass" style="float:right"></div>
 						</div>
 						<!-- role-->
 						<div class="form-group">
@@ -120,7 +128,9 @@ $listkhoa=$noidung['listkhoa'];
 						<div class="col-md-9">
 						<input type="checkbox" name="user" id="role-user" onclick="isuser();" checked>User
 						<input type="checkbox" name="admin" id="role-admin">Admin
+						
 						</div>
+						<div class="col-md-9 errmess" id="errrole"></div>
 						</div>
 						<div id="user-info">
 						<!-- Name input-->
@@ -142,7 +152,14 @@ $listkhoa=$noidung['listkhoa'];
 							<label class="col-md-3 control-label" for="msv">Mã sinh viên</label>
 							<div class="col-sm-9">
 								<input id="msv" class="form-control" name="msv" type="text" required>
+								
 							</div>
+							<?php
+							if(isset($_SESSION['errormsv'])){
+								echo "<div class='col-md-9' style='float:right'>".$_SESSION['errormsv']."</div>";
+								unset($_SESSION['errormsv']);
+							}
+							?>
 						</div>
 						<!-- img input-->
 						<div class="form-group">
@@ -163,7 +180,7 @@ $listkhoa=$noidung['listkhoa'];
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="email">E-mail</label>
 							<div class="col-md-9">
-								<input id="email" name="email" type="text" class="form-control" required>
+								<input id="email" name="email" type="email" class="form-control" required>
 							</div>
 						</div>
 						
@@ -275,7 +292,7 @@ $listkhoa=$noidung['listkhoa'];
 						<!-- Form actions -->
 						<div class="form-group">
 							<div class="col-md-12 widget-right">
-								<button type="submit" id="add-user-submit" class="btn btn-default btn-md pull-right" onclick="chapnhan();">Gửi</button>
+								<button type="submit" id="add-user-submit" class="btn btn-default btn-md pull-right" >Gửi</button>
 							
 						</div>
 					</fieldset>
@@ -292,7 +309,7 @@ $listkhoa=$noidung['listkhoa'];
 				<form action="themlop.php" method="get">
 					<div class="row" style="margin-left:10px; margin-right:10px"><input name="addclass" type="text" id="add-class"  class="form-control"></div>
 					<div class="row" style="margin-left:10px; margin-right:10px">
-					<select id="khoa" name="khoa" class="form-control" style=" min-width: 100px;" required>
+					<select id="themkhoa" name="khoa" class="form-control" style=" min-width: 100px;" required>
 									<option disabled selected>Khoa</option>
 									<?php
 									foreach($listkhoa as $khoa){
