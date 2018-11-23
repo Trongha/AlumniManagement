@@ -80,6 +80,12 @@ class c_admin{
         $m_danhmuc=new m_admin();
         $username=$_POST['username'];
         $password=$_POST['password'];
+        if(isset($_SESSION['errorusername'])){
+            unset($_SESSION['errorusername']);
+        }
+        if(isset($_SESSION['errormsv'])){
+            unset($_SESSION['errormsv']);
+        }
         if(isset($_POST['user'])){
             $isuser=1;
         }
@@ -95,9 +101,7 @@ class c_admin{
         $checkusername=$m_danhmuc->checkusername($username);
         if(empty($checkusername)){
         $m_danhmuc->themuser($username,$password,$isadmin,$isuser);
-            if(isset($_SESSION['errorusername'])){
-                unset($_SESSION['errorusername']);
-            }
+           
     }
         else{
             $_SESSION['errorusername']="Tên đăng nhập đã tồn tại!";
@@ -152,9 +156,7 @@ class c_admin{
         $checkmsv=$m_danhmuc->checkmasv($msv);
         if(empty($checkmsv)){
         $m_danhmuc->themthongtincsv($msv,$hoten,$email,$huyenid,$img,$lopid,$maxuserid[0]->max,$sdt,$ngaysinh);
-        if(isset($_SESSION['errormsv'])){
-            unset($_SESSION['errormsv']);
-        }
+    
         $csvid=$m_danhmuc->getmaxcsvid();
         $id1=array('maxid'=>$csvid);
         $maxcsvid=$id1['maxid'];
