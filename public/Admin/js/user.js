@@ -35,17 +35,19 @@ function deleteRowNow(e) {
 }
 function chapnhan(){
     okie=true;
-    if(document.getElementById("password").value!=document.getElementById("repassword").value){
-        alert("Mật khẩu không trùng khớp!");
+    document.getElementById("errrepass").innerHTML='';
+    document.getElementById("errrole").innerHTML='';
+    if(document.getElementById("password").value != document.getElementById("repassword").value){
+        document.getElementById("errrepass").innerHTML="Mật khẩu không đúng định dạng!";
         okie=false;
     }
-    else if(!document.getElementById("role-user").checked&&!document.getElementById("role-admin").checked){
-        alert("Bạn chưa chọn quyền!");
+    if(!document.getElementById("role-user").checked && !document.getElementById("role-admin").checked){
+        document.getElementById("errrole").innerHTML="Vui lòng chọn quyền cho người dùng!";
         okie=false;
     }
-    if(okie){}
-    //submit
+    return okie;
 }
+
 function ChuanhoaTen(ten) {
 	dname = ten;
 	ss = dname.split(' ');
@@ -58,21 +60,56 @@ function ChuanhoaTen(ten) {
 		}
 	return dname;
 }
-document.getElementById("role-user").onClick(function(e){
-    if (this.checked){
-        document.getElementById("user-info").style.display="block";
-    }
-    else
-    {
-        document.getElementById("user-info").style.display="none";
-    }
-});
 function isuser(){
-    if(document.getElementById("role-user").checked)
+    var vitri=document.getElementsByClassName("vitri");
+    
+    var coquan=document.getElementsByClassName("coquan");
+    var thoigian=document.getElementsByClassName("thoigian");
+    var mucluong= document.getElementsByClassName("mucluong");
+    if(document.getElementById("role-user").checked){
     document.getElementById("user-info").style.display="block";
+    document.getElementById("name").required=true;
+    document.getElementById("dob").required=true;
+    document.getElementById("msv").required=true;
+    document.getElementById("email").required=true;
+    document.getElementsByClassName("vitri").required=true;
+    document.getElementsByClassName("coquan").required=true;
+    document.getElementsByClassName("thoigian").required=true;
+    document.getElementsByClassName("mucluong").required=true;
+    
+    for (i=0;i<vitri.length;i++){
+        vitri[i].required=true;
+    }
+    for (i=0;i<coquan.length;i++){
+        coquan[i].required=true;
+    }
+    for (i=0;i<thoigian.length;i++){
+        thoigian[i].required=true;
+    }
+    for (i=0;i<mucluong.length;i++){
+        mucluong[i].required=true;
+    }}
     else{
+    document.getElementById("role-admin").checked=true;
     document.getElementById("user-info").style.display="none";
-    document.getElementById("name").required="false";
+    document.getElementById("name").required=false;
+    document.getElementById("dob").required=false;
+    document.getElementById("msv").required=false;
+    document.getElementById("email").required=false;
+    for (i=0;i<vitri.length;i++){
+        vitri[i].required=false;
+    }
+    for (i=0;i<coquan.length;i++){
+        coquan[i].required=false;
+    }
+    for (i=0;i<thoigian.length;i++){
+        thoigian[i].required=false;
+    }
+    for (i=0;i<mucluong.length;i++){
+        mucluong[i].required=false;
+    }
+    
 }
 }
+
 

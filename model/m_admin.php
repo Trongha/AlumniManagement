@@ -29,9 +29,10 @@ class m_admin extends database{
         $this->setQuery($sql);
         return $this->loadRow(array($id));}
     function getchitietnguoidung($id){
-        $sql="select user.*, cuu_sv.*,lop.tenlop, khoa.tenkhoa,huyen.tenhuyen, tinh.tentinh from 
+        $sql="select user.*, cuu_sv.*,lop.*, khoa.*,huyen.*, tinh.*, GROUP_CONCAT(congtac.congtacID,':',congtac.congviecdamnhiem,':',congtac.noilamviec,':',congtac.thoigian,':',congtac.mucluong) as congviec from 
         user left join cuu_sv on user.userID=cuu_sv.userID left join lop on cuu_sv.lopID=lop.lopID
         left join khoa on lop.khoaID=khoa.khoaID left join huyen on cuu_sv.huyenID=huyen.huyenid left join tinh on huyen.tinhid=tinh.tinhid
+        left join congtac on cuu_sv.csv_id=congtac.csv_id 
         where user.userID=$id";
         $this->setQuery($sql);
         return $this->loadRow(array($id));
@@ -85,11 +86,11 @@ class m_admin extends database{
         $this->setQuery($sql);
         return $this->execute(array($username,$password,$isadmin,$isuser));
     }
-    function themthongtincsv($csvid,$hoten,$email,$huyenid,$anh,$lopid,$userid,$sdt,$ngaysinh){
-        $sql="insert into cuu_sv (csv_id,hoten,email,huyenid,anh,lopid,userid,sdt,ngaysinh)
+    function themthongtincsv($msv,$hoten,$email,$huyenid,$anh,$lopid,$userid,$sdt,$ngaysinh){
+        $sql="insert into cuu_sv (msv,hoten,email,huyenid,anh,lopid,userid,sdt,ngaysinh)
         values (?,?,?,?,?,?,?,?,?)";
         $this->setQuery($sql);
-        return $this->execute(array($csvid,$hoten,$email,$huyenid,$anh,$lopid,$userid,$sdt,$ngaysinh));
+        return $this->execute(array($msv,$hoten,$email,$huyenid,$anh,$lopid,$userid,$sdt,$ngaysinh));
     }
     function themcongviec($noilamviec,$congviecdamnhiem,$mucluong,$csvid,$thoigian){
         $sql="insert into congtac(noilamviec,congviecdamnhiem,mucluong,csv_id,thoigian)
@@ -102,8 +103,13 @@ class m_admin extends database{
         $this->setQuery($sql);
         return $this->loadRow();
     }
+    function getmaxcsvid(){
+        $sql="select max(csv_id) as max from cuu_sv";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
     function checkmasv($msv){
-        $sql="select csv_id from cuu_sv where csv_id=$msv";
+        $sql="select msv from cuu_sv where csv_id=$msv";
         $this->setQuery($sql);
         return $this->loadRow();
     }
@@ -111,6 +117,10 @@ class m_admin extends database{
         $sql="select username from user where username=$username";
         $this->setQuery($sql);
         return $this->loadRow();}
+        function checkusername1($userid,$username){
+            $sql="select username from user where username=$username and userID != $userid";
+            $this->setQuery($sql);
+            return $this->loadRow();}
     function themlop($tenlop,$khoaid){
         $sql=" insert into lop (tenlop,khoaID)
         values(?,?)";
@@ -121,6 +131,88 @@ class m_admin extends database{
         $sql="select telop from lop where tenlop=$tenlop";
         $this->setQuery($sql);
         return $this->loadRow();
+    }
+    function getcauhoi($id){
+        $sql="select * from khaosat 
+        where bangID=$id";
+        $this->setQUery($sql);
+        return $this->loadAllRows();
+    }
+    function gettenbang($id){
+        $sql="select tenbang from bangkhaosat
+        where bangID=$id";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
+    function capnhatuser($userid, $username,$password){
+        $sql="update user
+        set username=?, password=?
+        where userid=?";
+        $this->setQuery($sql);
+        return $this->execute(array($username,$password,$userid));
+
+    }
+    function capnhatcsv($userid, $hoten, $msv,$email,$huyenid,$anh,$lopid,$sdt,$ngaysinh){
+        $sql="update cuu_sv
+        set hoten=?,msv=?, email=?,huyenid=?,anh=?,lopid=?,sdt=?,ngaysinh=?
+        where userid=?";
+        $this->setQuery($sql);
+        return $this->execute(array($hoten,$msv,$email,$huyenid,$anh,$lopid,$sdt,$ngaysinh,$userid));
+
+    }
+    function xoacongviec($csvid){
+        $sql="delete from congtac where csv_id=?";
+        $this->setQuery($sql);
+        return $this->execute(array($csvid));
+    }
+    function xoauser($userid){
+        $sql="delete from user where userID=?";
+        $this->setQuery($sql);
+        return $this->execute(array($userid));
+    }
+    function xoacuusv($userid){
+        $sql="delete from cuu_sv where userid=?";
+        $this->setQuery($sql);
+        return $this->execute(array($userid));
+    }
+    function xoacongtac($csvid){
+        $sql="delete from congtac where csv_id=?";
+        $this->setQuery($sql);
+        return $this->execute(array($csvid));
+    }
+    
+    /*function getluachonkhong($id){
+        $sql="select khaosat.*, count(kqkhaosat.luachon='co') as co,
+        count(kqkhaosat.luachon='khong') as khong, 
+        count(kqkhaosat.luachon='khonghan') as khonghan from khaosat join kqkhaosat on khaosat.khaosatID=kqkhaosat.khaosatID 
+        where bangID=$id
+        group by khaosatID";
+        $this->setQUery($sql);
+        return $this->loadAllRows();
+    }*/
+    function getkqco($id){
+        $sql="select khaosat.*, count(kqkhaosat.luachon) as co
+        from khaosat left join kqkhaosat on khaosat.khaosatID=kqkhaosat.khaosatID 
+        where bangID=$id and kqkhaosat.luachon='co'
+        group by khaosatID";
+        $this->setQUery($sql);
+        return $this->loadAllRows();
+    }
+    function getkqkhong($id){
+        $sql="select khaosat.*, count(kqkhaosat.luachon) as khong
+        from khaosat left join kqkhaosat on khaosat.khaosatID=kqkhaosat.khaosatID 
+        where bangID=$id and kqkhaosat.luachon='khong'
+        group by khaosatID";
+        $this->setQUery($sql);
+        return $this->loadAllRows();
+    }
+    function getkqkhonghan($id){
+        $sql="select khaosat.*, count(kqkhaosat.luachon) as khonghan
+        from khaosat left join kqkhaosat on khaosat.khaosatID=kqkhaosat.khaosatID 
+        where bangID=$id and kqkhaosat.luachon='khonghan'
+        group by khaosatID";
+        $this->setQUery($sql);
+        return $this->loadAllRows();
     }
     static function getnLopMoiNhat($n){
 		$sql = 'SELECT * FROM lop

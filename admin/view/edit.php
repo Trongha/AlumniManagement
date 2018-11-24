@@ -5,7 +5,8 @@ $noidung=$c_admin->edit1();
 $chitietnguoidung=$noidung['chitietnguoidung'];
 $listtinh=$noidung['listtinh'];
 $listkhoa=$noidung['listkhoa'];
-print_r($chitietnguoidung[0]->username);
+$listhuyen=$noidung['listhuyen'];
+$listlop=$noidung['listlop'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,14 +50,13 @@ print_r($chitietnguoidung[0]->username);
 			</div>
 			<div class="profile-usertitle">
 				<div class="profile-usertitle-name">Username</div>
-				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
 		</div>
 		<div class="divider"></div>
 		<form role="search">
 			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Search">
+				<input type="text" class="form-control" placeholder="Tìm kiếm">
 			</div>
 		</form>
 		<ul class="nav menu">
@@ -92,7 +92,7 @@ print_r($chitietnguoidung[0]->username);
 		
 	<!--Form nhap thong tin 1 user-->
 			<div class="panel-body">
-				<form class="form-horizontal" action="xulithemnguoidung.php" method="post">
+<form class="form-horizontal" action="suathongtincanhan.php?userid=<?=$chitietnguoidung[0]->userID?>&isuser=<?=$chitietnguoidung[0]->isuser?><?php if($chitietnguoidung[0]->isuser == 1){ ?>&csvid=<?=$chitietnguoidung[0]->csv_id?><?php } ?>" method="post" onsubmit="return chapnhan();">
 					<fieldset>
 						<!--Username input-->
 						<div class="form-group">
@@ -100,29 +100,22 @@ print_r($chitietnguoidung[0]->username);
 							<div class="col-md-9">
 								<input id="username" name="username" type="text" class="form-control" value="<?=$chitietnguoidung[0]->username?>" required>
 							</div>
+							<?php
+							if(isset($_SESSION['errorusername'])){
+								echo "<div class='col-md-9 errmess' style='float:right'>".$_SESSION['errorusername']."</div>";
+								unset($_SESSION['errorusername']);
+							}
+							?>
 						</div>
 						<!-- Password input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="password">Mật khẩu </label>
 							<div class="col-md-9">
-								<input id="password" name="password" type="password" class="form-control" value="<?=$chitietnguoidung[0]->password?>" required>
-							</div>
-						</div>
-						<!--rePassword input-->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="repassword">Nhập lại mật khẩu </label>
-							<div class="col-md-9">
-								<input id="repassword" name="repassword" type="password" class="form-control" required>
+								<input id="password" name="password" type="text" class="form-control" value="<?=$chitietnguoidung[0]->password?>" required>
 							</div>
 						</div>
 						<!-- role-->
-						<div class="form-group">
-						<label class="col-md-3 control-label">Quyền</label>
-						<div class="col-md-9">
-						<input type="checkbox" name="user" id="role-user" onclick="isuser();" checked>User
-						<input type="checkbox" name="admin" id="role-admin">Admin
-						</div>
-						</div>
+						
 						<?php
 						if($chitietnguoidung[0]->isuser){
 						?>
@@ -138,15 +131,21 @@ print_r($chitietnguoidung[0]->username);
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="dob">Ngày sinh</label>
 							<div class="col-md-9">
-								<input id="dob" name="dob" type="date" class="form-control" value="<?=$chitietnguoidung[0]->ngáyinh?>" required>
+								<input id="dob" name="dob" type="date" class="form-control" value="<?=$chitietnguoidung[0]->ngaysinh?>" required>
 							</div>
 						</div>
 						<!-- msv-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="msv">Mã sinh viên</label>
 							<div class="col-sm-9">
-								<input id="msv" class="form-control" name="msv" type="text" value="<?=$chitietnguoidung[0]->csv_id?>" required>
+								<input id="msv" class="form-control" name="msv" type="text" value="<?=$chitietnguoidung[0]->msv?>" required>
 							</div>
+							<?php
+							if(isset($_SESSION['errormsv'])){
+								echo "<div class='col-md-9' style='float:right color:red'>".$_SESSION['errormsv']."</div>";
+								unset($_SESSION['errormsv']);
+							}
+							?>
 						</div>
 						<!-- img input-->
 						<div class="form-group">
@@ -175,7 +174,7 @@ print_r($chitietnguoidung[0]->username);
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="sdt">Số điện thoại</label>
 							<div class="col-md-9">
-								<input id="sdt" name="sdt" type="text" value="<?=$chitietnguoidung[0]->username?>" class="form-control">
+								<input id="sdt" name="sdt" type="text" value="<?=$chitietnguoidung[0]->sdt?>" class="form-control">
 							</div>
 						</div>
 						<!-- Address input-->
@@ -183,7 +182,7 @@ print_r($chitietnguoidung[0]->username);
 							<label class="col-md-3 control-label" for="address">Quê quán</label>
 							<div class="col-md-3">
 								<select id="tinh" name="tinh" class="form-control" style=" min-width: 100px;"  required>
-									<option disabled selected>Tỉnh</option>
+								
 									<?php
 									foreach($listtinh as $tinh){
 										if($chitietnguoidung[0]->tentinh==$tinh->tentinh){
@@ -202,7 +201,21 @@ print_r($chitietnguoidung[0]->username);
 							<div class="col-md-1 control-label"></div>
 							<div class="col-md-3">
 								<select id="huyen" name="huyen" class="form-control" style=" min-width: 100px;" required>
-									<option disabled selected>Huyện</option>
+									
+									<?php
+									foreach($listhuyen as $huyen){
+										if($chitietnguoidung[0]->tenhuyen==$huyen->tenhuyen){
+											?>
+											<option value="<?=$huyen->huyenid?>" selected><?=$huyen->tenhuyen?></option>
+											<?php
+											}else{
+											?>
+											<option value="<?=$huyen->huyenid?>"><?=$huyen->tenhuyen?></option>
+											<?php
+											}
+										}
+											?>
+
 								</select>
 
 							</div>
@@ -212,228 +225,105 @@ print_r($chitietnguoidung[0]->username);
 							<label class="col-md-3 control-label" for="class">Lớp</label>
 							<div class="col-md-3">
 								<select id="lop" name="lop" class="form-control" style=" min-width: 100px;" required>
-									<option disabled selected>Lớp</option>
-								</select>
-								<button type="button" class="btn" onclick="addClass();">Thêm</button>
-							</div>
-							<div class="col-md-1"></div>
-							<div class="col-md-3">
-								<select id="khoa" class="form-control" style=" min-width: 100px;" required>
-									<option disabled selected>Khoa</option>
-									<?php
-									foreach($listkhoa as $khoa){
-									?>
-									<option value="<?=$khoa->khoaID?>"><?=$khoa->tenkhoa?></option>
-									<?php
-									}
-									?>
-								</select>
-
-							</div>
-						</div>
-						<!-- congviec input-->
-						<div class="form-group">
-							<label class="col-md-3 control-label">Công việc</label>
-							<div class="col-md-9">
-								<table class="table" id="job-table" class="form-control">
-									<thead>
-										<tr>
-											<th>Vị trí</th>
-											<th>Cơ quan</th>
-											<th>Thời gian</th>
-											<th>Mức Lương (USD)</th>
-											<th class="col-sm-1">
-												<!--button them 1 user-->
-												<button id="newjob" type="button" class="material-icons btn" style="padding:0px; color: black; background-color: white">add</button>
-											</th>
-	
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td><input class="vitri" name="vitri[]" type="text" required></td>
-											<td><input class="coquan" name="coquan[]" type="text" required></td>
-											<td><input class="thoigian" name="thoigian[]" type="text" required></td>
-											<td>
-												<input class="mucluong" name="mucluong[]" type="number" class="job-profile" required>
-												
-											</td>
-											<td class="col-md-2">
-												<button type="button" class="btn material-icons deleterow" style="padding:0px; background-color: white" onclick="deleteRowNow(event)">
-													delete
-												</button>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-								
-						
-
-							</div>
-
-						</div>
-
-						<!-- Message body -->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="message">Ghi chú</label>
-							<div class="col-md-9">
-								<textarea class="form-control" id="message" name="message" placeholder="..." rows="5"></textarea>
-							</div>
-							</div>
-						</div>
-						<?php}else{?>
-							<div id="user-info" style="display:none">
-						<!-- Name input-->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="name">Họ tên</label>
-							<div class="col-md-9">
-								<input id="name" name="name" type="text" class="form-control" onblur="this.value=ChuanhoaTen(this.value);" required>
-							</div>
-						</div>
-						<!-- dob input-->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="dob">Ngày sinh</label>
-							<div class="col-md-9">
-								<input id="dob" name="dob" type="date" class="form-control" required>
-							</div>
-						</div>
-						<!-- msv-->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="msv">Mã sinh viên</label>
-							<div class="col-sm-9">
-								<input id="msv" class="form-control" name="msv" type="text" required>
-							</div>
-						</div>
-						<!-- img input-->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="imgi">Ảnh</label>
-							<div class="col-sm-9">
-								<input id="imgi" name="imgi" type="file">
-							</div>
-						</div>
-						
-						<!--img output-->
-						<div class="form-group">
-							<label class="col-md-3 control-label">&nbsp;</label>
-							<div class="col-sm-3">
-								<img src="../../public/admin/img/400x300.png" class="form-control" style=" min-height: 200px">
-							</div>
-						</div>
-						<!-- Email input-->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="email">E-mail</label>
-							<div class="col-md-9">
-								<input id="email" name="email" type="text" class="form-control" required>
-							</div>
-						</div>
-						
-						<!-- phonenum input-->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="sdt">Số điện thoại</label>
-							<div class="col-md-9">
-								<input id="sdt" name="sdt" type="text" class="form-control">
-							</div>
-						</div>
-						<!-- Address input-->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="address">Quê quán</label>
-							<div class="col-md-3">
-								<select id="tinh" name="tinh" class="form-control" style=" min-width: 100px;" required>
-									<option disabled selected>Tỉnh</option>
-									<?php
-									foreach($listtinh as $tinh){
-									?>
-									<option value="<?=$tinh->tinhid?>"><?=$tinh->tentinh?></option>
-									<?php
-									}
-									?>
-								</select>
-							</div>
-							<div class="col-md-1 control-label"></div>
-							<div class="col-md-3">
-								<select id="huyen" name="huyen" class="form-control" style=" min-width: 100px;" required>
-									<option disabled selected>Huyện</option>
-								</select>
-
-							</div>
-						</div>
-						<!-- Class input-->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="class">Lớp</label>
-							<div class="col-md-3">
-								<select id="lop" name="lop" class="form-control" style=" min-width: 100px;" required>
-									<option disabled selected>Lớp</option>
-								</select>
-								<button type="button" class="btn" onclick="addClass();">Thêm</button>
-							</div>
-							<div class="col-md-1"></div>
-							<div class="col-md-3">
-								<select id="khoa" class="form-control" style=" min-width: 100px;" required>
-									<option disabled selected>Khoa</option>
-									<?php
-									foreach($listkhoa as $khoa){
-									?>
-									<option value="<?=$khoa->khoaID?>"><?=$khoa->tenkhoa?></option>
-									<?php
-									}
-									?>
-								</select>
-
-							</div>
-						</div>
-						<!-- congviec input-->
-						<div class="form-group">
-							<label class="col-md-3 control-label">Công việc</label>
-							<div class="col-md-9">
-								<table class="table" id="job-table" class="form-control">
-									<thead>
-										<tr>
-											<th>Vị trí</th>
-											<th>Cơ quan</th>
-											<th>Thời gian</th>
-											<th>Mức Lương (USD)</th>
-											<th class="col-sm-1">
-												<!--button them 1 user-->
-												<button id="newjob" type="button" class="material-icons btn" style="padding:0px; color: black; background-color: white">add</button>
-											</th>
-	
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td><input class="vitri" name="vitri[]" type="text" required></td>
-											<td><input class="coquan" name="coquan[]" type="text" required></td>
-											<td><input class="thoigian" name="thoigian[]" type="text" required></td>
-											<td>
-												<input class="mucluong" name="mucluong[]" type="number" class="job-profile" required>
-												
-											</td>
-											<td class="col-md-2">
-												<button type="button" class="btn material-icons deleterow" style="padding:0px; background-color: white" onclick="deleteRowNow(event)">
-													delete
-												</button>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-								
-						
-
-							</div>
-
-						</div>
-
-						<!-- Message body -->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="message">Ghi chú</label>
-							<div class="col-md-9">
-								<textarea class="form-control" id="message" name="message" placeholder="..." rows="5"></textarea>
-							</div>
-							</div>
-								</div>
 								<?php
+									foreach($listlop as $lop){
+										if($chitietnguoidung[0]->tenlop==$lop->tenlop){
+											?>
+											<option value="<?=$lop->lopID?>" selected><?=$lop->tenlop?></option>
+											<?php
+											}else{
+											?>
+											<option value="<?=$lop->lopID?>"><?=$lop->tenlop?></option>
+											<?php
+											}
+										}
+											?>
+								</select>
+							
+							</div>
+							<div class="col-md-1"></div>
+							<div class="col-md-3">
+								<select id="khoa" class="form-control" style=" min-width: 100px;" required>
+								<?php
+									foreach($listkhoa as $khoa){
+										if($chitietnguoidung[0]->tenkhoa==$khoa->tenkhoa){
+									?>
+									<option value="<?=$khoa->khoaid?>" selected><?=$khoa->tenkhoa?></option>
+									<?php
+									}else{
+									?>
+									<option value="<?=$khoa->khoaid?>"><?=$khoa->tenkhoa?></option>
+									<?php
+									}
 								}
-								?>
+									?>
+								</select>
+
+							</div>
+						</div>
+						<!-- congviec input-->
+						<div class="form-group">
+							<label class="col-md-3 control-label">Công việc</label>
+							<div class="col-md-9">
+								<table class="table" id="job-table" class="form-control">
+									<thead>
+										<tr>
+											<th>Vị trí</th>
+											<th>Cơ quan</th>
+											<th>Thời gian</th>
+											<th>Mức Lương (USD)</th>
+											<th class="col-sm-1">
+												<!--button them 1 user-->
+												<button id="newjob" type="button" class="material-icons btn" style="padding:0px; color: black; background-color: white">add</button>
+											</th>
+	
+										</tr>
+									</thead>
+									<tbody>
+									<?php
+									if($chitietnguoidung[0]->congviec!=0){
+									$congviec= explode(',',$chitietnguoidung[0]->congviec);
+									
+									foreach($congviec as $cv){
+									list($id,$vitri,$coquan,$thoigian,$mucluong)=explode(':',$cv);
+									?>
+										<tr>
+											<td><input class="vitri" name="vitri[]" type="text" value="<?=$vitri?>" required></td>
+											<td><input class="coquan" name="coquan[]" type="text" value="<?=$coquan?>" required></td>
+											<td><input class="thoigian" name="thoigian[]" type="text" value="<?=$thoigian?>" required></td>
+											<td>
+												<input class="mucluong" name="mucluong[]" type="number" value="<?=$mucluong?>" class="job-profile" required>
+												
+											</td>
+											<td class="col-md-2">
+												<button type="button" class="btn material-icons deleterow" style="padding:0px; background-color: white" onclick="deleteRowNow(event)">
+													delete
+												</button>
+											</td>
+										</tr>
+										<?php
+									}}
+										?>
+									</tbody>
+								</table>
+								
+						
+
+							</div>
+
+						</div>
+
+						<!-- Message body -->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="message">Ghi chú</label>
+							<div class="col-md-9">
+								<textarea class="form-control" id="message" name="message" placeholder="..." rows="5"></textarea>
+							</div>
+							</div>
+						</div>
+						<?php
+						}
+						?>
 						</div>
 						<!-- Form actions -->
 						<div class="form-group">

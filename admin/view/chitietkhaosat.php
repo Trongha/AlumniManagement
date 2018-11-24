@@ -1,3 +1,14 @@
+<?php
+include('../controller/c_admin.php');
+$c_admin=new c_admin();
+$noidung=$c_admin->getchitietkhaosat();
+$listcauhoi=$noidung['listcauhoi'];
+$kqco=$noidung['kqco'];
+$kqkhong=$noidung['kqkhong'];
+$kqkhonghan=$noidung['kqkhonghan'];
+$tenbang=$noidung['tenbang'];
+print_r($tenbang[0]);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -19,8 +30,6 @@
 </head>
 
 <body>
-
-	<body>
 		<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -64,14 +73,85 @@
 		<!--/.sidebar-->
 		<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 			<div class="panel panel-default" style="min-height:600px">
-				<div class="panel-heading">Khảo sát a</div>
+				<div class="panel-heading"><?=$tenbang[0]->tenbang?></div>
 				<div class="panel-body">
 					<div class="cauhoi">
-					<div class="col-md-6">Câu hỏi</div>
-					<div class="col-md-2">Có:<span style="padding:20px">1</span></div>
-					<div class="col-md-2">Không hẳn:<span style="padding:20px">1</span></div>
-					<div class="col-md-2">Không:<span style="padding:20px">1</span></div>
+					<?php
+					foreach($listcauhoi as $cauhoi){
+		
+					?>
+					<div class="col-md-6"><?=$cauhoi->noidung?></div>
+					<div class="col-md-2">Có:<span>  <?php $countco=0; foreach($kqco as $co){
+						if($co->khaosatID==$cauhoi->khaosatID){
+						$countco=$co->co;}
+						
+					}
+					$countkhonghan=0; foreach($kqkhonghan as $khonghan){
+						if($khonghan->khaosatID==$cauhoi->khaosatID){
+						$countkhonghan=$khonghan->khonghan;}
+						
+					}
+					$countkhong=0; foreach($kqkhong as $khong){
+						if($khong->khaosatID==$cauhoi->khaosatID){
+						$countkhong=$khong->khong;}
+					
+					}
+					$total=$countco+$countkhong+$countkhonghan; 
+					if($total != 0){
+					echo round(($countco/$total)*100,2)."%";
+				}
+					else
+					echo '0%';
+					?></span></div>
+					<div class="col-md-2">Không hẳn:<span><?php $countco=0; foreach($kqco as $co){
+						if($co->khaosatID==$cauhoi->khaosatID){
+						$countco=$co->co;}
+						
+					}
+					$countkhonghan=0; foreach($kqkhonghan as $khonghan){
+						if($khonghan->khaosatID==$cauhoi->khaosatID){
+						$countkhonghan=$khonghan->khonghan;}
+						
+					}
+					$countkhong=0; foreach($kqkhong as $khong){
+						if($khong->khaosatID==$cauhoi->khaosatID){
+						$countkhong=$khong->khong;}
+					
+					}
+					$total=$countco+$countkhong+$countkhonghan; 
+					if($total != 0){
+					echo round(($countkhonghan/$total)*100,2)."%";}
+					else
+					echo '0%';
+					?></span></div>
+					<div class="col-md-2">Không:<span><?php 
+					$countco=0; foreach($kqco as $co){
+						if($co->khaosatID==$cauhoi->khaosatID){
+						$countco=$co->co;}
+						
+					}
+					$countkhonghan=0; foreach($kqkhonghan as $khonghan){
+						if($khonghan->khaosatID==$cauhoi->khaosatID){
+						$countkhonghan=$khonghan->khonghan;}
+						
+					}
+					$countkhong=0; foreach($kqkhong as $khong){
+						if($khong->khaosatID==$cauhoi->khaosatID){
+						$countkhong=$khong->khong;}
+					
+					}
+					$total=$countco+$countkhong+$countkhonghan; 
+					if($total != 0){
+					echo round(($countkhong/$total)*100,2)."%";}
+					else
+					echo '0%';
+					?></span></div>
+					<?php
+					}
+					?>
 					</div>
+
+					
 				</div>
 			</div>
 		</div>

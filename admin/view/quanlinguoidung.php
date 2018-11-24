@@ -99,7 +99,7 @@ $listnguoidung=$noidung['listnguoidung'];
 						<th class="col-sm-1">&nbsp;</th>
 						<th class="col-sm-1">
 							<!--button them 1 user-->
-							<button id="add-user" onclick="addClick();" class="material-icons btn" style="padding:0px; color: black; background-color: white"><a href="themuser.php">add</a></button>
+							<button id="add-user" class="material-icons btn" style="padding:0px; color: black; background-color: white"><a href="themuser.php">add</a></button>
 						</th>
 					</tr>
 				</thead>
@@ -113,8 +113,8 @@ $listnguoidung=$noidung['listnguoidung'];
 						<td class="col-sm-2"><?=$user->tenlop?></td>
 						<td class="col-sm-2"><?=$user->tenkhoa?></td>
 						<td class="col-sm-2">&nbsp;</td>
-						<td class="col-sm-1"><button id="edit-user" class="material-icons btn" style="padding:0px; color: black; background-color: white"><a href="edit.php?id=<?=$user->userID	?>" style="color:black">edit</a></button></td>
-						<td class="col-sm-1"><button id="delete-user" class="material-icons btn" style="padding:0px; color: black; background-color: white" onclick="deleteRowNow();" >delete</button></td>
+						<td class="col-sm-1"><button id="edit-user" class="material-icons btn" style="padding:0px; color: black; background-color: white"><a href="edit.php?id=<?=$user->userID?>" style="color:black">edit</a></button></td>
+						<td class="col-sm-1"><button id="delete-user" class="material-icons btn" style="padding:0px; color: black; background-color: white" ><a href="xoanguoidung.php?id=<?=$user->userID?><?php if($user->isuser == 1){?>&csvid=<?=$user->csv_id?><?php } ?>" style="color:black">delete</a></button></td>
 					</tr>
 					<?php
 				}
