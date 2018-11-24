@@ -106,7 +106,7 @@
                     </div>
                     <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 pull-right">
                         <?php
-                            $homeController->setListKhaoSat();
+                            $homeController->setListNews();
                         ?>
 
                     </div>

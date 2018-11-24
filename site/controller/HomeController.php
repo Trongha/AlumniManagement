@@ -32,9 +32,20 @@ class HomeController{
 		echo $s;
 	}
 
-	public static function setListKhaoSat(){
-		$soLuongBaiDang = 9;
-		$listKhaoSat = m_admin::getnKhaoSatMoiNhat($soLuongBaiDang);
+	public static function setListNews(){
+		$soLuongBaiKhaoSat = 5;
+		$listKhaoSat = m_admin::getnKhaoSatMoiNhat($soLuongBaiKhaoSat);
+		$soLuongThongBao = 10 - count($listKhaoSat);
+
+		$listThongBao = m_admin::getkThongBao($soLuongThongBao);
+
+		foreach ($listThongBao as $aThongBao){
+			$s = "	<div class=\"row 1tin\">
+						<i class=\"fas fa-flag\"></i>
+						<a href=\"BaiDang.php?ID=$aThongBao->thongbaoID\">$aThongBao->tieude</a>
+					</div>";
+			echo $s;
+		}
 		foreach ($listKhaoSat as $aKhaoSat){
 			$s = "	<div class=\"row 1tin\">
 						<i class=\"fas fa-pencil-alt\"></i>
