@@ -65,33 +65,33 @@ $manager = new ListAlumniController();
     <!-- end Nav -->
 
     <div class="myHeader"></div>
-    	
-	<div class="container">
+
+    <div class="container">
         <div class="nameClass text-left">
             <h2>Lớp K61 CB</h2>
             <hr>
         </div>
     </div>
-	    <div class="container">
-	    <table class="listAlumni table table-hover table-bordered">
-	    	<thead >
-	    		<tr class="info">
-	    			<th>Stt</th>
-	    			<th>Họ và tên</th>
-	    			<th>Lớp</th>
-	    			<th>Nơi công tác</th>
-	    			<th>Công việc đảm nhiệm</th>
-	    			<th>Mức lương</th>
+    <div class="container">
+        <table class="listAlumni table table-hover table-bordered">
+            <thead >
+                <tr class="info">
+                    <th>Stt</th>
+                    <th>Họ và tên</th>
+                    <th>Lớp</th>
+                    <th>Nơi công tác</th>
+                    <th>Công việc đảm nhiệm</th>
+                    <th>Mức lương</th>
                     <th>Email</th>
                     <th>Sđt</th>
-	    		</tr>
-	    	</thead>
-	    	<tbody>
+                </tr>
+            </thead>
+            <tbody>
                 <?php
                     $manager->setBodyTable();
                 ?>
-	    	</tbody>
-	    </table>    	
+            </tbody>
+        </table>
     </div>
     <div class= "footer">
         <div class="container">

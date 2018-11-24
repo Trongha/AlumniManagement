@@ -39,6 +39,7 @@ class ListAlumniController{
 	}
 
 	public function setBodyTable(){
+
 		if (isset($_GET["classID"])){
 			$this->__construct($_GET["classID"]);
 		}

@@ -27,7 +27,10 @@
     
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+            
+        </div>
+        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
@@ -48,12 +51,15 @@
                         <a class="" href="#khaosat">Khảo sát</a>
                     </li>
                     <li>
-                        <a class="" href="ListClasses.php">Các lớp</a>
+                        <a class="" href="ListClasses.php"> Các lớp</a>
                     </li>
                     <li  class="active" >
                         <?php
                             $homeController->setUsernameNav();
                         ?>
+                    </li>
+                    <li >
+                        <a href=""><i class="fa fa-search "></i></a> 
                     </li>
                     
                 </ul>
