@@ -67,29 +67,17 @@ $manager = new ListAlumniController();
 
     <div class="container">
         <div class="nameClass text-left">
-            <h2>Lớp K61 CB</h2>
+            <?php
+			    $manager->printNameClass();
+            ?>
             <hr>
         </div>
     </div>
     <div class="container">
         <table class="listAlumni table table-hover table-bordered">
-            <thead >
-                <tr class="info">
-                    <th>Stt</th>
-                    <th>Họ và tên</th>
-                    <th>Lớp</th>
-                    <th>Nơi công tác</th>
-                    <th>Công việc đảm nhiệm</th>
-                    <th>Mức lương</th>
-                    <th>Email</th>
-                    <th>Sđt</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    $manager->setBodyTable();
-                ?>
-            </tbody>
+            <?php
+                $manager->setAlumniTable();
+            ?>
         </table>
     </div>
     <div class= "footer">

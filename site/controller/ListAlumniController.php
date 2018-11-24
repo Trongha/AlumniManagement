@@ -9,15 +9,19 @@ include_once ('../../model/m_admin.php');
 class ListAlumniController{
 	private $classID ;
 	private $nameClass;
+	private $listAlumni;
 
 	/**
 	 * ListAlumniController constructor.
 	 * @param string $classID
 	 */
-	public function __construct($classID = 0)
+	public function __construct()
 	{
-		$this->classID = $classID;
-		$this->setNameClass();
+		if (isset($_GET["classID"])){
+			$this->classID = $_GET["classID"];
+			$this->setNameClass();
+			$this->listAlumni = m_admin::getAllAlumniByClassID($this->classID);
+		}
 	}
 
 	/**
@@ -38,21 +42,36 @@ class ListAlumniController{
 		}
 	}
 
-	public function setBodyTable(){
-
+	public function printNameClass(){
 		if (isset($_GET["classID"])){
-			$this->__construct($_GET["classID"]);
+			echo "<h2>Lớp $this->nameClass</h2>";
 		}
-		$listAlumni = m_admin::getAllAlumniByClassID($this->classID);
-		if(isset($listAlumni)){
-			$stt = 0;
-			foreach ($listAlumni as $Alumni){
-				$mucluong = "";
-				if ($Alumni->mucluong > 0){
-					$mucluong .= $Alumni->mucluong . "$";
-				}
-				$stt++;
-				$row = "<tr>
+	}
+	public function setAlumniTable(){
+		if (isset($_GET["classID"])){
+			$thead = "	<tr class=\"info\">
+							<th>Stt</th>
+							<th>Họ và tên</th>
+							<th>Lớp</th>
+							<th>Nơi công tác</th>
+							<th>Công việc đảm nhiệm</th>
+							<th>Mức lương</th>
+							<th>Email</th>
+							<th>Sđt</th>
+						</tr>";
+			if(isset($this->listAlumni)){
+				echo "	<thead >
+							$thead
+						</thead>";
+				echo "<tbody>";
+				$stt = 0;
+				foreach ($this->listAlumni as $Alumni){
+					$mucluong = "";
+					if ($Alumni->mucluong > 0){
+						$mucluong .= $Alumni->mucluong . "$";
+					}
+					$stt++;
+					$row = "<tr>
 	    			<td>$stt</td>
 	    			<td>$Alumni->hoten</td>
 	    			<td>$this->nameClass</td>
@@ -62,7 +81,11 @@ class ListAlumniController{
 	    			<td>$Alumni->email</td>
 	    			<td>$Alumni->sdt</td>
 	    		</tr>";
-				echo $row;
+					echo $row;
+				}
+				echo"</tbody>";
+			}else{
+				echo "<h2>Chưa cập nhật danh sách lớp</h2>";
 			}
 		}
 	}

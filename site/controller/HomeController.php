@@ -68,7 +68,7 @@ class HomeController{
 					. '		<div class="caption text-center">'
 					. '			<h3>Lớp '. $aLop->getTenLop() .'</h3>'
 					. '		</div>'
-					. '		<a href="ListAlumni.php">'
+					. '		<a href="ListAlumni.php?classID='.$aLop->getLopID().'">'
 					. '			<div class="chiTiet text-center">'
 					. '				<i class="fas fa-info-circle"></i>'
 					. '				<h3>Chi tiết...</h3>'
