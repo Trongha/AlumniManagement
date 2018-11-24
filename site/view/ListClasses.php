@@ -26,47 +26,46 @@ mySession::checkLogin();
     
 </head>
 <body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
+            <div class="navbar-header">
+                
+                <a class="logo navbar-brand page-scroll" href="Home.php">
+                    <img src="../../public/Home/img/uetLogo.png" alt="">_Uet_Alumni
+                </a>
 
-<!-- Navigation -->
-<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                <i class="fa fa-bars"></i>
-            </button>
-
-            <a class="logo navbar-brand page-scroll" href="Home.php">
-                <img src="../../public/Home/img/uetLogo.png" alt="">_Uet_Alumni
-            </a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 myMenu">
+            <div class="collapse navbar-collapse navbar-main-collapse centerNav">
+                <ul class="nav navbar-nav center">
+                    <li><a href="Home.php">Trang chủ</a></li>
+                    <li><a class="" href="#Bảng tin">Tin mới</a></li>
+                    <li class="active"><a class="" href="ListClasses.php">Các lớp</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href=""><i class="fa fa-search "></i></a> 
+                    </li>
+                    <li  class="active">
+                        <?php
+						    require_once ('../controller/HomeController.php');
+						    HomeController::setUsernameNav();
+                        ?>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- end navbar-collapse -->
         </div>
 
-        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-            <ul class="nav navbar-nav">
-
-                <li >
-                    <a href="Home.php">Trang chủ</a>
-                </li>
-                <li>
-                    <a class="" href="#KhaoSat">Khảo sát</a>
-                </li>
-                <li class="active">
-                    <a  href="ListClasses.php">Các lớp</a>
-                </li>
-                <li class="active">
-					<?php
-					require_once ('../controller/HomeController.php');
-					homeController::setUsernameNav();
-					?>
-                </li>
-
-            </ul>
-        </div>
-        <!-- end navbar-collapse -->
-    </div>
-    <!-- end container -->
-
-</nav>
-<!-- end Nav -->
+    </nav>  
+        <!-- end Nav -->
 
     </nav>
     <!-- end Nav -->

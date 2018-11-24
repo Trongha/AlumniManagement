@@ -8,6 +8,7 @@
 
 }
 
+
 .navbar-header button i{
     color: #fff;
     font-size: 190%;
@@ -116,7 +117,14 @@
         margin:0px;
         padding: 0px;
     }
+
+    .center {
+        position: absolute;
+        left: 14%;
+        transform: translatex(-50%);
+    }
 }
+
 
 .footer h3{
     margin: 0px;
