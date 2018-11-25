@@ -13,6 +13,7 @@ $namngaytruoc=$noidung['namngaytruoc'];
 $saungaytruoc=$noidung['saungaytruoc'];
 $bayngaytruoc=$noidung['bayngaytruoc'];
 $lichsu=$noidung['lichsu'];
+print_r($duoi1000);
 ?>
 <!DOCTYPE html>
 <html>
@@ -78,7 +79,7 @@ $lichsu=$noidung['lichsu'];
 		</form>
 		<ul class="nav menu">
 		
-			<li><a href="quanlinguoidung.php"><em class="fa fa-calendar">&nbsp;</em> Quản lí người dùng </a></li>
+			<li><a href="quanlinguoidung.php"><em class="fa fa-calendar">&nbsp;</em> Quản lí người dùng  </a></li>
 			
 			<li><a href="quanlidanhmuc.php"><em class="fa fa-toggle-off">&nbsp;</em> Quản lí bài đăng</a></li>
 			 
@@ -142,6 +143,7 @@ $lichsu=$noidung['lichsu'];
 						<ul>
 							<?php 
 							foreach($lichsu as $l){
+								
 							?>
 							<li class="left clearfix"><span class="chat-img pull-left">
 								
@@ -176,17 +178,6 @@ $lichsu=$noidung['lichsu'];
 	<script src="../../public/admin/js/bootstrap-datepicker.js"></script>
 	<script src="../../public/admin/js/custom.js"></script>
 	<script>
-		function addDays(dateObj,numDays){
-			dateObj.setDate(dateObj.getDate()+numDays);
-			return dateObj;
-		}
-		var d=new Date();
-		var truoc1=addDays(d,-1);
-		var truoc2=addDays(d,2);
-		var truoc3=addDays(d,3);
-		var truoc4=addDays(d,4);
-		var truoc5=addDays(d,5);
-		var truoc6=addDays(d,6);
 
 	var pieData=[{
 		value:<?php echo $duoi1000[0]->duoi1000 ?>,
@@ -220,15 +211,6 @@ $lichsu=$noidung['lichsu'];
 	scaleLineColor: "rgba(0,0,0,.2)",
 	scaleGridLineColor: "rgba(0,0,0,.05)",
 	scaleFontColor: "#c5c7cc"
-	});
-	var chart3 = document.getElementById("doughnut-chart").getContext("2d");
-	window.myDoughnut = new Chart(chart3).Doughnut(doughnutData, {
-	responsive: true,
-	legend: {
-      display: true,
-      position: 'right'
-    },
-	segmentShowStroke: false
 	});
 	var chart4 = document.getElementById("pie-chart").getContext("2d");
 	window.myPie = new Chart(chart4).Pie(pieData, {
