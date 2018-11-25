@@ -48,7 +48,7 @@ class loginController{
 				mySession::writeHistory("Login");
 
 				if ($this->allInfo->isadmin == 1){
-					header('Location: admin/view/dashboard.php');
+					header('Location: admin/view/quanlinguoidung.php');
 				}else{
 					header('Location: site/view/Home.php');
 				}

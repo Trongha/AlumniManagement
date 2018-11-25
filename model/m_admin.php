@@ -239,6 +239,14 @@ class m_admin extends database{
         $this->setQUery($sql);
         return $this->loadAllRows();
     }*/
+    function getlichsu(){
+        $sql="select user.username,cuu_sv.anh, history.thoigian,history.noidung from user 
+        join history on user.userID=history.userID left join cuu_sv on user.userID=cuu_sv.userID
+        order by hisID desc 
+        limit 10" ;
+        $this->setQuery($sql);
+        return $this->loadAllRows();
+    }
     function getkqco($id){
         $sql="select khaosat.*, count(kqkhaosat.luachon) as co
         from khaosat left join kqkhaosat on khaosat.khaosatID=kqkhaosat.khaosatID 

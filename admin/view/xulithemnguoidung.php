@@ -7,5 +7,7 @@ if(isset($_SESSION['errorusername']) || isset($_SESSION['errormsv'])){
 }
 else{
     header('Location: http://localhost/AlumniManagement/admin/view/quanlinguoidung.php');
+    require_once ("../../model/mySession.php");
+				mySession::writeHistory("Thêm người dùng");
 }
 ?>

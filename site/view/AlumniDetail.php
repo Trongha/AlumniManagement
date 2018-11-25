@@ -4,7 +4,14 @@
 
      require_once ("../controller/BaiDangController.php");
      $manager = new BaiDangController();
-
+     include('../controller/editController.php');
+     $c_admin=new c_admin();
+     $noidung=$c_admin->edit1();
+     $chitietnguoidung=$noidung['chitietnguoidung'];
+     $listtinh=$noidung['listtinh'];
+     $listkhoa=$noidung['listkhoa'];
+     $listhuyen=$noidung['listhuyen'];
+     $listlop=$noidung['listlop'];
 ?>
 
 <!DOCTYPE html>
