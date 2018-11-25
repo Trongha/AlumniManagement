@@ -55,4 +55,9 @@ class mySession{
 		}
 	}
 
+	public static function writeHistory($sAction){
+		self::checkLogin();
+		m_admin::writeHistory(self::$userInSession->userID, $sAction);
+	}
+
 }

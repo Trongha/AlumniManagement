@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f663908a-febf-4d72-89ce-46db6b35cbbc" name="Default Changelist" comment="" />
+    <list default="true" id="f663908a-febf-4d72-89ce-46db6b35cbbc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/chitietkhaosat.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/chitietkhaosat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/chitietthongbao.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/chitietthongbao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/quanlidanhmuc.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/quanlidanhmuc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/quanlinguoidung.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/quanlinguoidung.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/taocuockhaosat.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/taocuockhaosat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/taothongbao.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/taothongbao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/themuser.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/themuser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/thongkebaocao.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/thongkebaocao.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +28,7 @@
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.12" value="3" />
+          <entry key="project.open.time.12" value="4" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.16" value="1" />
@@ -28,107 +40,123 @@
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
         <counts>
-          <entry key="PHP Class.type" value="13" />
+          <entry key="PHP Class.type" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="4" />
-          <entry key="php" value="88" />
+          <entry key="php" value="138" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="4" />
-          <entry key="PHP" value="88" />
+          <entry key="PHP" value="138" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
           <entry key="html" value="29" />
-          <entry key="php" value="10692" />
-          <entry key="txt" value="640" />
+          <entry key="php" value="10923" />
+          <entry key="txt" value="659" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="86" />
-          <entry key="PHP" value="10619" />
-          <entry key="PLAIN_TEXT" value="641" />
+          <entry key="PHP" value="10850" />
+          <entry key="PLAIN_TEXT" value="660" />
           <entry key="SQL" value="16" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3584656">
+    <splitter split-orientation="horizontal" split-proportion="0.69957083">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/model/m_admin.php">
+            <entry file="file://$PROJECT_DIR$/admin/view/themlop.php">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/admin/view/themuser.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="418">
-                  <caret line="256" column="5" lean-forward="true" selection-start-line="256" selection-start-column="5" selection-end-line="256" selection-end-column="5" />
+                <state relative-caret-position="136">
+                  <caret line="50" column="92" selection-start-line="50" selection-start-column="92" selection-end-line="50" selection-end-column="92" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/admin/view/thongkebaocao.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="66" column="92" selection-start-line="66" selection-start-column="92" selection-end-line="66" selection-end-column="92" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/admin/view/thongkecautraloi.php">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/admin/view/xoanguoidung.php">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/admin/view/xulibangkhaosat.php">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/admin/view/xulithemnguoidung.php">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/admin/view/xulithongbao.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="102">
+                  <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/site/view/ListAlumni.php">
+            <entry file="file://$PROJECT_DIR$/admin/view/edit.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="333">
-                  <caret line="78" column="31" lean-forward="true" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
+                <state relative-caret-position="170">
+                  <caret line="32" column="73" lean-forward="true" selection-start-line="32" selection-start-column="73" selection-end-line="32" selection-end-column="73" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/site/view/ListClasses.php">
+            <entry file="file://$PROJECT_DIR$/admin/view/dashboard.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="554">
-                  <caret line="84" column="46" selection-start-line="84" selection-start-column="46" selection-end-line="84" selection-end-column="46" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/site/controller/ListClassesController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="35" column="102" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="102" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/site/view/BaiDang.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="44">
-                  <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/site/view/KhaoSat.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="367">
-                  <caret line="57" column="78" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="78" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/model/database.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+                <state relative-caret-position="340">
+                  <caret line="41" column="111" lean-forward="true" selection-start-line="40" selection-start-column="16" selection-end-line="41" selection-end-column="111" />
                 </state>
               </provider>
             </entry>
@@ -136,21 +164,21 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+        <leaf>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/site/view/Home.php">
+            <entry file="file://$PROJECT_DIR$/model/m_admin.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1673">
-                  <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+                <state relative-caret-position="458">
+                  <caret line="306" column="34" lean-forward="true" selection-start-line="306" selection-start-column="34" selection-end-line="306" selection-end-column="34" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/site/controller/ListAlumniController.php">
+            <entry file="file://$PROJECT_DIR$/site/controller/LoginController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="104">
-                  <caret line="50" column="37" lean-forward="true" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+                <state relative-caret-position="503">
+                  <caret line="44" column="16" lean-forward="true" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="37" />
                 </state>
               </provider>
             </entry>
@@ -158,17 +186,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/site/controller/HomeController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="534">
+                <state relative-caret-position="710">
                   <caret line="70" column="84" lean-forward="true" selection-start-line="70" selection-start-column="84" selection-end-line="70" selection-end-column="84" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/site/controller/BaiDangController.php">
+            <entry file="file://$PROJECT_DIR$/site/controller/KhaoSatController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="279">
-                  <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+                <state relative-caret-position="673">
+                  <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
@@ -176,6 +204,12 @@
         </leaf>
       </split-second>
     </splitter>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>đăng</find>
+      <find>usernam</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -195,14 +229,10 @@
         <option value="$PROJECT_DIR$/site/controller/ListClassesController.php" />
         <option value="$PROJECT_DIR$/site/controller/loginController.php" />
         <option value="$PROJECT_DIR$/site/view/Login.php" />
-        <option value="$PROJECT_DIR$/site/controller/LoginController.php" />
-        <option value="$PROJECT_DIR$/admin/view/dashboard.php" />
-        <option value="$PROJECT_DIR$/model/mySession.php" />
         <option value="$PROJECT_DIR$/site/controller/KhaoSatController.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/site/view/Home.php" />
         <option value="$PROJECT_DIR$/model/database.php" />
-        <option value="$PROJECT_DIR$/model/m_admin.php" />
         <option value="$PROJECT_DIR$/site/controller/BaiDangController.php" />
         <option value="$PROJECT_DIR$/site/controller/NavController.php" />
         <option value="$PROJECT_DIR$/site/view/KhaoSat.php" />
@@ -211,6 +241,20 @@
         <option value="$PROJECT_DIR$/site/view/ListAlumni.php" />
         <option value="$PROJECT_DIR$/site/controller/HomeController.php" />
         <option value="$PROJECT_DIR$/site/controller/ListAlumniController.php" />
+        <option value="$PROJECT_DIR$/model/m_admin.php" />
+        <option value="$PROJECT_DIR$/model/mySession.php" />
+        <option value="$PROJECT_DIR$/site/controller/LoginController.php" />
+        <option value="$PROJECT_DIR$/admin/view/login.php" />
+        <option value="$PROJECT_DIR$/admin/view/dashboard.php" />
+        <option value="$PROJECT_DIR$/admin/view/chitietkhaosat.php" />
+        <option value="$PROJECT_DIR$/admin/view/chitietthongbao.php" />
+        <option value="$PROJECT_DIR$/admin/view/quanlidanhmuc.php" />
+        <option value="$PROJECT_DIR$/admin/view/quanlinguoidung.php" />
+        <option value="$PROJECT_DIR$/admin/view/taocuockhaosat.php" />
+        <option value="$PROJECT_DIR$/admin/view/taothongbao.php" />
+        <option value="$PROJECT_DIR$/admin/view/themuser.php" />
+        <option value="$PROJECT_DIR$/admin/view/thongkebaocao.php" />
+        <option value="$PROJECT_DIR$/admin/view/edit.php" />
       </list>
     </option>
   </component>
@@ -226,8 +270,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="679" />
-    <option name="y" value="-17" />
+    <option name="x" value="524" />
+    <option name="y" value="-23" />
     <option name="width" value="1040" />
     <option name="height" value="744" />
   </component>
@@ -259,6 +303,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -274,7 +319,14 @@
             <path>
               <item name="AlumniManagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="AlumniManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AlumniManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlumniManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AlumniManagement" type="b2602c69:ProjectViewProjectNode" />
@@ -297,7 +349,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -357,6 +408,7 @@
       <workItem from="1543034787988" duration="2115000" />
       <workItem from="1543056275827" duration="671000" />
       <workItem from="1543077522096" duration="12708000" />
+      <workItem from="1543159070104" duration="4218000" />
     </task>
     <task id="LOCAL-00001" summary="ok list new class at Home">
       <created>1542410657934</created>
@@ -505,16 +557,24 @@
       <option name="project" value="LOCAL" />
       <updated>1543095935402</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="ok history Login">
+      <created>1543161797278</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1543161797293</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101289000" />
+    <option name="totallyTimeSpent" value="105507000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19402985" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13059701" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -564,23 +624,15 @@
     <MESSAGE value="update NAV" />
     <MESSAGE value="update NAV2" />
     <MESSAGE value="update list csv" />
-    <option name="LAST_COMMIT_MESSAGE" value="update list csv" />
+    <MESSAGE value="ok history Login" />
+    <option name="LAST_COMMIT_MESSAGE" value="ok history Login" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/site/controller/HomeControler.php" />
-    <entry file="file://$PROJECT_DIR$/model/CountrySakilaTest.php" />
     <entry file="file://$PROJECT_DIR$/site/controller/CountrySakilaTestController.php" />
     <entry file="file://$PROJECT_DIR$/admin/controller/c_admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/view/quanlidanhmuc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -612,38 +664,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/view/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="42" lean-forward="true" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../projectweb/admin/login.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/site/view/Login.php" />
-    <entry file="file://$PROJECT_DIR$/admin/view/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/view/chitietthongbao.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/superglobals/_superglobals.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="173" selection-start-line="173" selection-end-line="173" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/mySession.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -654,13 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site/controller/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="42" column="24" lean-forward="true" selection-start-line="39" selection-start-column="16" selection-end-line="42" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/site/controller/LopController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
@@ -668,62 +689,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/view/xulibangkhaosat.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/view/thongkebaocao.php">
+    <entry file="file://$PROJECT_DIR$/site/controller/NavController.php" />
+    <entry file="file://$PROJECT_DIR$/site/view/ListAlumni.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/controller/KhaoSatController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/m_admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="256" column="5" lean-forward="true" selection-start-line="256" selection-start-column="5" selection-end-line="256" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/controller/NavController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="18" column="63" lean-forward="true" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
+        <state relative-caret-position="333">
+          <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/site/controller/BaiDangController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
+        <state relative-caret-position="476">
           <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/view/KhaoSat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="57" column="78" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/view/BaiDang.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -734,13 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site/view/Home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1673">
-          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/site/controller/ListClassesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -748,17 +718,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site/view/ListAlumni.php">
+    <entry file="file://$PROJECT_DIR$/site/view/BaiDang.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="78" column="31" lean-forward="true" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
+        <state relative-caret-position="44">
+          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site/controller/HomeController.php">
+    <entry file="file://$PROJECT_DIR$/site/view/KhaoSat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="70" column="84" lean-forward="true" selection-start-line="70" selection-start-column="84" selection-end-line="70" selection-end-column="84" />
+        <state relative-caret-position="367">
+          <caret line="57" column="78" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/history.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -766,6 +750,171 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="50" column="37" lean-forward="true" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/view/Home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/controller/KhaoSatController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="673">
+          <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/m_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="306" column="34" lean-forward="true" selection-start-line="306" selection-start-column="34" selection-end-line="306" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/controller/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="710">
+          <caret line="70" column="84" lean-forward="true" selection-start-line="70" selection-start-column="84" selection-end-line="70" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/mySession.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/controller/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="44" column="16" lean-forward="true" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/chitietkhaosat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="51" column="96" selection-start-line="51" selection-start-column="96" selection-end-line="51" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/chitietthongbao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="48" column="96" selection-start-line="48" selection-start-column="96" selection-end-line="48" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/huyen.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/lop.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/quanlidanhmuc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="47" column="92" selection-start-line="47" selection-start-column="92" selection-end-line="47" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/quanlinguoidung.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="47" column="92" selection-start-line="47" selection-start-column="92" selection-end-line="47" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/suathongtincanhan.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/taocuockhaosat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="40" column="92" selection-start-line="40" selection-start-column="92" selection-end-line="40" selection-end-column="92" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/taothongbao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="40" column="92" selection-start-line="40" selection-start-column="92" selection-end-line="40" selection-end-column="92" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/themlop.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/themuser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="50" column="92" selection-start-line="50" selection-start-column="92" selection-end-line="50" selection-end-column="92" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/thongkebaocao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="66" column="92" selection-start-line="66" selection-start-column="92" selection-end-line="66" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/thongkecautraloi.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/xoanguoidung.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/xulibangkhaosat.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/xulithemnguoidung.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/xulithongbao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="41" column="111" lean-forward="true" selection-start-line="40" selection-start-column="16" selection-end-line="41" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="32" column="73" lean-forward="true" selection-start-line="32" selection-start-column="73" selection-end-line="32" selection-end-column="73" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
