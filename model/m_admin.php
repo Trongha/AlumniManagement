@@ -180,6 +180,21 @@ class m_admin extends database{
         $this->setQuery($sql);
         return $this->execute(array($csvid));
     }
+    function getluongduoi1000(){
+        $sql="select count(*) as duoi1000 from congtac where mucluong<1000";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
+    function getluong1000den5000(){
+        $sql="select count(*) as duoi5000 from congtac where mucluong>=1000 and mucluong<5000";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
+    function getluongtren5000(){
+        $sql="select count(*) as tren5000 from congtac where mucluong>=5000";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
     
     /*function getluachonkhong($id){
         $sql="select khaosat.*, count(kqkhaosat.luachon='co') as co,

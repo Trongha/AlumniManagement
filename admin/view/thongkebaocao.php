@@ -1,3 +1,11 @@
+<?php
+include('../controller/c_admin.php');
+$c_admin=new c_admin();
+$noidung=$c_admin->thongke();
+$duoi1000=$noidung['duoi1000'];
+$duoi5000=$noidung['duoi5000'];
+$tren5000=$noidung['tren5000'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +23,20 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<style>
+	ul.pie-legend {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        ul.pie-legend li {
+           display:inline-block;
+		   margin-right: 10px; 
+		   padding: 10px;
+        }
+        ul.pie-legend li span {
+            padding: 2px 10px;
+            color: #fff;
+        }</style>
 </head>
 <body>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -183,35 +205,14 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="panel panel-default">
-					<div class="panel-heading">
-						Pie Chart
-						<ul class="pull-right panel-settings panel-button-tab-right">
-							<li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
-								<em class="fa fa-cogs"></em>
-							</a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li>
-										<ul class="dropdown-settings">
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 1
-											</a></li>
-											<li class="divider"></li>
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 2
-											</a></li>
-											<li class="divider"></li>
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 3
-											</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
+					<div class="panel-heading" style="font-family:Helvetica, Arial, sans-serif">
+						Thống kê các mức lương
+						
 						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
 					<div class="panel-body">
 						<div class="canvas-wrapper">
 							<canvas class="chart" id="pie-chart" ></canvas>
+							<div id="legendDiv"></div>
 						</div>
 					</div>
 				</div>
@@ -340,6 +341,21 @@
 	<script src="../../public/admin/js/bootstrap-datepicker.js"></script>
 	<script src="../../public/admin/js/custom.js"></script>
 	<script>
+	var pieData=[{
+		value:<?php echo $duoi1000[0]->duoi1000 ?>,
+		color:"#f9243f",
+		label:"Dưới 1000$",
+	},
+	{
+		value:<?php echo $duoi5000[0]->duoi5000 ?>,
+		color:"#ffb53e",
+		label:"1000$ - 5000$",
+	},
+	{
+		value:<?php echo $tren5000[0]->tren5000 ?>,
+		color:"cyan",
+		label:"Trên 5000$",
+	},];
 	window.onload = function () {
 	var chart1 = document.getElementById("line-chart").getContext("2d");
 	window.myLine = new Chart(chart1).Line(lineChartData, {
@@ -358,13 +374,18 @@
 	var chart3 = document.getElementById("doughnut-chart").getContext("2d");
 	window.myDoughnut = new Chart(chart3).Doughnut(doughnutData, {
 	responsive: true,
+	legend: {
+      display: true,
+      position: 'right'
+    },
 	segmentShowStroke: false
 	});
 	var chart4 = document.getElementById("pie-chart").getContext("2d");
 	window.myPie = new Chart(chart4).Pie(pieData, {
 	responsive: true,
 	segmentShowStroke: false
-	});
+	},);
+	document.getElementById("legendDiv").innerHTML = window.myPie.generateLegend();
 	var chart5 = document.getElementById("radar-chart").getContext("2d");
 	window.myRadarChart = new Chart(chart5).Radar(radarData, {
 	responsive: true,

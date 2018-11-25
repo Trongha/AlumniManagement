@@ -169,13 +169,6 @@ $listkhoa=$noidung['listkhoa'];
 							</div>
 						</div>
 						
-						<!--img output-->
-						<div class="form-group">
-							<label class="col-md-3 control-label">&nbsp;</label>
-							<div class="col-sm-3">
-								<img src="../../public/admin/img/400x300.png" class="form-control" style=" min-height: 200px">
-							</div>
-						</div>
 						<!-- Email input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="email">E-mail</label>
