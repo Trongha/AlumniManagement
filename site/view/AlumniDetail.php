@@ -73,7 +73,7 @@
 
     <div class="AlumniDetail">
 
-            <Để trong này cho t nhé>
+            <h2>Chức năng xem thông tin cá nhân hiện đang được update!</h2>
 
     </div>
 

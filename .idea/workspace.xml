@@ -252,7 +252,7 @@
       <path value="$PROJECT_DIR$/public/vendor/fontawesome-free/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="524" />
     <option name="y" value="-23" />
     <option name="width" value="1040" />
@@ -390,7 +390,7 @@
       <workItem from="1543034787988" duration="2115000" />
       <workItem from="1543056275827" duration="671000" />
       <workItem from="1543077522096" duration="12708000" />
-      <workItem from="1543159070104" duration="7512000" />
+      <workItem from="1543159070104" duration="8108000" />
     </task>
     <task id="LOCAL-00001" summary="ok list new class at Home">
       <created>1542410657934</created>
@@ -550,10 +550,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108801000" />
+    <option name="totallyTimeSpent" value="109397000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13059701" />
