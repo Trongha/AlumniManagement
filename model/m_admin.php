@@ -273,5 +273,10 @@ class m_admin extends database{
 		$sql = "SELECT * FROM `thongbao` WHERE thongbaoID = $thongbaoID";
 		return parent::loadAllRowsStatic($sql);
 	}
+	static function writeHistory($userID, $sAction){
+    	$sql = "INSERT into history (userID, noidung)
+					VALUES ($userID,\"$sAction\")";
+    	return parent::loadAllRowsStatic($sql);
+	}
 }
 ?>

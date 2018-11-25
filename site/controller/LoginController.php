@@ -44,6 +44,8 @@ class loginController{
 				echo $this->usernameInput;
 				$_SESSION['username'] = $this->usernameInput;
 
+				require_once ("model/mySession.php");
+				mySession::writeHistory("Login");
 
 				if ($this->allInfo->isadmin == 1){
 					header('Location: admin/view/dashboard.php');
