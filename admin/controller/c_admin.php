@@ -290,7 +290,14 @@ public function thongke(){
     $duoi1000=$m_danhmuc->getluongduoi1000();
     $duoi5000=$m_danhmuc->getluong1000den5000();
     $tren5000=$m_danhmuc->getluongtren5000();
-    return array('duoi1000'=>$duoi1000,'duoi5000'=>$duoi5000,'tren5000'=>$tren5000);
+    $homnay=$m_danhmuc->getloginhomnay();
+    $homqua=$m_danhmuc->getloginhomqua();
+    $bangaytruoc=$m_danhmuc->getlogin3ngaytruoc();
+    $bonngaytruoc=$m_danhmuc->getlogin4ngaytruoc();
+    $namngaytruoc=$m_danhmuc->getlogin5ngaytruoc();
+    $saungaytruoc=$m_danhmuc->getlogin6ngaytruoc();
+    $bayngaytruoc=$m_danhmuc->getlogin7ngaytruoc();
+    return array('duoi1000'=>$duoi1000,'duoi5000'=>$duoi5000,'tren5000'=>$tren5000,'homnay'=>$homnay,'homqua'=>$homqua, 'bangaytruoc'=>$bangaytruoc,'bonngaytruoc'=>$bonngaytruoc,'namngaytruoc'=>$namngaytruoc,'saungaytruoc'=>$saungaytruoc,'bayngaytruoc'=>$bayngaytruoc);
 }
 }
 ?>

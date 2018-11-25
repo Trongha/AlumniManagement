@@ -167,14 +167,14 @@ $listlop=$noidung['listlop'];
 							<?php
 							if($chitietnguoidung[0]->anh != ''){
 							?>
-							<div class="col-sm-3">
+							<div class="col-sm-3" id="anh">
 								<img src="<?=$chitietnguoidung[0]->anh?>" class="form-control"  style="height:100px; width:100px">
 							</div>
 							<?php
 							}
 							else{
 							?>
-							<div class="col-sm-3">
+							<div class="col-sm-3" id="anh">
 								<img src="../../public/admin/img/400x300.png" class="form-control" style="height:100px; width:100px">
 							</div>
 							<?php } ?>
@@ -199,7 +199,7 @@ $listlop=$noidung['listlop'];
 							<label class="col-md-3 control-label" for="address">Quê quán</label>
 							<div class="col-md-3">
 								<select id="tinh" name="tinh" class="form-control" style=" min-width: 100px;"  required>
-								
+									<option value="" disabled selected>Tỉnh</option>
 									<?php
 									foreach($listtinh as $tinh){
 										if($chitietnguoidung[0]->tentinh==$tinh->tentinh){
@@ -218,7 +218,7 @@ $listlop=$noidung['listlop'];
 							<div class="col-md-1 control-label"></div>
 							<div class="col-md-3">
 								<select id="huyen" name="huyen" class="form-control" style=" min-width: 100px;" required>
-									
+								<option value="" disabled selected>Huyện</option>
 									<?php
 									foreach($listhuyen as $huyen){
 										if($chitietnguoidung[0]->tenhuyen==$huyen->tenhuyen){
