@@ -49,9 +49,9 @@
                         <a href=""><i class="fa fa-search "></i></a> 
                     </li>
                     <li  class="active" >
-                        <?php
+                            <?php
                             $homeController->setUsernameNav();
-                        ?>
+                            ?>
                     </li>
                     
                 </ul>

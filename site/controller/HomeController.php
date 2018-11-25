@@ -25,7 +25,7 @@ class HomeController{
 		else{
 			isset($_SESSION['hoten']) ? $Acc = $_SESSION['hoten'] : $Acc = 'Đăng nhập';
 		}
-		$s = "<a href='#'>$Acc</a>";
+		$s = "<a href='https://localhost/AlumniManagement/site/view/AlumniDetail.php'>$Acc</a>";
 		if ($Acc == 'Đăng nhập'){
 			$s = "<a href='https://localhost/AlumniManagement/'>$Acc</a>";
 		}
