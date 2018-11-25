@@ -44,7 +44,7 @@
             <div class="collapse navbar-collapse navbar-main-collapse centerNav">
                 <ul class="nav navbar-nav center">
                     <li><a href="Home.php">Trang chủ</a></li>
-                    <li class="active"><a class="" href="#Bảng tin">Tin mới</a></li>
+                    <li class="active"><a class="" href="#Bảng tin">Tin tức</a></li>
                     <li><a class="" href="ListClasses.php">Các lớp</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
