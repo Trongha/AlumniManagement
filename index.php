@@ -1,6 +1,9 @@
 <?php
     require_once ("model/mySession.php");
+    $sesisonManage = new mySession();
+
     mySession::startSession();
+    $sesisonManage->unsetSession();
 
     require_once ("site/controller/LoginController.php");
     $manager = new LoginController();
