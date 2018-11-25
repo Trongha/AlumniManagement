@@ -12,6 +12,7 @@ $bonngaytruoc=$noidung['bonngaytruoc'];
 $namngaytruoc=$noidung['namngaytruoc'];
 $saungaytruoc=$noidung['saungaytruoc'];
 $bayngaytruoc=$noidung['bayngaytruoc'];
+$lichsu=$noidung['lichsu'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -76,10 +77,10 @@ $bayngaytruoc=$noidung['bayngaytruoc'];
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li><a href="dashboard.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+		
 			<li><a href="quanlinguoidung.php"><em class="fa fa-calendar">&nbsp;</em> Quản lí người dùng </a></li>
 			
-			<li><a href="quanlidanhmuc.php"><em class="fa fa-toggle-off">&nbsp;</em> Quản lí danh mục</a></li>
+			<li><a href="quanlidanhmuc.php"><em class="fa fa-toggle-off">&nbsp;</em> Quản lí bài đăng</a></li>
 			 
             <li class="active"><a href="thongkebaocao.php"><em class="fa fa-bar-chart">&nbsp;</em> Thống kê &amp; Báo cáo</a></li>
             <li><a href="https://localhost/AlumniManagement/"><em class="fa fa-power-off">&nbsp;</em> Đăng xuất</a></li>
@@ -132,8 +133,35 @@ $bayngaytruoc=$noidung['bayngaytruoc'];
 					</div>
 				</div>
 			</div>
+			<div class="col-md-6">
+				<div class="panel panel-default chat">
+					<div class="panel-heading"  style="font-family:Helvetica, Arial, sans-serif">
+						Lịch sử đăng nhập					
+						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
+					<div class="panel-body">
+						<ul>
+							<?php 
+							foreach($lichsu as $l){
+							?>
+							<li class="left clearfix"><span class="chat-img pull-left">
+								
+								</span>
+								<div class="chat-body clearfix">
+									<div class="header"><strong class="primary-font"><?=$l->username?></strong> <small class="text-muted"><?=$l->thoigian?></small></div>
+									<p><?=$l->noidung?></p>
+								</div>
+							</li>
+							<?php
+						} 
+						?>
+						</ul>
+					</div>
+					
+				
+			</div><!--/.col-->
 			
 		</div><!--/.row-->
+		
 		
 		
 	</div>	<!--/.main-->
