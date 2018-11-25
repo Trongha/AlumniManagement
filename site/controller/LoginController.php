@@ -60,4 +60,5 @@ class loginController{
 			echo $s;
 		}
 	}
+	
 }

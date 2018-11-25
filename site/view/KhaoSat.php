@@ -59,6 +59,9 @@
 						    HomeController::setUsernameNav();
                         ?>
                     </li>
+                    <li>
+                        <a href="https://localhost/AlumniManagement/" title="Sign Out"><i class="fas fa-sign-out-alt"></i></a>
+                    </li>
                     
                 </ul>
             </div>

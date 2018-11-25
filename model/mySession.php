@@ -60,4 +60,9 @@ class mySession{
 		m_admin::writeHistory(self::$userInSession->userID, $sAction);
 	}
 
+	public function unsetSession(){
+		$_SESSION = array();
+		self::$userInSession = null;
+	}
+
 }
