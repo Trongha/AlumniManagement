@@ -27,7 +27,7 @@
     background: white;
 }
 .newsFeed{
-    margin:10px 0px;
+    margin:35px 0px;
 }
 .news h3, hr{
     margin:5px 0px;
@@ -41,6 +41,7 @@
 }
 .newClassSession {
     background: #13983d9c;
+    
 }
 
 .aClass{

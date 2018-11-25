@@ -22,76 +22,63 @@ $manager = new ListAlumniController();
 	<title>Alumni</title>
 </head>
 <body>
-
+    
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
+        <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-
+                
                 <a class="logo navbar-brand page-scroll" href="Home.php">
                     <img src="../../public/Home/img/uetLogo.png" alt="">_Uet_Alumni
                 </a>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
             </div>
-
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-
+        </div>
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 myMenu">
+            <div class="collapse navbar-collapse navbar-main-collapse centerNav">
+                <ul class="nav navbar-nav center">
+                    <li><a href="Home.php">Trang chủ</a></li>
+                    <li><a class="" href="#Bảng tin">Tin mới</a></li>
+                    <li class="active"><a class="" href="ListClasses.php">Các lớp</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
                     <li >
-                        <a href="Home.php">Trang chủ</a>
+                        <a href=""><i class="fa fa-search "></i></a> 
                     </li>
-                    <li>
-                        <a class="" href="#KhaoSat">Khảo sát</a>
+                    <li  class="active" >
+                        <?php
+						    require_once ('../controller/HomeController.php');
+						    HomeController::setUsernameNav();
+                        ?>
                     </li>
-                    <li>
-                        <a class="" href="ListClasses.php">Các lớp</a>
-                    </li>
-                    <li class="active">
-						<?php
-                            require_once ('../controller/HomeController.php');
-						    homeController::setUsernameNav();
-						?>
-                    </li>
-
+                    
                 </ul>
             </div>
             <!-- end navbar-collapse -->
         </div>
-        <!-- end container -->
 
-    </nav>
-    <!-- end Nav -->
+    </nav>  
+        <!-- end Nav -->
 
     <div class="myHeader"></div>
-    	
-	<div class="container">
+
+    <div class="container">
         <div class="nameClass text-left">
-            <h2>Lớp K61 CB</h2>
+            <?php
+			    $manager->printNameClass();
+            ?>
             <hr>
         </div>
     </div>
-	    <div class="container">
-	    <table class="listAlumni table table-hover table-bordered">
-	    	<thead >
-	    		<tr class="info">
-	    			<th>Stt</th>
-	    			<th>Họ và tên</th>
-	    			<th>Lớp</th>
-	    			<th>Nơi công tác</th>
-	    			<th>Công việc đảm nhiệm</th>
-	    			<th>Mức lương</th>
-                    <th>Email</th>
-                    <th>Sđt</th>
-	    		</tr>
-	    	</thead>
-	    	<tbody>
-                <?php
-                    $manager->setBodyTable();
-                ?>
-	    	</tbody>
-	    </table>    	
+    <div class="container">
+        <table class="listAlumni table table-hover table-bordered">
+            <?php
+                $manager->setAlumniTable();
+            ?>
+        </table>
     </div>
     <div class= "footer">
         <div class="container">

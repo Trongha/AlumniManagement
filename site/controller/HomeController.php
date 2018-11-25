@@ -32,9 +32,20 @@ class HomeController{
 		echo $s;
 	}
 
-	public static function setListKhaoSat(){
-		$soLuongBaiDang = 9;
-		$listKhaoSat = m_admin::getnKhaoSatMoiNhat($soLuongBaiDang);
+	public static function setListNews(){
+		$soLuongBaiKhaoSat = 5;
+		$listKhaoSat = m_admin::getnKhaoSatMoiNhat($soLuongBaiKhaoSat);
+		$soLuongThongBao = 10 - count($listKhaoSat);
+
+		$listThongBao = m_admin::getkThongBao($soLuongThongBao);
+
+		foreach ($listThongBao as $aThongBao){
+			$s = "	<div class=\"row 1tin\">
+						<i class=\"fas fa-flag\"></i>
+						<a href=\"BaiDang.php?ID=$aThongBao->thongbaoID\">$aThongBao->tieude</a>
+					</div>";
+			echo $s;
+		}
 		foreach ($listKhaoSat as $aKhaoSat){
 			$s = "	<div class=\"row 1tin\">
 						<i class=\"fas fa-pencil-alt\"></i>
@@ -57,7 +68,7 @@ class HomeController{
 					. '		<div class="caption text-center">'
 					. '			<h3>Lớp '. $aLop->getTenLop() .'</h3>'
 					. '		</div>'
-					. '		<a href="ListAlumni.php">'
+					. '		<a href="ListAlumni.php?classID='.$aLop->getLopID().'">'
 					. '			<div class="chiTiet text-center">'
 					. '				<i class="fas fa-info-circle"></i>'
 					. '				<h3>Chi tiết...</h3>'

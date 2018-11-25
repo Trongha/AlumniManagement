@@ -278,5 +278,15 @@ class m_admin extends database{
     	$sql = "SELECT * FROM `bangkhaosat` WHERE bangID = $bangID";
     	return parent::loadAllRowsStatic($sql);
 	}
+	static function getkThongBao($k){
+    	$sql = "SELECT * FROM `thongbao` 
+				ORDER BY thongbaoID DESC
+				limit $k";
+    	return parent::loadAllRowsStatic($sql);
+	}
+	static function getThongBaoByID($thongbaoID){
+		$sql = "SELECT * FROM `thongbao` WHERE thongbaoID = $thongbaoID";
+		return parent::loadAllRowsStatic($sql);
+	}
 }
 ?>

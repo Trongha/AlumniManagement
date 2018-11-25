@@ -9,8 +9,6 @@
 <html lang="en">
 <head>
 
-	<!-- <meta charset="UTF-8" http-equiv="refresh" content="1"> -->
-
 	<meta charset="UTF-8">
     <!-- bootstrap -->
 	<link rel="stylesheet" href="../../public/vendor/bootstrapv3/css/bootstrap.min.css">
@@ -27,28 +25,28 @@
     
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
+        <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-
+                
                 <a class="logo navbar-brand page-scroll" href="Home.php">
                     <img src="../../public/Home/img/uetLogo.png" alt="">_Uet_Alumni
                 </a>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
             </div>
-
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-
-                    <li class="active" >
-                        <a href="Home.php">Trang chủ</a>
-                    </li>
-                    <li>
-                        <a class="" href="#khaosat">Khảo sát</a>
-                    </li>
-                    <li>
-                        <a class="" href="ListClasses.php">Các lớp</a>
+        </div>
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 myMenu">
+            <div class="collapse navbar-collapse navbar-main-collapse centerNav">
+                <ul class="nav navbar-nav center">
+                    <li class="active"><a href="Home.php">Trang chủ</a></li>
+                    <li><a class="" href="#Bảng tin">Tin mới</a></li>
+                    <li><a class="" href="ListClasses.php">Các lớp</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li >
+                        <a href=""><i class="fa fa-search "></i></a> 
                     </li>
                     <li  class="active" >
                         <?php
@@ -60,7 +58,6 @@
             </div>
             <!-- end navbar-collapse -->
         </div>
-        <!-- end container -->
 
     </nav>  
         <!-- end Nav -->
@@ -100,7 +97,7 @@
                     </div>
                     <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 pull-right">
                         <?php
-                            $homeController->setListKhaoSat();
+                            $homeController->setListNews();
                         ?>
 
                     </div>

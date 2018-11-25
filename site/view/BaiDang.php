@@ -1,6 +1,10 @@
 <?php
-require_once ('../../model/mySession.php');
-mySession::checkLogin();
+    require_once ('../../model/mySession.php');
+    mySession::checkLogin();
+
+     require_once ("../controller/BaiDangController.php");
+     $manager = new BaiDangController();
+
 ?>
 
 <!DOCTYPE html>
@@ -13,21 +17,16 @@ mySession::checkLogin();
     <!-- bootstrap -->
 	<link rel="stylesheet" href="../../public/vendor/bootstrapv3/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../public/vendor/bootstrapv3/css/bootstrap-theme.min.css">
-
     <!-- font -->
     <link rel="stylesheet" type="text/css" href="../../public/vendor/fontawesome-free/css/all.min.css">
     <!-- my CSS -->
-    <link rel="stylesheet" href="../../public/ListClasses/ListClasses.css">
+    <link rel="stylesheet" href="../../public/BaiDang/BaiDang.css">
     <link rel="stylesheet" href="../../public/Home/NavFoo.css">
-	<title>Alumni</title>
-    <?php 
-        require_once('../controller/ListClassesController.php');
-     ?>
-    
+	<title>Alumni_BaiDang</title>
+
 </head>
 <body>
-    
-    <!-- Navigation -->
+<!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
             <div class="navbar-header">
@@ -45,14 +44,14 @@ mySession::checkLogin();
             <div class="collapse navbar-collapse navbar-main-collapse centerNav">
                 <ul class="nav navbar-nav center">
                     <li><a href="Home.php">Trang chủ</a></li>
-                    <li><a class="" href="#Bảng tin">Tin mới</a></li>
-                    <li class="active"><a class="" href="ListClasses.php">Các lớp</a></li>
+                    <li class="active"><a class="" href="#Bảng tin">Tin mới</a></li>
+                    <li><a class="" href="ListClasses.php">Các lớp</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
+                    <li >
                         <a href=""><i class="fa fa-search "></i></a> 
                     </li>
-                    <li  class="active">
+                    <li  class="active" >
                         <?php
 						    require_once ('../controller/HomeController.php');
 						    HomeController::setUsernameNav();
@@ -67,26 +66,40 @@ mySession::checkLogin();
     </nav>  
         <!-- end Nav -->
 
-    </nav>
-    <!-- end Nav -->
     <div class="myHeader"></div>
-    <div class="gradient">
-        <div class="container ">
-            <div class="title text-left">
-                <h2>Cựu sinh viên các lớp</h2>
-                <hr>
+
+    <div class="BaiDang">
+        <div class="container">
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                <div class="row">
+                    <div class="title">
+                        <?php
+                            $manager->setTenBaiDang();
+                        ?>
+
+                        <br>
+                    </div>
+                </div>
+                <div class="noidung">
+					<?php
+                        $manager->setNoiDung();
+                        ?>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 listBaiDang pull-right">
+                <div class="title">
+                    <h2>Các bài mới <br><br></h2>
+                    
+                </div>
+                <?php
+				    require_once ('../controller/HomeController.php');
+                    $manager->setListBaiDang();
+                ?>
             </div>
         </div>
+            <!-- end container -->
     </div>
-    
-	<div class="timeline">
-        <?php
-            $listClassController = new ListClassesController();
-            $listClassController->setListClasses();
-         ?>
-    </div>
-        <!--end tiemline-->
-	
+
     <div class= "footer">
         <div class="container">
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
@@ -94,7 +107,7 @@ mySession::checkLogin();
                     Copyright &copy; Team
                 </h3>
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-2 col-sm-4 col-md-4 col-lg-4">
                 <div class="text-right">
                     <a href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-3x social"></i></a>
                     <a href="mailto:Trongha.hd.98@gmai.com"><i class="fa fa-envelope-square fa-3x social"></i></a>
@@ -102,11 +115,9 @@ mySession::checkLogin();
             </div>
         </div>
     </div>
-    
 
 	<script src="../../public/vendor/jquery/jquery.min.js"></script>
     <script src="../../public/vendor/bootstrapv3/js/bootstrap.min.js"></script>
     <script src="../../public/Home/NavFoo.js"></script>
-
 </body>
 </html>
