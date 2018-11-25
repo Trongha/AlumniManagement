@@ -38,7 +38,7 @@
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Username</div>
+				<div class="profile-usertitle-name"><?php echo $_SESSION['username']?></div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
@@ -52,7 +52,7 @@
 		<ul class="nav menu">
 			<li class="active"><a href="dashboard.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 			<li><a href="quanlinguoidung.php"><em class="fa fa-calendar">&nbsp;</em>Quản lí người dùng </a></li>
-			
+
 			<li><a href="quanlidanhmuc.php"><em class="fa fa-toggle-off">&nbsp;</em> Quản lí danh mục</a></li>
 			 
             <li><a href="thongkebaocao.php"><em class="fa fa-bar-chart">&nbsp;</em> Thống kê &amp; Báo cáo</a></li>
