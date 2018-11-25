@@ -49,7 +49,8 @@ class BaiDangController{
 		foreach ($listBaiDang as $baiDang){
 			$s = "<div 1bai>
  					<i class=\"fas fa - pencil - alt\"></i>
-						<a href=\"BaiDang.php?ID=$baiDang->thongbaoID\">$baiDang->tieude</a>
+						<a href=\"BaiDang.php?ID=$baiDang->thongbaoID\">$baiDang->tieude<br></a>
+						<div class=\"pull-right\">$baiDang->thoigian</div>
 					<hr>
                 </div>";
 			echo $s;

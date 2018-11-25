@@ -42,14 +42,15 @@ class HomeController{
 		foreach ($listThongBao as $aThongBao){
 			$s = "	<div class=\"row 1tin\">
 						<i class=\"fas fa-flag\"></i>
-						<a href=\"BaiDang.php?ID=$aThongBao->thongbaoID\">$aThongBao->tieude</a>
+						<a href=\"BaiDang.php?ID=$aThongBao->thongbaoID\">$aThongBao->tieude<br></a>
+						<div class=\"pull-right\">$aThongBao->thoigian</div>
 					</div>";
 			echo $s;
 		}
 		foreach ($listKhaoSat as $aKhaoSat){
 			$s = "	<div class=\"row 1tin\">
 						<i class=\"fas fa-pencil-alt\"></i>
-						<a href=\"KhaoSat.php?bangID=$aKhaoSat->bangID\">$aKhaoSat->tenbang</a>
+						<a href=\"KhaoSat.php?bangID=$aKhaoSat->bangID\">$aKhaoSat->tenbang<br></a>
 					</div>";
 			echo $s;
 		}
