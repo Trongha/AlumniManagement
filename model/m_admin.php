@@ -114,7 +114,7 @@ class m_admin extends database{
         return $this->loadRow();
     }
     function checkusername($username){
-        $sql="select username from user where username=$username";
+        $sql='select username from user where username="'.$username.'"';
         $this->setQuery($sql);
         return $this->loadRow();}
         function checkusername1($userid,$username){
