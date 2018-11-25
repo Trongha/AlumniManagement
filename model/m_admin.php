@@ -180,7 +180,56 @@ class m_admin extends database{
         $this->setQuery($sql);
         return $this->execute(array($csvid));
     }
-    
+    function getluongduoi1000(){
+        $sql="select count(*) as duoi1000 from congtac where mucluong<1000";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
+    function getluong1000den5000(){
+        $sql="select count(*) as duoi5000 from congtac where mucluong>=1000 and mucluong<5000";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
+    function getluongtren5000(){
+        $sql="select count(*) as tren5000 from congtac where mucluong>=5000";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
+    function getloginhomnay(){
+        $sql="select count(*) as homnay  from history where noidung='login'";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
+    function getloginhomqua(){
+        $sql="select count(*) as homqua  from history where noidung='login' and datediff(now(),thoigian)=1";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
+    function getlogin3ngaytruoc(){
+        $sql="select count(*) as bangaytruoc  from history where noidung='login' and datediff(now(),thoigian)=2";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
+    function getlogin4ngaytruoc(){
+        $sql="select count(*) as bonngaytruoc  from history where noidung='login' and datediff(now(),thoigian)=3";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
+    function getlogin5ngaytruoc(){
+        $sql="select count(*) as namngaytruoc  from history where noidung='login' and datediff(now(),thoigian)=4";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
+    function getlogin6ngaytruoc(){
+        $sql="select count(*) as saungaytruoc  from history where noidung='login' and datediff(now(),thoigian)=5";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
+    function getlogin7ngaytruoc(){
+        $sql="select count(*) as bayngaytruoc  from history where noidung='login' and datediff(now(),thoigian)=6";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
     /*function getluachonkhong($id){
         $sql="select khaosat.*, count(kqkhaosat.luachon='co') as co,
         count(kqkhaosat.luachon='khong') as khong, 

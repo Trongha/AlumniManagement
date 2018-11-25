@@ -66,7 +66,7 @@ $listlop=$noidung['listlop'];
 			<li><a href="quanlidanhmuc.php"><em class="fa fa-toggle-off">&nbsp;</em> Quản lí danh mục</a></li>
 			 
 			<li><a href="thongkebaocao.php"><em class="fa fa-bar-chart">&nbsp;</em> Thống kê &amp; Báo cáo</a></li>
-			<li><a href="login.php"><em class="fa fa-power-off">&nbsp;</em> Đăng xuất</a></li>
+            <li><a href="https://localhost/AlumniManagement/"><em class="fa fa-power-off">&nbsp;</em> Đăng xuất</a></li>
 		</ul>
 	</div>
 	<!--/.sidebar-->
@@ -92,7 +92,7 @@ $listlop=$noidung['listlop'];
 		
 	<!--Form nhap thong tin 1 user-->
 			<div class="panel-body">
-<form class="form-horizontal" action="suathongtincanhan.php?userid=<?=$chitietnguoidung[0]->userID?>&isuser=<?=$chitietnguoidung[0]->isuser?><?php if($chitietnguoidung[0]->isuser == 1){ ?>&csvid=<?=$chitietnguoidung[0]->csv_id?><?php } ?>" method="post" onsubmit="return chapnhan();">
+<form enctype="multipart/form-data" class="form-horizontal" action="suathongtincanhan.php?userid=<?=$chitietnguoidung[0]->userID?>&isuser=<?=$chitietnguoidung[0]->isuser?><?php if($chitietnguoidung[0]->isuser == 1){ ?>&csvid=<?=$chitietnguoidung[0]->csv_id?><?php } ?>" method="post" onsubmit="return chapnhan();">
 					<fieldset>
 						<!--Username input-->
 						<div class="form-group">
@@ -151,16 +151,33 @@ $listlop=$noidung['listlop'];
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="imgi">Ảnh</label>
 							<div class="col-sm-9">
-								<input id="imgi" name="imgi" type="file" value="<?=$chitietnguoidung[0]->anh?>">
+								<input type="file" name="imgi">
 							</div>
+							<?php
+							if(isset($_SESSION['errorimg'])){
+								echo "<div class='col-md-9 errmess' style='float:right'>".$_SESSION['errorimg']."</div>";
+								unset($_SESSION['errorimg']);
+							}
+							?>
 						</div>
 						
 						<!--img output-->
 						<div class="form-group">
 							<label class="col-md-3 control-label">&nbsp;</label>
-							<div class="col-sm-3">
-								<img src="../../public/admin/img/400x300.png" class="form-control" style=" min-height: 200px">
+							<?php
+							if($chitietnguoidung[0]->anh != ''){
+							?>
+							<div class="col-sm-3" id="anh">
+								<img src="<?=$chitietnguoidung[0]->anh?>" class="form-control"  style="height:100px; width:100px">
 							</div>
+							<?php
+							}
+							else{
+							?>
+							<div class="col-sm-3" id="anh">
+								<img src="../../public/admin/img/400x300.png" class="form-control" style="height:100px; width:100px">
+							</div>
+							<?php } ?>
 						</div>
 						<!-- Email input-->
 						<div class="form-group">
@@ -182,7 +199,7 @@ $listlop=$noidung['listlop'];
 							<label class="col-md-3 control-label" for="address">Quê quán</label>
 							<div class="col-md-3">
 								<select id="tinh" name="tinh" class="form-control" style=" min-width: 100px;"  required>
-								
+									<option value="" disabled selected>Tỉnh</option>
 									<?php
 									foreach($listtinh as $tinh){
 										if($chitietnguoidung[0]->tentinh==$tinh->tentinh){
@@ -201,7 +218,7 @@ $listlop=$noidung['listlop'];
 							<div class="col-md-1 control-label"></div>
 							<div class="col-md-3">
 								<select id="huyen" name="huyen" class="form-control" style=" min-width: 100px;" required>
-									
+								<option value="" disabled selected>Huyện</option>
 									<?php
 									foreach($listhuyen as $huyen){
 										if($chitietnguoidung[0]->tenhuyen==$huyen->tenhuyen){

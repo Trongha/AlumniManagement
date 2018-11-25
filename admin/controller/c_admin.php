@@ -80,6 +80,9 @@ class c_admin{
         $m_danhmuc=new m_admin();
         $username=$_POST['username'];
         $password=$_POST['password'];
+        if(isset($_SESSION['errorimg'])){
+            unset($_SESSION['errorimg']);
+        }
         if(isset($_SESSION['errorusername'])){
             unset($_SESSION['errorusername']);
         }
@@ -109,29 +112,29 @@ class c_admin{
         if($isuser==1){
             $hoten=$_POST['name'];
             $ngaysinh=$_POST['dob'];
-        if(isset($_FILES['imgi']['name'])){ // Đã chọn file
-	            //Kiểm tra định dạng tệp tin
-	    if($_FILES['imgi']['type'] == "image/jpeg" || $_FILES['imgi']['type'] == "image/png" || $_FILES['imgi']['type'] == "image/gif"){
-		//Tiếp tục kiểm tra dung lượng
-		$maxFileSize = 10 * 1000 * 1000; //MB
-		if($_FILES['imgi']['size'] > ($maxFileSize * 1000 * 1000)){
-			echo 'Tập tin không được vượt quá: '.$maxFileSize.' MB';
-		} else {
-			//Hợp lệ tiếp tục xử lý Upload
-			$path = 'public/images/'; //Lưu trữ tập tin vào thư mục: images
-			$tmp_name = $_FILES['imgi']['tmp_name'];
-			$name = $_FILES['imgi']['name'];
-			$type = $_FILES['imgi']['type']; 
-			$size = $_FILES['imgi']['size']; 
-			//Upload file
+            if(isset($_FILES['imgi']['name'])){ // Đã chọn file
+                //Kiểm tra định dạng tệp tin
+        if($_FILES['imgi']['type'] == "image/jpeg" || $_FILES['imgi']['type'] == "image/png" || $_FILES['imgi']['type'] == "image/gif"){
+        //Tiếp tục kiểm tra dung lượng
+        $maxFileSize = 10 * 1000 * 1000; //MB
+        if($_FILES['imgi']['size'] > ($maxFileSize * 1000 * 1000)){
+            echo 'Tập tin không được vượt quá: '.$maxFileSize.' MB';
+        } else {
+            //Hợp lệ tiếp tục xử lý Upload
+            $path = '../../public/images/'; //Lưu trữ tập tin vào thư mục: images
+            $tmp_name = $_FILES['imgi']['tmp_name'];
+            $name = $_FILES['imgi']['name'];
+            $type = $_FILES['imgi']['type']; 
+            $size = $_FILES['imgi']['size']; 
+            //Upload file
             move_uploaded_file($tmp_name,$path.$name);
             $img=$path.$name;
-	}
+    }
             }
-            else $img='';
+            else $_SESSION['errimg']="File ảnh không hợp lệ!";
         }
         else{
-            $img='';
+            $_SESSION['errimg']="File ảnh không hợp lệ!";
         }
         if(isset($_POST['lop'])){
         $lopid=$_POST['lop'];}
@@ -210,7 +213,8 @@ public function capnhatthongtin(){
             if($isuser==1){
                 $hoten=$_POST['name'];
                 $ngaysinh=$_POST['dob'];
-            if(isset($_FILES['imgi']['name'])){ // Đã chọn file
+
+                if(isset($_FILES['imgi']['name'])){ // Đã chọn file
                     //Kiểm tra định dạng tệp tin
             if($_FILES['imgi']['type'] == "image/jpeg" || $_FILES['imgi']['type'] == "image/png" || $_FILES['imgi']['type'] == "image/gif"){
             //Tiếp tục kiểm tra dung lượng
@@ -219,7 +223,7 @@ public function capnhatthongtin(){
                 echo 'Tập tin không được vượt quá: '.$maxFileSize.' MB';
             } else {
                 //Hợp lệ tiếp tục xử lý Upload
-                $path = 'public/images/'; //Lưu trữ tập tin vào thư mục: images
+                $path = '../../public/images/'; //Lưu trữ tập tin vào thư mục: images
                 $tmp_name = $_FILES['imgi']['tmp_name'];
                 $name = $_FILES['imgi']['name'];
                 $type = $_FILES['imgi']['type']; 
@@ -229,10 +233,10 @@ public function capnhatthongtin(){
                 $img=$path.$name;
         }
                 }
-                else $img='';
+                else $_SESSION['errimg']="File ảnh không hợp lệ!";
             }
             else{
-                $img='';
+                $_SESSION['errimg']="File ảnh không hợp lệ!";
             }
             if(isset($_POST['lop'])){
             $lopid=$_POST['lop'];}
@@ -280,6 +284,20 @@ public function xoanguoidung(){
         $m_danhmuc->xoacuusv($userid);
     }
     $m_danhmuc->xoauser($userid);
+}
+public function thongke(){
+    $m_danhmuc=new m_admin();
+    $duoi1000=$m_danhmuc->getluongduoi1000();
+    $duoi5000=$m_danhmuc->getluong1000den5000();
+    $tren5000=$m_danhmuc->getluongtren5000();
+    $homnay=$m_danhmuc->getloginhomnay();
+    $homqua=$m_danhmuc->getloginhomqua();
+    $bangaytruoc=$m_danhmuc->getlogin3ngaytruoc();
+    $bonngaytruoc=$m_danhmuc->getlogin4ngaytruoc();
+    $namngaytruoc=$m_danhmuc->getlogin5ngaytruoc();
+    $saungaytruoc=$m_danhmuc->getlogin6ngaytruoc();
+    $bayngaytruoc=$m_danhmuc->getlogin7ngaytruoc();
+    return array('duoi1000'=>$duoi1000,'duoi5000'=>$duoi5000,'tren5000'=>$tren5000,'homnay'=>$homnay,'homqua'=>$homqua, 'bangaytruoc'=>$bangaytruoc,'bonngaytruoc'=>$bonngaytruoc,'namngaytruoc'=>$namngaytruoc,'saungaytruoc'=>$saungaytruoc,'bayngaytruoc'=>$bayngaytruoc);
 }
 }
 ?>

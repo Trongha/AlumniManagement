@@ -58,7 +58,6 @@ mySession::checkLogin();
 						    HomeController::setUsernameNav();
                         ?>
                     </li>
-                    
                 </ul>
             </div>
             <!-- end navbar-collapse -->
