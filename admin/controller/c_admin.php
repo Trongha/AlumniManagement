@@ -114,7 +114,7 @@ class c_admin{
             $ngaysinh=$_POST['dob'];
             if(isset($_FILES['imgi']['name'])){ // Đã chọn file
                 //Kiểm tra định dạng tệp tin
-        if($_FILES['imgi']['type'] == "image/jpeg" || $_FILES['imgi']['type'] == "image/jpg"|| $_FILES['imgi']['type'] == "image/png" || $_FILES['imgi']['type'] == "image/gif"){
+        if($_FILES['imgi']['type'] == "image/jpeg" || $_FILES['imgi']['type'] == "image/jpg" || $_FILES['imgi']['type'] == "image/png" || $_FILES['imgi']['type'] == "image/gif"){
         //Tiếp tục kiểm tra dung lượng
         $maxFileSize = 10 * 1000 * 1000; //MB
         if($_FILES['imgi']['size'] > ($maxFileSize * 1000 * 1000)){

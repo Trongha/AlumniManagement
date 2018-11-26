@@ -92,7 +92,7 @@ $listkhoa=$noidung['listkhoa'];
 		
 	<!--Form nhap thong tin 1 user-->
 			<div class="panel-body">
-				<form class="form-horizontal" action="xulithemnguoidung.php" method="post" onsubmit="return chapnhan();">
+				<form enctype="multipart/form-data" class="form-horizontal" action="xulithemnguoidung.php" method="post" onsubmit="return chapnhan();">
 					<fieldset>
 						<!--Username input-->
 						<div class="form-group">
@@ -167,6 +167,12 @@ $listkhoa=$noidung['listkhoa'];
 							<div class="col-sm-9">
 								<input id="imgi" name="imgi" type="file">
 							</div>
+							<?php
+							if(isset($_SESSION['errorimg'])){
+								echo "<div class='col-md-9 errmess' style='float:right'>".$_SESSION['errorimg']."</div>";
+								unset($_SESSION['errorimg']);
+							}
+							?>
 						</div>
 						
 						<!-- Email input-->

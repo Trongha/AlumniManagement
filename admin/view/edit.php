@@ -61,7 +61,6 @@ $listlop=$noidung['listlop'];
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li><a href="dashboard.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 			<li class="active"><a href="quanlinguoidung.php"><em class="fa fa-calendar">&nbsp;</em> Quản lí người dùng </a></li>
 
 			<li><a href="quanlidanhmuc.php"><em class="fa fa-toggle-off">&nbsp;</em> Quản lí danh mục</a></li>
@@ -266,11 +265,11 @@ $listlop=$noidung['listlop'];
 									foreach($listkhoa as $khoa){
 										if($chitietnguoidung[0]->tenkhoa==$khoa->tenkhoa){
 									?>
-									<option value="<?=$khoa->khoaid?>" selected><?=$khoa->tenkhoa?></option>
+									<option value="<?=$khoa->khoaID?>" selected><?=$khoa->tenkhoa?></option>
 									<?php
 									}else{
 									?>
-									<option value="<?=$khoa->khoaid?>"><?=$khoa->tenkhoa?></option>
+									<option value="<?=$khoa->khoaID?>"><?=$khoa->tenkhoa?></option>
 									<?php
 									}
 								}
