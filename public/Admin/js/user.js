@@ -25,28 +25,15 @@ function addnewjob(){
 $(document).ready(function (){
     $("#newjob").click(function(){
         
-        var markup = '<tr><td><input class="vitri" name="vitri[]" type="text" required></td><td><input class="coquan" name="coquan[]" type="text" required></td><td><input class="thoigian" name="thoigian[]" type="text" required></td><td><input class="mucluong" name="mucluong[]" type="number" required></td><td class="col-md-2"><button type="button" class="btn material-icons deleterow" style="padding:0px; background-color: white" onclick="deleteRowNow(event)">delete</button></td></tr>';
-        $("#job-table tbody").append(markup);
+        var markup = '<label class="col-md-3 control-label"></label><div id="one-job"><div class="col-md-9"><input class="vitri form-control" name="vitri[]" placeholder="Vị trí" type="text" required></div><label class="col-md-3 control-label"></label><div class="col-md-9"><input class="coquan form-control" name="coquan[]" placeholder="Cơ quan" type="text" required></div><label class="col-md-3 control-label"></label><div class="col-md-9"><input class="thoigian form-control" placeholder="Thời gian" name="thoigian[]" type="text" required></div><label class="col-md-3 control-label"></label><div class="col-md-9"><input class="mucluong form-control" placeholder="Mức lương(USD)" name="mucluong[]" type="number" class="job-profile" required></div><label class="col-md-3 control-label"></label><div class="col-md-9"><button type="button" class="btn material-icons deleterow" style="padding:0px; background-color: white" onclick="deleteRowNow(event)">delete</button></div></div>';
+        $("#job-profile").append(markup);
     });
 });
 function deleteRowNow(e) {
     var rowToDelete = event.target.parentNode.parentNode;
     rowToDelete.remove();
 }
-function chapnhan(){
-    okie=true;
-    document.getElementById("errrepass").innerHTML='';
-    document.getElementById("errrole").innerHTML='';
-    if(document.getElementById("password").value != document.getElementById("repassword").value){
-        document.getElementById("errrepass").innerHTML="Mật khẩu không đúng định dạng!";
-        okie=false;
-    }
-    if(!document.getElementById("role-user").checked && !document.getElementById("role-admin").checked){
-        document.getElementById("errrole").innerHTML="Vui lòng chọn quyền cho người dùng!";
-        okie=false;
-    }
-    return okie;
-}
+
 
 function ChuanhoaTen(ten) {
 	dname = ten;

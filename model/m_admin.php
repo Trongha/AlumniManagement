@@ -196,7 +196,7 @@ class m_admin extends database{
         return $this->loadRow();
     }
     function getloginhomnay(){
-        $sql="select count(*) as homnay  from history where noidung='login'";
+        $sql="select count(*) as homnay  from history where noidung='login'and datediff(now(),thoigian)=0";
         $this->setQuery($sql);
         return $this->loadRow();
     }
