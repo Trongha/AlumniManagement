@@ -281,7 +281,6 @@ $listlop=$noidung['listlop'];
 						<!-- congviec input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label">Công việc</label>
-							<div class="col-md-9">
 											<div class="col-md-1">
 												<!--button them 1 user-->
 												<button id="newjob" type="button" class="material-icons btn" style="padding:0px; color: black; background-color: white">add</button>
@@ -295,13 +294,13 @@ $listlop=$noidung['listlop'];
 									foreach($congviec as $cv){
 									list($id,$vitri,$coquan,$thoigian,$mucluong)=explode(':',$cv);
 									?>
-										
+										<label class="col-md-3 control-label"></label>
 										<div id="one-job">
-											<div class="col-md-9"><input class="vitri form-control" name="vitri[]" type="text" value=<?$vitri?> required></div>
+											<div class="col-md-9"><input class="vitri form-control" name="vitri[]" type="text" value=<?=$vitri?> required></div>
 											<label class="col-md-3 control-label"></label>
-											<div class="col-md-9"><input class="coquan form-control" name="coquan[]" type="text" value=<?$coquan?> required></div>
+											<div class="col-md-9"><input class="coquan form-control" name="coquan[]" type="text" value=<?=$coquan?> required></div>
 											<label class="col-md-3 control-label"></label>
-											<div class="col-md-9"><input class="thoigian form-control" name="thoigian[]" type="text" value=<?$thoigian?> required></div>
+											<div class="col-md-9"><input class="thoigian form-control" name="thoigian[]" type="text" value=<?=$thoigian?> required></div>
 											<label class="col-md-3 control-label"></label>
 											<div class="col-md-9"><input class="mucluong form-control" name="mucluong[]" type="number" class="job-profile" value=<?=$mucluong?> required></div>
 											<label class="col-md-3 control-label"></label>
