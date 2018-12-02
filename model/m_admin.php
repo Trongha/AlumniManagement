@@ -273,7 +273,7 @@ class m_admin extends database{
     }
     static function getnLopMoiNhat($n){
 		$sql = 'SELECT * FROM lop
-				ORDER BY lop.lopID DESC
+				ORDER BY lop.tenlop 
 				LIMIT '.$n;
 		return parent::loadAllRowsStatic($sql);
 	}

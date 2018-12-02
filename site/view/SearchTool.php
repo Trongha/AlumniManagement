@@ -53,7 +53,7 @@ $manager = new SearchToolController();
             <ul class="nav navbar-nav center">
                 <li><a href="Home.php">Trang chủ</a></li>
                 <li><a class="" href="#Bảng tin">Tin tức</a></li>
-                <li><a class="" href="ListAlumni.php">Các lớp</a></li>
+                <li><a class="" href="ListClasses.php">Các lớp</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="active">

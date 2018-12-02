@@ -1,5 +1,5 @@
 body {
-    padding-top: 50px;
+    min-height: 1000px;
 }
 .button-Search{
     width: auto;
@@ -7,6 +7,9 @@ body {
 .dropdown.dropdown-lg .dropdown-menu {
     margin-top: -1px;
     padding: 6px 20px;
+}
+.dropdown-menu.dropdown-menu-right {
+    background-color: #fffffff0;
 }
 .input-group-btn .btn-group {
     display: flex !important;
