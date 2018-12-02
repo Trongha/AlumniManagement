@@ -92,7 +92,7 @@ $listkhoa=$noidung['listkhoa'];
 		
 	<!--Form nhap thong tin 1 user-->
 			<div class="panel-body">
-				<form class="form-horizontal" action="xulithemnguoidung.php" method="post" onsubmit="return chapnhan();">
+				<form enctype="multipart/form-data" class="form-horizontal" action="xulithemnguoidung.php" method="post" onsubmit="return chapnhan();">
 					<fieldset>
 						<!--Username input-->
 						<div class="form-group">
@@ -167,6 +167,12 @@ $listkhoa=$noidung['listkhoa'];
 							<div class="col-sm-9">
 								<input id="imgi" name="imgi" type="file">
 							</div>
+							<?php
+							if(isset($_SESSION['errorimg'])){
+								echo "<div class='col-md-9 errmess' style='float:right'>".$_SESSION['errorimg']."</div>";
+								unset($_SESSION['errorimg']);
+							}
+							?>
 						</div>
 						
 						<!-- Email input-->
@@ -211,13 +217,6 @@ $listkhoa=$noidung['listkhoa'];
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="class">Lớp</label>
 							<div class="col-md-3">
-								<select id="lop" name="lop" class="form-control" style=" min-width: 100px;" required>
-									<option disabled selected>Lớp</option>
-								</select>
-								<button type="button" class="btn" onclick="addClass();">Thêm</button>
-							</div>
-							<div class="col-md-1"></div>
-							<div class="col-md-3">
 								<select id="khoa" class="form-control" style=" min-width: 100px;" required>
 									<option disabled selected>Khoa</option>
 									<?php
@@ -230,56 +229,47 @@ $listkhoa=$noidung['listkhoa'];
 								</select>
 
 							</div>
+							<div class="col-md-1"></div>
+							<div class="col-md-3">
+								<select id="lop" name="lop" class="form-control" style=" min-width: 100px;" required>
+									<option disabled selected>Lớp</option>
+								</select>
+								<button type="button" class="btn" onclick="addClass();">Thêm</button>
+							</div>
+							<div class="col-md-1"></div>
+							
 						</div>
 						<!-- congviec input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label">Công việc</label>
-							<div class="col-md-9">
-								<table class="table" id="job-table" class="form-control">
-									<thead>
-										<tr>
-											<th>Vị trí</th>
-											<th>Cơ quan</th>
-											<th>Thời gian</th>
-											<th>Mức Lương (USD)</th>
-											<th class="col-sm-1">
+											<div class="col-md-1">
 												<!--button them 1 user-->
 												<button id="newjob" type="button" class="material-icons btn" style="padding:0px; color: black; background-color: white">add</button>
-											</th>
-	
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td><input class="vitri" name="vitri[]" type="text" required></td>
-											<td><input class="coquan" name="coquan[]" type="text" required></td>
-											<td><input class="thoigian" name="thoigian[]" type="text" required></td>
-											<td>
-												<input class="mucluong" name="mucluong[]" type="number" class="job-profile" required>
-												
-											</td>
-											<td class="col-md-2">
+											</div>
+									<div style="float:both"></div>
+									<div id="job-profile">
+										<div id="one-job">
+											<div class="col-md-9"><input class="vitri form-control" name="vitri[]" type="text" placeholder="Vị trí" required></div>
+											<label class="col-md-3 control-label"></label>
+											<div class="col-md-9"><input class="coquan form-control" name="coquan[]" type="text" placeholder="Cơ quan" required></div>
+											<label class="col-md-3 control-label"></label>
+											<div class="col-md-9"><input class="thoigian form-control" name="thoigian[]" type="text" placeholder="Thời gian" required></div>
+											<label class="col-md-3 control-label"></label>
+											<div class="col-md-9"><input class="mucluong form-control" name="mucluong[]" type="number" class="job-profile" placeholder="Mức lương(USD)" required></div>
+											<label class="col-md-3 control-label"></label>
+											<div class="col-md-9">
 												<button type="button" class="btn material-icons deleterow" style="padding:0px; background-color: white" onclick="deleteRowNow(event)">
 													delete
 												</button>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-								
-						
-
+											</div>
+										</div>
+										
 							</div>
 
-						</div>
+					
 
 						<!-- Message body -->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="message">Ghi chú</label>
-							<div class="col-md-9">
-								<textarea class="form-control" id="message" name="message" placeholder="..." rows="5"></textarea>
-							</div>
-							</div>
+						
 						</div>
 						</div>
 						<!-- Form actions -->
@@ -350,6 +340,47 @@ $listkhoa=$noidung['listkhoa'];
 			});
 		});
 	});
+	
+	/*function register() {
+                $.ajax({
+                    url: "check.php",
+                    type: "post",
+                    data: {
+                        username: $('#username').val(),
+                    },
+                    success: function(response) {
+						var result = JSON.parse(response);
+						if(result["existedun"] === false || result["existedun"] === false){
+							return true;
+						}
+                        if(result["existedun"] === true) {
+                            $('#err-username').html("Tài khoản đã tồn tại!");
+						}
+						if(result["existedmsv"] === true) {
+							$('#err-msv').html("Tài khoản đã tồn tại!");
+						
+					}
+					return false;
+				});
+			}
+		}*/
+				function chapnhan(){
+    okie=true;
+    document.getElementById("errrepass").innerHTML='';
+    document.getElementById("errrole").innerHTML='';
+    if(document.getElementById("password").value != document.getElementById("repassword").value){
+        document.getElementById("errrepass").innerHTML="Mật khẩu không đúng định dạng!";
+        okie=false;
+    }
+    if(!document.getElementById("role-user").checked && !document.getElementById("role-admin").checked){
+        document.getElementById("errrole").innerHTML="Vui lòng chọn quyền cho người dùng!";
+        okie=false;
+	}
+	if(register() == false){
+		okie=false;
+	}
+    return okie;
+} 
 	</script>
 </body>
 </html>

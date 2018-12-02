@@ -114,7 +114,7 @@ class c_admin{
             $ngaysinh=$_POST['dob'];
             if(isset($_FILES['imgi']['name'])){ // Đã chọn file
                 //Kiểm tra định dạng tệp tin
-        if($_FILES['imgi']['type'] == "image/jpeg" || $_FILES['imgi']['type'] == "image/png" || $_FILES['imgi']['type'] == "image/gif"){
+        if($_FILES['imgi']['type'] == "image/jpeg" || $_FILES['imgi']['type'] == "image/jpg" || $_FILES['imgi']['type'] == "image/png" || $_FILES['imgi']['type'] == "image/gif"){
         //Tiếp tục kiểm tra dung lượng
         $maxFileSize = 10 * 1000 * 1000; //MB
         if($_FILES['imgi']['size'] > ($maxFileSize * 1000 * 1000)){
@@ -200,7 +200,7 @@ public function capnhatthongtin(){
     $isuser=$_GET['isuser'];
     $username=$_POST['username'];
     $password=$_POST['password'];
-    $checkusername=$m_danhmuc->checkusername($userid,$username);
+    $checkusername1=$m_danhmuc->checkusername1($userid,$username);
         if(empty($checkusername1)){
             $m_danhmuc->capnhatuser($userid,$username,$password);
             if(isset($_SESSION['errorusername'])){
@@ -216,7 +216,7 @@ public function capnhatthongtin(){
 
                 if(isset($_FILES['imgi']['name'])){ // Đã chọn file
                     //Kiểm tra định dạng tệp tin
-            if($_FILES['imgi']['type'] == "image/jpeg" || $_FILES['imgi']['type'] == "image/png" || $_FILES['imgi']['type'] == "image/gif"){
+            if($_FILES['imgi']['type'] == "image/jpeg" || $_FILES['imgi']['type'] == "image/jpg" || $_FILES['imgi']['type'] == "image/png" || $_FILES['imgi']['type'] == "image/gif"){
             //Tiếp tục kiểm tra dung lượng
             $maxFileSize = 10 * 1000 * 1000; //MB
             if($_FILES['imgi']['size'] > ($maxFileSize * 1000 * 1000)){
@@ -299,6 +299,14 @@ public function thongke(){
     $bayngaytruoc=$m_danhmuc->getlogin7ngaytruoc();
     $lichsu=$m_danhmuc->getlichsu();
     return array('duoi1000'=>$duoi1000,'duoi5000'=>$duoi5000,'tren5000'=>$tren5000,'homnay'=>$homnay,'homqua'=>$homqua, 'bangaytruoc'=>$bangaytruoc,'bonngaytruoc'=>$bonngaytruoc,'namngaytruoc'=>$namngaytruoc,'saungaytruoc'=>$saungaytruoc,'bayngaytruoc'=>$bayngaytruoc,'lichsu'=>$lichsu);
+}
+public function check(){
+    $m_danhmuc=new m_admin();
+    $username = $_POST['username'];
+    $msv = $_POST['msv'];
+    $checkusername=$m_danhmuc->checkusername($username);
+    $checkmsv=$m_danhmuc->checkmasv($msv);
+    return array('checkusername'=>$checkusername,'checkmsv'=>$checkmsv);
 }
 }
 ?>

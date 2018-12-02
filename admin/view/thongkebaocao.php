@@ -13,7 +13,6 @@ $namngaytruoc=$noidung['namngaytruoc'];
 $saungaytruoc=$noidung['saungaytruoc'];
 $bayngaytruoc=$noidung['bayngaytruoc'];
 $lichsu=$noidung['lichsu'];
-print_r($duoi1000);
 ?>
 <!DOCTYPE html>
 <html>

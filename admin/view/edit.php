@@ -61,7 +61,6 @@ $listlop=$noidung['listlop'];
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li><a href="dashboard.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 			<li class="active"><a href="quanlinguoidung.php"><em class="fa fa-calendar">&nbsp;</em> Quản lí người dùng </a></li>
 
 			<li><a href="quanlidanhmuc.php"><em class="fa fa-toggle-off">&nbsp;</em> Quản lí danh mục</a></li>
@@ -266,11 +265,11 @@ $listlop=$noidung['listlop'];
 									foreach($listkhoa as $khoa){
 										if($chitietnguoidung[0]->tenkhoa==$khoa->tenkhoa){
 									?>
-									<option value="<?=$khoa->khoaid?>" selected><?=$khoa->tenkhoa?></option>
+									<option value="<?=$khoa->khoaID?>" selected><?=$khoa->tenkhoa?></option>
 									<?php
 									}else{
 									?>
-									<option value="<?=$khoa->khoaid?>"><?=$khoa->tenkhoa?></option>
+									<option value="<?=$khoa->khoaID?>"><?=$khoa->tenkhoa?></option>
 									<?php
 									}
 								}
@@ -282,22 +281,12 @@ $listlop=$noidung['listlop'];
 						<!-- congviec input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label">Công việc</label>
-							<div class="col-md-9">
-								<table class="table" id="job-table" class="form-control">
-									<thead>
-										<tr>
-											<th>Vị trí</th>
-											<th>Cơ quan</th>
-											<th>Thời gian</th>
-											<th>Mức Lương (USD)</th>
-											<th class="col-sm-1">
+											<div class="col-md-1">
 												<!--button them 1 user-->
 												<button id="newjob" type="button" class="material-icons btn" style="padding:0px; color: black; background-color: white">add</button>
-											</th>
-	
-										</tr>
-									</thead>
-									<tbody>
+											</div>
+									<div style="float:both"></div>
+									<div id="job-profile">
 									<?php
 									if($chitietnguoidung[0]->congviec!=0){
 									$congviec= explode(',',$chitietnguoidung[0]->congviec);
@@ -305,20 +294,22 @@ $listlop=$noidung['listlop'];
 									foreach($congviec as $cv){
 									list($id,$vitri,$coquan,$thoigian,$mucluong)=explode(':',$cv);
 									?>
-										<tr>
-											<td><input class="vitri" name="vitri[]" type="text" value="<?=$vitri?>" required></td>
-											<td><input class="coquan" name="coquan[]" type="text" value="<?=$coquan?>" required></td>
-											<td><input class="thoigian" name="thoigian[]" type="text" value="<?=$thoigian?>" required></td>
-											<td>
-												<input class="mucluong" name="mucluong[]" type="number" value="<?=$mucluong?>" class="job-profile" required>
-												
-											</td>
-											<td class="col-md-2">
+										<label class="col-md-3 control-label"></label>
+										<div id="one-job">
+											<div class="col-md-9"><input class="vitri form-control" name="vitri[]" type="text" value=<?=$vitri?> required></div>
+											<label class="col-md-3 control-label"></label>
+											<div class="col-md-9"><input class="coquan form-control" name="coquan[]" type="text" value=<?=$coquan?> required></div>
+											<label class="col-md-3 control-label"></label>
+											<div class="col-md-9"><input class="thoigian form-control" name="thoigian[]" type="text" value=<?=$thoigian?> required></div>
+											<label class="col-md-3 control-label"></label>
+											<div class="col-md-9"><input class="mucluong form-control" name="mucluong[]" type="number" class="job-profile" value=<?=$mucluong?> required></div>
+											<label class="col-md-3 control-label"></label>
+											<div class="col-md-9">
 												<button type="button" class="btn material-icons deleterow" style="padding:0px; background-color: white" onclick="deleteRowNow(event)">
 													delete
 												</button>
-											</td>
-										</tr>
+											</div>
+										</div>
 										<?php
 									}}
 										?>
@@ -331,13 +322,7 @@ $listlop=$noidung['listlop'];
 
 						</div>
 
-						<!-- Message body -->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="message">Ghi chú</label>
-							<div class="col-md-9">
-								<textarea class="form-control" id="message" name="message" placeholder="..." rows="5"></textarea>
-							</div>
-							</div>
+						
 						</div>
 						<?php
 						}
