@@ -37,10 +37,7 @@ class loginController{
 		if (isset($_POST["btn_submit"])){
 			$this->getAcc();
 			if ($this->check()){
-				$s = "	<div class='alert alert-success myalert'>
-						  <strong>Success!</strong> Xin chào $this->usernameInput
-						</div>";
-				echo $s;
+				
 				echo $this->usernameInput;
 				$_SESSION['username'] = $this->usernameInput;
 

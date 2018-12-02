@@ -35,7 +35,7 @@ class HomeController{
 	public static function setListNews(){
 		$soLuongBaiKhaoSat = 5;
 		$listKhaoSat = m_admin::getnKhaoSatMoiNhat($soLuongBaiKhaoSat);
-		$soLuongThongBao = 10 - count($listKhaoSat);
+		$soLuongThongBao = 7 - count($listKhaoSat);
 
 		$listThongBao = m_admin::getkThongBao($soLuongThongBao);
 
@@ -44,14 +44,16 @@ class HomeController{
 						<i class=\"fas fa-flag\"></i>
 						<a href=\"BaiDang.php?ID=$aThongBao->thongbaoID\">$aThongBao->tieude<br></a>
 						<div class=\"pull-right\">$aThongBao->thoigian</div>
-					</div>";
+					</div>
+					<hr>";
 			echo $s;
 		}
 		foreach ($listKhaoSat as $aKhaoSat){
 			$s = "	<div class=\"row 1tin\">
 						<i class=\"fas fa-pencil-alt\"></i>
 						<a href=\"KhaoSat.php?bangID=$aKhaoSat->bangID\">$aKhaoSat->tenbang<br></a>
-					</div>";
+					</div>
+					<hr>	";
 			echo $s;
 		}
 	}

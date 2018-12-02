@@ -46,7 +46,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li >
-                        <a href=""><i class="fa fa-search "></i></a> 
+                        <a href="SearchTool.php"><i class="fa fa-search "></i></a> 
                     </li>
                     <li  class="active" >
                             <?php
@@ -95,8 +95,8 @@
             <div class=" news col-xs-12 col-sm-5 col-md-5 col-lg-5">
                 <div class="news">
                     <div class="">
-                         <h3><i class="far fa-newspaper"></i>    Tin mới</h3>
-                        <hr>
+                         <h3><i class="far fa-newspaper"></i>    Tin mới<br><br></h3>
+                        
                     </div>
                     <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 pull-right">
                         <?php

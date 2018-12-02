@@ -51,7 +51,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li >
-                        <a href=""><i class="fa fa-search "></i></a> 
+                        <a href="SearchTool.php"><i class="fa fa-search "></i></a> 
                     </li>
                     <li  class="active" >
                         <?php
@@ -90,8 +90,8 @@
                     $manager->showInForm();
                 ?>
                 <div class="row text-center">
-                    <button class="btn btn-success" name="submit-btn">
-                        ---------------Xong!---------------
+                    <button class="btn btn-success xongBtn" name="submit-btn">
+                        Hoàn thành
                     </button>
                 </div>
                 

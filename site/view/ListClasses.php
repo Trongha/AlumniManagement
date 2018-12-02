@@ -50,7 +50,7 @@ mySession::checkLogin();
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href=""><i class="fa fa-search "></i></a> 
+                        <a href="SearchTool.php"><i class="fa fa-search "></i></a> 
                     </li>
                     <li  class="active">
                         <?php

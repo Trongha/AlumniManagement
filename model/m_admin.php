@@ -335,5 +335,8 @@ class m_admin extends database{
 					VALUES ($userID,\"$sAction\")";
     	return parent::loadAllRowsStatic($sql);
 	}
+	static function getDataBySqlString($sql){
+    	return parent::loadAllRowsStatic($sql);
+	}
 }
 ?>
